@@ -10,6 +10,8 @@ Moon's Coding - 20yy.mm.dd
 
 <hr>
 
-**created by SuperMoon**
+**Created by SuperMoon**
 
 **출처 : https://github.com/jm921106**
+
+**참조 :**
