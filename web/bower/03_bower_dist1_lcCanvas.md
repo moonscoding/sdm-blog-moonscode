@@ -1,7 +1,6 @@
 # BOWER - CUSTOM 첫번째
 
-#### LC GRID ( 패키지명 : lc-canvas
-   )
+#### LC GRID ( 패키지명 : lc-canvas )
 
 Moon's Coding - 20yy.mm.dd
 
