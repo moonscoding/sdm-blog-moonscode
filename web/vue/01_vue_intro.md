@@ -24,17 +24,19 @@ https://kr.vuejs.org/v2/guide/index.html 공식 홈페이지에 한국어정리�
 2. Install 설치 방법 (안정적 운용 가능)
 ```linux
   $ npm install vue     # [case1]
-  $  bower install vue  # [case2]
+
+  $ bower install vue  # [case2]
 ```
 
-#### 3. CLI
+#### 3. CLI (Command Line Interface)
 
 CLI란 간단한 명령어로 프로젝트 스캐폴딩을 생성, 실행, 빌드 할 수 있고,
 
 구성 요소를 선벽적으로 추가 할 수 있는 [cmd-line-interface].
 
-```lunux
+다음 명령어는 Vue 공식 페이지 CLI입니다.
 
+```lunux
   $ npm install --global vue-cli    # vue-cli 설치
 
   $ vue init webpack my-project     # "webpack" 템플릿을 이용해서 새 프로젝트 생성
@@ -44,6 +46,18 @@ CLI란 간단한 명령어로 프로젝트 스캐폴딩을 생성, 실행, 빌�
   $ npm install
 
   $ npm run dev
+```
+
+#### 4. Vue가 지원하는 다양한 빌드
+
+```
+
+```
+
+#### 5. WebPack과 빌드
+
+```
+
 ```
 
 <hr>
