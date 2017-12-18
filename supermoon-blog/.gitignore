@@ -1,0 +1,11 @@
+
+# Cache
+.DS_Store
+
+# 준비중
+.ai/
+.db/
+.mobile/
+.os/
+.server/
+.web/
