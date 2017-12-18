@@ -1,4 +1,4 @@
-# Markdown (in atom) 단축키 정리
+# MARKDOWN (IN ATOM) 사용법 정리 01
 
 #### 마크다운 (in atom) 에서 사용하는 단축키
 
