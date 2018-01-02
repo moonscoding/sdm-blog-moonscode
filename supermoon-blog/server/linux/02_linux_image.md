@@ -1,12 +1,12 @@
-# TITLE (제목을 작성해 주세요. 대문자 작성)
+# LINUX IMAGE
 
-#### 부제목을 작성해 주세요.
+#### linux server image 떠서 상태 보관하기
 
 <div class="pull-right"> 문스코딩 - 2017.12.17 </div>
 
 ---
 
-내용 입력
+
 
 ---
 

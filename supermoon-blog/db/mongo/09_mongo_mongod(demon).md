@@ -1,12 +1,14 @@
-# TITLE (제목을 작성해 주세요. 대문자 작성)
+# MONGO D (DEMON)
 
-#### 부제목을 작성해 주세요.
+#### Mongo Demon에 관한 모든 것.
 
-<div class="pull-right"> 문스코딩 - 2017.12.17 </div>
+<div class="pull-right"> 문스코딩 - 2018.01.02 </div>
 
 ---
 
-내용 입력
+```
+    mongod 
+```
 
 ---
 

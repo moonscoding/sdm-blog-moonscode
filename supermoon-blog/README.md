@@ -2,11 +2,30 @@
 
 #### 슈퍼문의 코딩 블로그 입니다.
 
-<div class="pull-right"> Moon's Coding Blog - 2017.12.17 </div>
+<div class="pull-right"> Moon's Coding Blog </div>
 
 ---
 
-내용 입력
+SuperMoon의 코딩 블로그입니다.
+
+
+DIR
+```
+    dev/
+        준비중
+    ai/
+        준비중
+    db/
+        준비중
+    server/
+        준비중
+    os/
+        준비중
+    mobile/
+        준비중
+    web/
+        준비중
+```
 
 ---
 

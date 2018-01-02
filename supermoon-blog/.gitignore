@@ -8,7 +8,8 @@
 .ai/
 
 # 02. 데이터베이스
-.db/
+# .db/
+.db/mongo/LC_mongo_install.md
 
 # 03. 서버관련
 .server/

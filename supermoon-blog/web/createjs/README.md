@@ -1,12 +1,12 @@
-# TITLE (제목을 작성해 주세요. 대문자 작성)
+# CREATEJS - CANVAS LIB
 
-#### 부제목을 작성해 주세요.
+#### CreateJS를 이용해서 액티브한 캔버스앱 제작하기
 
-<div class="pull-right"> 문스코딩 - 2017.12.17 </div>
+<div class="pull-right"> Moon's Coding Blog - 2017.12.18 </div>
 
 ---
 
-내용 입력
+
 
 ---
 
