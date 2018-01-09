@@ -230,6 +230,15 @@ ___이태릭+강조___
 
 <img src="http://placehold.it/100x100" width="50" height="50" />
 
+
+~~**이미지 shortcut 사용방법 (markdown preview enhanced 에서 지원)**~~
+
+~~1. [s] + [c] + p~~
+~~2. image helper 검색~~
+~~3. 이미지 경로 선택~~
+
+**사용하지않음 -> 경로가 /asset/~ 으로 새로 설정됨**
+
 #### 09. 표
 
 - 기본
