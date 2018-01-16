@@ -13,18 +13,29 @@ DIR
 ```
     dev/
         준비중
-    ai/
-        준비중
     db/
         준비중
     server/
-        준비중
-    os/
-        준비중
+        node/
+            express/    // [준비중]
+            mongoose/   // [준비중]
+            npm/        // [준비중]
     mobile/
         준비중
     web/
-        준비중
+        javascript/     
+            dom/        // [준비중]
+            es5/        // [작성중] 기본개념 제외 잘 사용하지 않았던 심화개념 정리
+            es6/        // [작성중] ES6에서 새롭게 추가된 개념들만 정리
+            build/      // [준비중]
+                gulp/       // [준비중]
+                grunt/      // [준비중]
+                lint/       // [준비중]
+                webpack/    // [준비중]
+        vue/
+            vuejs/      // [준비중]
+            vue-cli/    // [준비중]
+
 ```
 
 ---
