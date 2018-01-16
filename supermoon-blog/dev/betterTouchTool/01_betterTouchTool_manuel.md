@@ -1,12 +1,12 @@
-# TITLE (제목을 작성해 주세요. 대문자 작성)
+# BETTER TOUCH TOOL 기본
 
-#### 부제목을 작성해 주세요.
+#### better touch tool 기본 사용법.
 
-<div class="pull-right"> 문스코딩 - 2017.12.20</div>
+<div class="pull-right"> 문스코딩 - 20178.01.10 </div>
 
 ---
 
-내용 입력
+
 
 ---
 

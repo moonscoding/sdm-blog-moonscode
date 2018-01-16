@@ -9,6 +9,5 @@
 .db/mongo/LC_mongo_install.md
 .server/            # 03. 서버관련
 # .os/              # 04. 운영체제
-# .mobile/          # 05. 모바일
-# .web/             # 06. 웹
+# .mobile/          # 05. 모바일 # .web/             # 06. 웹
 # .dev/             # 07. 개발
