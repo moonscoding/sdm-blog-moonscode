@@ -1,14 +1,14 @@
-# TITLE (제목을 작성해 주세요. 대문자 작성)
+# CSS - MEDIA QUERY
 
-#### 부제목을 작성해 주세요.
+#### media query를 자세히 알아보자.
 
-<div class="pull-right"> 문스코딩 - 20178.01.dd </div>
+<div class="pull-right"> 문스코딩 - 20178.01.17 </div>
 
 ---
 
 **용어정리**
 ```
-
+     media query ::
 ```
 
 #### 01.

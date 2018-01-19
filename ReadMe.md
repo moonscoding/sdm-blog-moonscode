@@ -1,6 +1,6 @@
-# MOON's CODING BLOG
+# Moon's Coding
 
-#### 슈퍼문의 코딩 블로그 입니다.
+#### SDM (software designer moon) - 개발일지
 
 <div class="pull-right"> Moon's Coding Blog </div>
 
@@ -10,17 +10,7 @@ SuperMoon의 코딩 블로그입니다.
 
 DIR
 ```
-    dev/
-        준비중
-    db/
-        준비중
-    server/
-        node/
-            express/    // [준비중]
-            mongoose/   // [준비중]
-            npm/        // [준비중]
-    mobile/
-        준비중
+    # 01.
     web/
         javascript/     
             dom/        // [준비중]
@@ -34,6 +24,37 @@ DIR
         vue/
             vuejs/      // [준비중]
             vue-cli/    // [준비중]
+    # 02.
+    mobile/
+        [준비중]
+    // 03.
+    server/
+        node/
+            express/    // [준비중]
+            mongoose/   // [준비중]
+            npm/        // [준비중]
+    # 04.
+    db/
+        [준비중]
+    # 05.
+    os/
+        [준비중]
+    # 06.
+    data/
+        [준비중]
+    # 07.
+    ai/
+        [준비중]
+    # 08.
+    game/
+        [준비중]
+    # 09.
+    dev/
+        [준비중]
+
+
+
+
 
 ```
 

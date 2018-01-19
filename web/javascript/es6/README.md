@@ -42,7 +42,7 @@ https://kangax.github.io/compat-table/es6/
     - 현재 JS는 플랫폼 측면에서 독보적 위치
     - 다른 프로그래밍 언어를 JS로 컴파일 가능
 
-> ES6는 해외에서 이미 표준으로 사용중
+> ES6는 해외에서 이미 표준으로 사용중$
 
 **ES6의 새로운 기능**
 - Arrow Functions
