@@ -33,9 +33,9 @@ class TempClass {
 
 ```
 
-#### 02. property 안전하게 저장하기
+#### 02. property 안전하게 저장하기 (Keep Data Private)
 
-**방식1**
+**방식1 :: constructor(생성자) closure에 담기**
 
 ```js
 class Car{
@@ -47,37 +47,66 @@ class Car{
 }
 ```
 
-> 해당 방식은 메소드 오버라이딩을 사용할 수 없음 
+> 해당 방식은 메소드 오버라이딩을 사용할 수 없습니다.
+> 모든 처리가 constructor(생성자) 안에서 처리가 되야함
 
-**방식2**
+**방식2 :: symbol을 이용해서 처리하기**
+
+[참조링크](https://www.sitepoint.com/object-oriented-javascript-deep-dive-es6-classes/)
 
 ```js
-const Car = (function() {
-    const carProps = new WeakMap();
+let SimpleDate = (function() {
+  let _yearKey = Symbol();
 
-    class Car {
-        constructor(make , model) {
-            this.make = make;
-            this.model = model;
-            this._usersGears = ['a', 'b', 'c'];
-            carProps.set(this, { userGear : this._userGears[0]} )
-        }
+  class SimpleDate {
+    constructor(year) {
+      // Check that (year) is a valid date
+      // ...
 
-        get userGear() { return carProps.get(this).userGears; }
-        set userGear(value) {
-            if(this._userGear.indexOf(value) < 0)
-                throw new Error(`Invalid gear : ${value}`);
-            carProps.get(this).users = value;
-        }
-
-        shift(gear) { this.users = gear }
+      // If it is, use it to initialize "this" date
+      // ...
+      this[_yearKey] = year;
     }
-})
 
+    getYear() {
+      return this[_yearKey];
+    }
+  }
+
+  return SimpleDate;
+}());
 ```
 
-즉시, 호출하는 함수 표현식을 사용해서 WeakMap을 클로저로 감싸고 바깝에서 접근할 수 없게 처리합니다.
-그리고 WeakMap은 클래스 외부에서 접근하면 안되는 프로퍼티를 안전하게 저장합니다.
+> 유니크한 심볼 키를 이용할 수 있습니다.
+> 그리고 그 심볼키를 closure에 묶어둘 수 있습니다.
+
+**방식3 :: WeakMap을 이용해서 처리하기**
+
+```js
+let SimpleDate = (function() {
+  let _years = new WeakMap();
+
+  class SimpleDate {
+    constructor(year) {
+      // Check that (year) is a valid date
+      // ...
+
+      // If it is, use it to initialize "this" date
+      // ...
+      _years.set(this, year);
+    }
+
+    getYear() {
+      return _years.get(this);
+    }
+  }
+
+  return SimpleDate;
+}());
+```
+
+> property를 key/value 형식으로 WeakMap에 담아둘 수 있습니다.
+> 그리고 담아둔 WeakMap을 closure에 묶어둡니다
 
 #### 03.
 

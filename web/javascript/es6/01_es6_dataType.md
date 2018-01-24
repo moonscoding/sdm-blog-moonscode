@@ -11,14 +11,15 @@
     LITERAL (리터럴) :: 변수를 설정할때 식별자와 할당된 값이 있다. 이중에서 할당된 값을 리터럴이라고 부름
     SCOPE ::
     CLOSURE :: 클로저는 외부함수 (포함하고 있는)의 변수에 접근할 수 있는 내부 함수를 일컫습니다. 스코프 체인(scope chain)으로 표현되기도 합니다.
+    Symbol (심볼) :: 심볼은 유일한 토큰을 나타내기 위해 새로이 도입한 데이터 타입
 ```
 
-#### scope 활용 전략
+#### 01. scope 활용 전략 (var , let 비교)
 
 ES6 이전에는 아래와 같이 function 단위의 scope만 존재했습니다.
 따라서, function 안에 있는 지역변수를 먼저 찾고 이후에 scope chain을 따라 전역변수를 찾는 방식이었습니다.
 
-#### ES5 - var
+**ES5 - var**
 ```js
 var name = "global var";
 
@@ -32,8 +33,7 @@ function home() {
 home();
 ```
 
-#### ES6 - let
-
+**ES6 - let**
 ```js
 var name = "global var";
 
@@ -69,7 +69,7 @@ for(let i=0; i<list.length; i++) {
 }
 ```
 
-#### ES6 - const
+#### 02. ES6 - const
 
 > const 타입은 변수에 대한 새로운 값 할당이 불가능
 
@@ -127,7 +127,7 @@ console.log(list === list2);
 > const는 재할당은 안되지만 배열, 오브젝트 값을 변경하는 것은 가능
 
 
-**ES6 - String**
+#### 03. ES6 - String
 
 ```js
 // ES2015 string에 새로운 메소드들
@@ -138,10 +138,25 @@ console.log(str.endsWith(matchstr));                // false
 console.log("include test", str.includes("world")); // true
 ```
 
+#### 04. Symbol
 
+심볼은 항상 유일, 다른 어떤 심볼과도 일치하지 않습니다. (객체와 유사)
 
+```js
+const RED = Symbol("The color of a sunset!")
+const ORANGE = Symbol("The color of a sunset!")
+console.log(RED === ORANGE)     // false (모든 심볼은 유일)
+console.log(typeof RED)         // symbol
+```
 
+> 다른 식별자와 혼동해서 안되는 고유한 식별자가 필요하다면 심볼을 사용하세요 !
 
+#### 05. null & undefined
+
+null은 프로그래머에게 허용된 데이터 타입 (할당된 값의 텅빈값)
+undefined는 자바스크립트 자체에서 사용 (할당조차 되지 않은 빈값)
+
+> 프로그래머가 undefined를 사용하는 경우는 아직 값이 주어지지 않은 변수의 동작을 고의로 흉내낼때 사용
 
 
 ---

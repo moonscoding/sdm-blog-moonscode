@@ -11,11 +11,6 @@
  ES6 == ES2015 :: 기본 자바스크립트에서 개선된 문법(Syntax)를 가지고 업데이트된 새로운 자바스크립트
  ECMAScript :: js 프로그래밍 언어를 정의하는 국제 표준의 이름
  test suite :: 테스트 모듈
- Iteration :: 페이지 참조
- Iterable :: 페이지 참조
- Iterator (반복기) :: 페이지 참조
- Generator (생성기) :: 페이지 참조
- function* :: 페이지 참조
  expr ::
  strict mode ::
  Nesting ::
