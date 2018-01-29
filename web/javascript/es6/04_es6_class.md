@@ -10,6 +10,7 @@
 ```
     getter ::
     setter ::
+    static :: 정적
 ```
 
 #### 01. class 기본
@@ -33,7 +34,31 @@ class TempClass {
 
 ```
 
-#### 02. property 안전하게 저장하기 (Keep Data Private)
+#### 02. static 메소드 , 변수
+
+정적 함수 vs 인스턴스 함수를 먼저 이해해야 합니다.
+정적인 함수는 객체에 대해 정의되는 함수지만 객체의 프로퍼티를 변경하진 않습니다.
+
+[[참조] 객체지향을 자제해서 사용해야 하는 이유 ?](http://tech.thegajago.com/2016/02/20/%EC%99%9C-%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-static%EC%9D%98-%EC%82%AC%EC%9A%A9%EC%9D%84-%EC%A7%80%EC%96%91%ED%95%B4%EC%95%BC-%ED%95%98%EB%8A%94%EA%B0%80/)
+
+- 객체의 라이프타임 내에서 static은 계속 살아있게 됩니다.
+- static은 재사용성이 떨어집니다.
+-
+
+```js
+class StaticMethodCall {
+  static staticMethod() {
+    return 'Static method has been called';
+  }
+  static anotherStaticMethod() {
+    return this.staticMethod() + ' from another static method';
+  }
+}
+StaticMethodCall.staticMethod();
+StaticMethodCall.anotherStaticMethod();
+```
+
+#### 03. property 안전하게 저장하기 (Keep Data Private)
 
 **방식1 :: constructor(생성자) closure에 담기**
 
@@ -116,6 +141,7 @@ let SimpleDate = (function() {
 
 **출처 : [SuperMoon's Git Blog](https://github.com/jm921106)**
 
-**참조 : [링크1]()**
+**참조 : [ 링크1 :: 정적함수란 무엇인가 ? ](https://ko.khanacademy.org/computing/computer-programming/programming-natural-simulations/programming-vectors/a/static-functions-vs-instance-methods)**
+**참조 : [ 링크2 :: 객체지향 프로그래밍에서 Static을 자사용하지 말아야 하는 이유 ?](http://tech.thegajago.com/2016/02/20/%EC%99%9C-%EC%9E%90%EB%B0%94%EC%97%90%EC%84%9C-static%EC%9D%98-%EC%82%AC%EC%9A%A9%EC%9D%84-%EC%A7%80%EC%96%91%ED%95%B4%EC%95%BC-%ED%95%98%EB%8A%94%EA%B0%80/)**
 
 Copyright (c) 2017 Copyright Holder All Rights Reserved.
