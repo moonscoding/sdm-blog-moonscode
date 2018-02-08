@@ -9,7 +9,7 @@
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [ANDROID - Library 학습](#android-library-학습)
+* [Android Lib를 통한 간단 코드 적용기](#android-lib를-통한-간단-코드-적용기)
 	* [버터 나이프 - 뷰에 대한 가장 쉬운 접근.](#버터-나이프-뷰에-대한-가장-쉬운-접근)
 		* [01. 여러 뷰들을 관리 - Butter Knife](#01-여러-뷰들을-관리-butter-knife)
 			* [액티비티에서 사용하기](#액티비티에서-사용하기)

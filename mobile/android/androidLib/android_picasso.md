@@ -10,7 +10,7 @@
 <!-- code_chunk_output -->
 
 * [Android Lib를 통한 간단 코드 적용기](#android-lib를-통한-간단-코드-적용기)
-	* [Anrdroid 이미지를 다루는 간편한 방법ㄴ](#anrdroid-이미지를-다루는-간편한-방법ᄂ)
+	* [Anrdroid 이미지를 다루는 간편한 방법](#anrdroid-이미지를-다루는-간편한-방법)
 		* [01. Picasso](#01-picasso)
 		* [02. Picasso의 기능들](#02-picasso의-기능들)
 		* [03. 로컬 저장소 이용](#03-로컬-저장소-이용)
