@@ -1,17 +1,29 @@
-# ANDROID PATTENR - DEPENDENCY
-
-#### Dependency 패턴이란 무엇인고 ?
+# ANDROID PATTERN
+## Dependency 패턴이란 무엇인고 ?
 
 <div class="pull-right"> 문스코딩 - 2018.01.29 </div>
 
 ---
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [ANDROID PATTERN](#android-pattern)
+	* [Dependency 패턴이란 무엇인고 ?](#dependency-패턴이란-무엇인고)
+		* [01. Dependency Injection](#01-dependency-injection)
+		* [02.](#02)
+		* [03.](#03)
+
+<!-- /code_chunk_output -->
+
 
 **용어정리**
 ```
     Dependency Injection :: 구성요소간의 의존 관계가 소스코드 내부가 아닌 외부의 설정 파일 등을 통해 정의되는 것을 말합니다.
 ```
 
-#### 01. Dependency Injection
+### 01. Dependency Injection
 
 - 구성요소간의 의존 관계가 소스코드 내부가 아닌 외부의 설정 파일 등을 통해 정의 되는 것을 말합니다.
 - 필요한 모든 것은 이미 존재하기 때문에 가져다 사용하기만 하면 됩니다.
@@ -33,9 +45,9 @@ public class AppModule {
 > @Component 인터페이스를 생성하여 모듈과 주입할 클래스를 선언합니다.
 > java @Component(modules = AppModule.class) interface AppComponent {  ... }
 
-#### 02.
+### 02.
 
-#### 03.
+### 03.
 
 ---
 

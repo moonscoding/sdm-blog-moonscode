@@ -13,6 +13,7 @@
 	* [SDM (software designer moon)의 개발일지](#sdm-software-designer-moon의-개발일지)
 		* [머리말](#머리말)
 		* [Web 파트](#web-파트)
+		* [Mobile 파트](#mobile-파트)
 		* [Server 파트](#server-파트)
 		* [DataBase 파트](#database-파트)
 		* [Game 파트](#game-파트)

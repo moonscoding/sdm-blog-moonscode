@@ -1,21 +1,33 @@
-# ANDROID PATTERN - MVC
-
-####
+# ANDROID PATTERN
+## MCV 더이상 안쓰는 이유는 ?
 
 <div class="pull-right"> 문스코딩 - 2018.01.30 </div>
 
 ---
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [ANDROID PATTERN](#android-pattern)
+	* [MCV 더이상 안쓰는 이유는 ?](#mcv-더이상-안쓰는-이유는)
+		* [01.](#01)
+		* [02.](#02)
+		* [03.](#03)
+
+<!-- /code_chunk_output -->
+
 
 **용어정리**
 ```
 
 ```
 
-#### 01.
+### 01.
 
-#### 02.
+### 02.
 
-#### 03.
+### 03.
 
 ---
 

@@ -1,17 +1,30 @@
 # ANDROID PATTERN
-
-#### 안드로이드에서 많이 사용하는 패턴은 ???.
+## 안드로이드에서 많이 사용하는 패턴은 ???.
 
 <div class="pull-right"> 문스코딩 - 2018.01.29 </div>
 
 ---
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [ANDROID PATTERN](#android-pattern)
+	* [안드로이드에서 많이 사용하는 패턴은 ???.](#안드로이드에서-많이-사용하는-패턴은)
+		* [01. SOLID](#01-solid)
+		* [02. 생성 패턴 (Creational Patterns)](#02-생성-패턴-creational-patterns)
+		* [03. 구조 패턴 (Structural Patterns)](#03-구조-패턴-structural-patterns)
+		* [04. 행위 패턴 (Behavioral Patterns)](#04-행위-패턴-behavioral-patterns)
+
+<!-- /code_chunk_output -->
+
 
 **용어정리**
 ```
 
 ```
 
-#### 01. SOLID
+### 01. SOLID
 
 SOLID - 객체 지향 프로그래밍 및 설계의 다섯 가지 기본 원칙을 소개한 것.
 
@@ -26,7 +39,7 @@ SOLID - 객체 지향 프로그래밍 및 설계의 다섯 가지 기본 원칙�
 - D(DIP) 의존관계 역전 원칙 (Dependency inversion Principle)
     - 프로그래머는 추상화에 의존해야지, 구체화에 의존하면 안된다.
 
-#### 02. 생성 패턴 (Creational Patterns)
+### 02. 생성 패턴 (Creational Patterns)
 
 - 추상 팩토리 패턴 :: 동일한 주제의 다른 팩토리를 묶어 준다.
 - 빌더 패턴 :: 셍성(Construction)과 표기(Respresentation)를 분리해 복잡한 객체를 생성한다.
@@ -34,7 +47,7 @@ SOLID - 객체 지향 프로그래밍 및 설계의 다섯 가지 기본 원칙�
 - 프로토타입 패턴 :: 기존 객체를 복제함으로써 객체를 생성한다,
 - 싱글톤 패턴 :: 한 클래승 한 객체만 존재하도록 한다.
 
-#### 03. 구조 패턴 (Structural Patterns)
+### 03. 구조 패턴 (Structural Patterns)
 
 - 어탭터 패턴 :: 인터페이스가 호환되지 않는 클래스들을 함께 이용할 수 있도록, 타 클래스의 인터페이스를 기존 인터페이스에 덧씌운다.
 - 브맂지 패턴 :: 추상화와 구현을 분리해 둘을 각각 따라 발전 시킬 수 있다.
@@ -44,7 +57,7 @@ SOLID - 객체 지향 프로그래밍 및 설계의 다섯 가지 기본 원칙�
 - 플라이 웨이트 패턴 :: 다수의 유사한 객체를 생성 조작하는 비용을 절감할 수 있다.
 - 프록시 패턴 :: 접근 조절, 비용 절감, 복잡도 감소를 위해 접근이 힘든 객체에 대한 대역을 제공한다.
 
-#### 04. 행위 패턴 (Behavioral Patterns)
+### 04. 행위 패턴 (Behavioral Patterns)
 
 - 책임 연쇄 패턴 :: 일련의 처리 객체들에 명령을 대행합니다.
 - 커맨드 패턴 :: 작업과 매개변수를 묶어놓은 객체를 생성합니다.

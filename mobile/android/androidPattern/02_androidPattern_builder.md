@@ -1,17 +1,29 @@
-# ANDROID PATTERN - BUILDER
-
-#### 안드로이드 BUILDR 패턴은 무엇인가요 ?
+# ANDROID PATTERN
+## 안드로이드 BUILDR 패턴은 무엇인가요 ?
 
 <div class="pull-right"> 문스코딩 - 2018.01.29 </div>
 
 ---
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [ANDROID PATTERN](#android-pattern)
+	* [안드로이드 BUILDR 패턴은 무엇인가요 ?](#안드로이드-buildr-패턴은-무엇인가요)
+		* [01. Builder 패턴](#01-builder-패턴)
+		* [02.](#02)
+		* [03.](#03)
+
+<!-- /code_chunk_output -->
+
 
 **용어정리**
 ```
     Builder ::
 ```
 
-#### 01. Builder 패턴
+### 01. Builder 패턴
 
 - 복잡한 인스턴스를 조립하여 만드는 구조
 - 생성자에 파라미터가 많은 클래스인 경우 빌더 패턴을 사용하여 가독성을 높일 수 있음
@@ -43,11 +55,11 @@ new AlertDialog.Builder(this)
 
 > Builder 패턴은 단계적으로 진행되며 사용자에게 중요한 부분들을 지정할 수 있습니다.
 
-#### 02.
+### 02.
 
 
 
-#### 03.
+### 03.
 
 ---
 
