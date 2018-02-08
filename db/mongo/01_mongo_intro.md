@@ -1,14 +1,38 @@
-a# MOBGO DB 기본
-
-#### MONGO DB의 기본
+# MONGO - NoSQL의 선두
+## MONGO DB 설정하기
 
 <div class="pull-right"> 문스코딩 - 2017.12.19 </div>
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [MONGO - NoSQL의 선두](#mongo-nosql의-선두)
+	* [MONGO DB 설정하기](#mongo-db-설정하기)
+		* [01. 머리말](#01-머리말)
+		* [02. 설치](#02-설치)
+		* [02. 버전 관리](#02-버전-관리)
+		* [03. 삭제](#03-삭제)
+
+<!-- /code_chunk_output -->
+
 ---
 
-## 01. 설치
+### 01. 머리말
 
-### 01. mac
+NoSQL은 DB 진영에서 점점 더 힘을 얻고 있습니다.
+가장 대표적인 DB로써 Mongo와 Cassandra가 있습니다.
+Mongo는 Document Store 형식이고 Cassandra는 Wide Column Store 방식으로써
+각각 다른 데이터 모델의 선두주자라 할 수 있습니다.
+
+Mongo는 3.6부터 하위 형식과 부분적으로 달라져 호환 문제가 발생하고
+포퍼먼스가 상당히 향상된 모습을 보입니다.
+따라서 처음 시작하시는 분들은 3.6이상의 버전으로 시작하시는 것을 추천합니다.
+다음의 문서도 3.6 버전을 기준으로 작성합니다.
+
+### 02. 설치
+
+**01. mac OS**
 
 01. Tar 이용한 설치 방법.
 
@@ -48,11 +72,11 @@ a# MOBGO DB 기본
 
     $ mongod --version
 
-### 02. window
+**02. window**
 
 .exe 설치
 
-### 03. linux
+**03. linux**
 
 [1] yum 이용
 
@@ -204,23 +228,29 @@ replication:
     rpm -qal | grep mongo
 
 
-## 02. 버전 관리
+### 02. 버전 관리
 
-01. mac
+**01. mac OS**
 
 homebrew를 이용한 버전관리
 
-## 03. 삭제
+**02. window**
 
-01. mac
+.exe 을 이용한 버전관리
+
+**03. linux**
+
+### 03. 삭제
+
+**01. mac**
 
 homebrew 삭제 처리
 
-02. window
+**02. window**
 
 .exe uninstall
 
-03. linux (yum 삭제)
+**03. linux (yum 삭제)**
 
 ```
     sudo service stop mongod
@@ -228,8 +258,6 @@ homebrew 삭제 처리
     sudo rm -r /var/log/mongodb
     sudo rm -r /var/lib/mongo
 ```
-
-
 
 ---
 

@@ -1,10 +1,20 @@
 # JAVASCRIPT ES6 - ARRAY
 
-#### ES6 - ARRAY 배열 파헤치기
+## ES6 - ARRAY 배열 파헤치기
 
 <div class="pull-right"> 문스코딩 - 20178.01.15 </div>
 
 ---
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [JAVASCRIPT ES6 - ARRAY](#javascript-es6-array)
+	* [ES6 - ARRAY 배열 파헤치기](#es6-array-배열-파헤치기)
+		* [ES5 - Array 기본 함수 목록](#es5-array-기본-함수-목록)
+		* [ES6 - Array](#es6-array)
+
+<!-- /code_chunk_output -->
 
 **용어정리**
 ```
@@ -18,7 +28,7 @@
     Destructuring ::
 ```
 
-#### ES5 - Array 기본 함수 목록
+### ES5 - Array 기본 함수 목록
 
 
 ```js
@@ -75,7 +85,7 @@ var a = arr.reduce(function(prev, cur) {
 console.log(a) // 15
 ```
 
-#### ES6 - Array
+### ES6 - Array
 
 **for(let v of arr) 객체값 리턴 vs for(let v in arr) 인덱스 리턴**
 
@@ -183,17 +193,6 @@ let jung = data[2];
 let [jisu,,jung] = data;        
 console.log(jisu, jung); // crong jkqs       
 ```
-
-
-
-
-
-
-
-
-
-
-
 
 
 ---

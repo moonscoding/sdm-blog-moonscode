@@ -1,4 +1,4 @@
-# MONGO JOIN
+# MONGO - NoSQL의 선두
 
 #### MongoDB를 이용해서 JOIN
 

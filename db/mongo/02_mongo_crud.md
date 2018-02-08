@@ -1,6 +1,6 @@
-# MONGO CRUD
+# MONGO - NoSQL의 선두
 
-#### 몽고 CRUD
+#### Mongo DB의 CRUD를 학습해봅니다.
 
 <div class="pull-right"> 문스코딩 - 2017.12.20 </div>
 

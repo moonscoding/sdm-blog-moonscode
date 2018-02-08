@@ -1,4 +1,4 @@
-# Markdown (in atom) 패키지 리스트
+# 사용하세요 ! MARK_DOWN (feat. ATOM)
 
 #### 마크다운 (in atom) 에서 사용하는 패키지 리스트
 

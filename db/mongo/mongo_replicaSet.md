@@ -1,4 +1,4 @@
-# MONGO REPLICA SET
+# MONGO - NoSQL의 선두
 
 #### mongoDB replica set 구성하기.
 

@@ -1,4 +1,4 @@
-# MogGo DB - SEARCH
+# MONGO - NoSQL의 선두
 
 #### 데이터를 검색하자 ... !
 

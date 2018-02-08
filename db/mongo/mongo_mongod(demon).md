@@ -1,21 +1,14 @@
-# BOOTSTRAP - MARGIN
+# MONGO - NoSQL의 선두
 
-#### 부제목을 작성해 주세요.
+#### Mongo Demon에 관한 모든 것.
 
-<div class="pull-right"> 문스코딩 - 20178.01.17 </div>
+<div class="pull-right"> 문스코딩 - 2018.01.02 </div>
 
 ---
 
-**용어정리**
 ```
-
+    mongod
 ```
-
-#### 01.
-
-#### 02.
-
-#### 03.
 
 ---
 

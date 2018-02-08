@@ -1,4 +1,4 @@
-# MARKDOWN (IN ATOM) 사용법 정리 02
+# 사용하세요 ! MARK_DOWN (feat. ATOM)
 
 #### 마크다운 (in atom) 에서 사용하는 단축키
 
