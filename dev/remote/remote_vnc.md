@@ -1,4 +1,4 @@
-# VNC
+# REMOTE 어디까지 활용할 수 있을까요 ?
 
 ## 아이패드로 개발할 수 있을까 ?
 
@@ -9,7 +9,7 @@
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [VNC](#vnc)
+* [REMOTE 어디까지 활용할 수 있을까요 ?](#remote-어디까지-활용할-수-있을까요)
 	* [아이패드로 개발할 수 있을까 ?](#아이패드로-개발할-수-있을까)
 		* [01. 화면공유 설정](#01-화면공유-설정)
 		* [02. 호출 OS 에서 VNC viewer 설치](#02-호출-os-에서-vnc-viewer-설치)
