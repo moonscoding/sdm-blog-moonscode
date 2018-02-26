@@ -87,14 +87,12 @@ mobile 운영체제의 프로그래밍 언어에 대해서 학습하는 파트�
 
 - mobile/
     - android/
-        - android (layout)/
-        - android (java)/
-        - androidPattern/
-        - androidLib
-        - realm
-        - fabric
-        - RXandroid
-    - ios/
+        - layout/
+        - java/
+        - pattern/
+        - library/
+    - ios/ (미정)
+
 
 ### Server 파트
 
