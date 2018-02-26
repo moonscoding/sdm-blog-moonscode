@@ -1,6 +1,6 @@
-# MAC 활용기
+# MACBOOK 1년차의 OSX 사용기
 
-## 내 MAC OS의 터미널 업데이트 하기
+## 내 MAC OS의 터미널 아름답게 사용하기
 
 Moon's Coding - 2017.12.01
 
@@ -10,8 +10,8 @@ Moon's Coding - 2017.12.01
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [MAC 활용기](#mac-활용기)
-	* [내 MAC OS의 터미널 업데이트 하기](#내-mac-os의-터미널-업데이트-하기)
+* [MACBOOK 1년차의 OSX 사용기](#macbook-1년차의-osx-사용기)
+	* [내 MAC OS의 터미널 아름답게 사용하기](#내-mac-os의-터미널-아름답게-사용하기)
 		* [01. on my zsh 설치](#01-on-my-zsh-설치)
 		* [02. iterm 설치](#02-iterm-설치)
 		* [03. 환경변수 설정](#03-환경변수-설정)

@@ -1,11 +1,10 @@
-# BETTER TOUCH TOOL 기본
+# MACBOOK 1년차의 OSX 사용기
 
 #### better touch tool 기본 사용법.
 
 <div class="pull-right"> 문스코딩 - 20178.01.10 </div>
 
 ---
-
 
 
 ---

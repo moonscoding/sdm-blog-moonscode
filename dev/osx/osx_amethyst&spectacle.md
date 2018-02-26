@@ -1,4 +1,5 @@
-# MAC 활용기
+# MACBOOK 1년차의 OSX 사용기
+
 ## 키보드로만 개발하기 ! - spectacle & amethyst
 
 <div class="pull-right"> 문스코딩 - 2018.02.dd </div>
@@ -8,7 +9,7 @@
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [MAC 활용기](#mac-활용기)
+* [MACBOOK 1년차의 OSX 사용기](#macbook-1년차의-osx-사용기)
 	* [키보드로만 개발하기 ! - spectacle & amethyst](#키보드로만-개발하기-spectacle-amethyst)
 		* [01. 키보드 개발 방법론 !](#01-키보드-개발-방법론)
 		* [02. spectacle](#02-spectacle)
