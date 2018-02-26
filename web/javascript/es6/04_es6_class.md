@@ -1,10 +1,22 @@
 # JAVASCRIPT ES6 - CLASS
 
-#### es6 - class
+## es6 - class
 
 <div class="pull-right"> 문스코딩 - 20178.01.17 </div>
 
 ---
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [JAVASCRIPT ES6 - CLASS](#javascript-es6-class)
+	* [es6 - class](#es6-class)
+		* [01. class 기본](#01-class-기본)
+		* [02. static 메소드 , 변수](#02-static-메소드-변수)
+		* [03. property 안전하게 저장하기 (Keep Data Private)](#03-property-안전하게-저장하기-keep-data-private)
+
+<!-- /code_chunk_output -->
+
 
 **용어정리**
 ```
@@ -13,8 +25,7 @@
     static :: 정적
 ```
 
-#### 01. class 기본
-
+### 01. class 기본
 ```js
 class TempClass {
     constructor (a, b) {
@@ -34,7 +45,7 @@ class TempClass {
 
 ```
 
-#### 02. static 메소드 , 변수
+### 02. static 메소드 , 변수
 
 정적 함수 vs 인스턴스 함수를 먼저 이해해야 합니다.
 정적인 함수는 객체에 대해 정의되는 함수지만 객체의 프로퍼티를 변경하진 않습니다.
@@ -58,7 +69,13 @@ StaticMethodCall.staticMethod();
 StaticMethodCall.anotherStaticMethod();
 ```
 
-#### 03. property 안전하게 저장하기 (Keep Data Private)
+**Static과 상속의 관계**
+
+static 메서드는 상속을 통해 오버라이드 되지 않습니다.
+정적 메서드는 실행할 때 동적 바인딩을 실행하는 것이 아니고,
+컴파일 할 때 결정된 객체의 타입에 따라 실행된 메서드가 결정됩니다.ㅈ
+
+### 03. property 안전하게 저장하기 (Keep Data Private)
 
 **방식1 :: constructor(생성자) closure에 담기**
 
@@ -133,7 +150,6 @@ let SimpleDate = (function() {
 > property를 key/value 형식으로 WeakMap에 담아둘 수 있습니다.
 > 그리고 담아둔 WeakMap을 closure에 묶어둡니다
 
-#### 03.
 
 ---
 

@@ -1,12 +1,23 @@
-# NPM ERROR (이슈 저장소)
+# NPM 의 모든것 !
 
-#### npm 이슈 저장소 - 같은 에러는 빠르게 !
+## npm 이슈 저장소 - 같은 에러는 빠르게 !
 
 <div class="pull-right"> 문스코딩 - 2017.12.20</div>
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [NPM 의 모든것 !](#npm-의-모든것)
+	* [npm 이슈 저장소 - 같은 에러는 빠르게 !](#npm-이슈-저장소-같은-에러는-빠르게)
+		* [[3] linux](#3-linux)
+
+<!-- /code_chunk_output -->
+
+
 ---
 
-##### [3] linux
+### [3] linux
 
 1.  tunneling socket could not be established, cause=connect ECONNREFUSED 52.78.156.89:80
 
@@ -24,11 +35,10 @@
 
 **optionalDependencies**
 
-사용을 원하는 모듈이지만,
-없거나 설치가 실패해서 npm의 설치 과정이 중단되지 않도로 하려면,
-optionalDependencies를 사용
-여기에는 버전을 포함한 패키지 이름 혹은 url을 dependencies와 같은 방식으로 기재
-차이가 있다면 빌드가 실패해서 설치가 중단되지 않고 다른 모듈을 설치하는 것.
+사용을 원하는 모듈이지만, 없거나 설치가 실패해서 npm의 설치 과정이 중단되지 않도로 하려면,
+optionalDependencies를 사용합니다.
+여기에는 버전을 포함한 패키지 이름 혹은 url을 dependencies와 같은 방식으로 기재합니다.
+차이가 있다면 빌드가 실패해서 설치가 중단되지 않고 다른 모듈을 설치하는 것입니다.
 
 ```
 try {
