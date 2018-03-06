@@ -1,4 +1,4 @@
-# JAVASCRIPT ES6 - CLASS
+# JS ES6 - 이젠 필수입니다.
 
 ## es6 - class
 
