@@ -16,7 +16,6 @@
 		* [Mobile 파트](#mobile-파트)
 		* [Server 파트](#server-파트)
 		* [DataBase 파트](#database-파트)
-		* [Game 파트](#game-파트)
 		* [Dev 파트](#dev-파트)
 
 <!-- /code_chunk_output -->
@@ -31,6 +30,10 @@
 
 **정리가 된 글**
 ~~정리가 되지 않은 글~~
+
+> 각각의 파트 폴더 아래 세부적인 README.md 파일이 있습니다.
+> 이곳의 정보를 업데이트 하는 것이 아니라,
+> 세부폴더의 README.md를 업데이트해서 가져오는 식으로 처리해주시기 바랍니다.
 
 ### Web 파트
 
@@ -95,22 +98,21 @@ mobile 운영체제의 프로그래밍 언어에 대해서 학습하는 파트�
         - java/
         - pattern/
         - library/
-    - ios/ (미정)
+    - ~~ios/~~
 
 
 ### Server 파트
 
 ### DataBase 파트
 
-### Game 파트
-
 ### Dev 파트
 
 Dev 파트는 개발에 관련된 Tool 사용법을 정리하는 저장소입니다.
-1. editor :: 개발 IDE에 관련된 문서입니다.
-2. git    :: Git 사용법에 관한 문서입니다.
-3. oxs    :: Mac 운영체제의 사용법에 관한 문서입니다.
-4. remote :: 원격 컨트롤에 관련한 문서입니다.
+1. editor    :: 개발 IDE에 관련된 문서입니다.
+2. git       :: Git 사용법에 관한 문서입니다.
+3. oxs       :: Mac 운영체제의 사용법에 관한 문서입니다.
+4. remote    :: 원격 컨트롤에 관련한 문서입니다.
+5. cleanCode :: 코드를 최적화해서 유지하는 법에 관한 문서입니다.
 
 - dev/
     - editor/
@@ -121,6 +123,7 @@ Dev 파트는 개발에 관련된 Tool 사용법을 정리하는 저장소입니
     - git/
     - osx/
     - remote/
+    - cleanCode/
 
 
 

@@ -1,10 +1,21 @@
-# JAVASCRIPT - FUNCTION
-
-#### 자바스크립트에서 사용하는 내가 몰랐던 Function 기능.
+# JS - 어디까지 알고있나요 ?
+## 자바스크립트에서 사용하는 내가 몰랐던 Function 기능.
 
 <div class="pull-right"> 문스코딩 - 2018.01.24 </div>
 
 ---
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [JS - 어디까지 알고있나요 ?](#js-어디까지-알고있나요)
+	* [자바스크립트에서 사용하는 내가 몰랐던 Function 기능.](#자바스크립트에서-사용하는-내가-몰랐던-function-기능)
+		* [01. call 메서드](#01-call-메서드)
+		* [02. apply 메서드](#02-apply-메서드)
+		* [03. bind](#03-bind)
+
+<!-- /code_chunk_output -->
+
 
 **용어정리**
 ```
@@ -13,7 +24,7 @@
     bind ::
 ```
 
-#### 01. call 메서드
+### 01. call 메서드
 
 일반적인 방법 이외에도 함수를 어디서, 어떠헤 호출 했느냐와 관계없이 this가 무엇인지 지정할 수 있습니다.
 call 메서드는 모든 함수에서 사용할 수 있으며, this를 특정값으로 지정할 수 있습니다.
@@ -43,7 +54,7 @@ update.call(bruce, 1949, 'singer');         // { name : "Bruce" , brithYear : 19
 update.call(madelune, 1942, 'actress')      // { name : "Madeline" , brithYear : 1942 , occupation : "actress" }
 ```
 
-#### 02. apply 메서드
+### 02. apply 메서드
 
 apply는 배열 요소를 함수 매개변수로 사용해야 할 때 유용합니다.
 apply를 설명할 때 흔히 사용하는 예제는 배열의 min / max 를 구하는 겂니다
@@ -68,7 +79,7 @@ Math.min(...arr); // -5
 Math.max(...arr); // 15
 ```
 
-#### 03. bind
+### 03. bind
 
 bind를 사용하면 함수의 this 값을 영구히 바꿀 수 있습니다.
 update 매서드를 이리저리 옮기면서도 호출할 때, this 값은 항상 bruce가 되게끔,

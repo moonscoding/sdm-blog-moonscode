@@ -1,17 +1,28 @@
-# JS HOISTING
-
-#### javascript 호이스팅 (hoisting) 이란 무엇인가 ?
+# JS - 어디까지 알고있나요 ?
+##  호이스팅 (hoisting) 모르고 사용했던 기능
 
 <div class="pull-right"> 문스코딩 - 2018.01.dd </div>
 
 ---
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [JS - 어디까지 알고있나요 ?](#js-어디까지-알고있나요)
+	* [호이스팅 (hoisting) 모르고 사용했던 기능](#호이스팅-hoisting-모르고-사용했던-기능)
+		* [01. 함수 스코프와 호이스팅](#01-함수-스코프와-호이스팅)
+		* [02. 함수 호이스팅](#02-함수-호이스팅)
+
+<!-- /code_chunk_output -->
+
 
 **용어정리**
 ```
     hoisting :: 끌어올린다는 뜻으로 선언부 (할당이 아닌) 만 최상위로 올려준다.
 ```
 
-#### 01. 함수 스코프와 호이스팅
+### 01. 함수 스코프와 호이스팅
 
 var는 함수 스코프라 불리는 스코프를 가졌습니다.
 let으로 변수를 선언하면, 그 변수는 선언하기 전에 존재하지 않습니다.
@@ -47,7 +58,7 @@ x = 3;
 x;      // 3
 ```
 
-#### 02. 함수 호이스팅
+### 02. 함수 호이스팅
 
 ```js
 f()                 // 'f'
@@ -55,15 +66,12 @@ function f() {
     console.log('f');
 }
 
-f2();                // ReferrenceError
+f2();                    // ReferrenceError
 let f2 = function() {    // 변수할당한 함수는 올려지지 않음
     console.log('f')
 }
 ```
 > var와 마찬가지로 함수 선언도 맨 위로 끌어 올려집니다. 따라서 함수를 호출하기전에 사용할 수 있습니다.
-
-
-#### 03.
 
 ---
 

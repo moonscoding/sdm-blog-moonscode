@@ -1,10 +1,25 @@
 # JS - 어디까지 알고있나요 ?
-
-#### JS의 Garbage Collection 메모리 관리
+## JS의 Garbage Collection 메모리 관리
 
 <div class="pull-right"> 문스코딩 - 2018.02.dd </div>
 
 ---
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [JS - 어디까지 알고있나요 ?](#js-어디까지-알고있나요)
+	* [JS의 Garbage Collection 메모리 관리](#js의-garbage-collection-메모리-관리)
+			* [01. 메모리 관리](#01-메모리-관리)
+			* [02. 메모리의 생명 주기](#02-메모리의-생명-주기)
+			* [03. 가비지 컬렉션 (Garbage Collection)](#03-가비지-컬렉션-garbage-collection)
+			* [04. 참조 방식 예제](#04-참조-방식-예제)
+			* [05. 순환 참조 때문에 생기는 문제](#05-순환-참조-때문에-생기는-문제)
+			* [06. 마크스위프 알고리즘](#06-마크스위프-알고리즘)
+			* [07. 흔한 자바스크립트의 메모리 누수](#07-흔한-자바스크립트의-메모리-누수)
+
+<!-- /code_chunk_output -->
+
 
 **용어정리**
 ```

@@ -1,4 +1,4 @@
-# JS ES6 - 이젠 필수입니다.
+# JS ES6 - 필수입니다.
 
 ## es6 - class
 
@@ -9,11 +9,12 @@
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [JAVASCRIPT ES6 - CLASS](#javascript-es6-class)
+* [JS ES6 - 필수입니다.](#js-es6-필수입니다)
 	* [es6 - class](#es6-class)
 		* [01. class 기본](#01-class-기본)
 		* [02. static 메소드 , 변수](#02-static-메소드-변수)
 		* [03. property 안전하게 저장하기 (Keep Data Private)](#03-property-안전하게-저장하기-keep-data-private)
+		* [04. 생성종료를 감시하는 감시자](#04-생성종료를-감시하는-감시자)
 
 <!-- /code_chunk_output -->
 
@@ -54,7 +55,7 @@ class TempClass {
 
 - 객체의 라이프타임 내에서 static은 계속 살아있게 됩니다.
 - static은 재사용성이 떨어집니다.
--
+- 상속이 되지 않습니다.
 
 ```js
 class StaticMethodCall {
@@ -73,7 +74,7 @@ StaticMethodCall.anotherStaticMethod();
 
 static 메서드는 상속을 통해 오버라이드 되지 않습니다.
 정적 메서드는 실행할 때 동적 바인딩을 실행하는 것이 아니고,
-컴파일 할 때 결정된 객체의 타입에 따라 실행된 메서드가 결정됩니다.ㅈ
+컴파일 할 때 결정된 객체의 타입에 따라 실행된 메서드가 결정됩니다.
 
 ### 03. property 안전하게 저장하기 (Keep Data Private)
 
@@ -150,6 +151,21 @@ let SimpleDate = (function() {
 > property를 key/value 형식으로 WeakMap에 담아둘 수 있습니다.
 > 그리고 담아둔 WeakMap을 closure에 묶어둡니다
 
+### 04. 생성종료를 감시하는 감시자
+
+여러 클래스를 다중으로 상속처리하다보면 (문어발식 상속),
+
+가장 마지막 클래스의 위치가 제 각각이 되게 됩니다.
+
+그래서 생성자에 있는 로직이 모두 끝난 후에 처리되야 하는 로직을
+
+각각의 마지막 클래스의 생성자 마지막에 설정해주어야 합니다.
+
+**방법1 :: 객체 생성후에 처리하기**
+
+객체를 생성하고, 모든 객체에 메소드를 이용해 처리하는것도 방법입니다.
+
+**방법2**
 
 ---
 
