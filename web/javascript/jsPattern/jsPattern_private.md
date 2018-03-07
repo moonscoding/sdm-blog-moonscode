@@ -1,5 +1,4 @@
 # JavaScript Pattern, 세상에 잘 짜여진 코드는 많다.
-
 ## Web - Front 자바스크립트 비공개 변수 어디까지 처리해야할까요 ?
 
 <div class="pull-right"> 문스코딩 - 2018.01.dd </div>
@@ -18,6 +17,7 @@
 			* [4.1 방법1 - 접두사 사용하기](#41-방법1-접두사-사용하기)
 			* [4.2 방법2 - ES6에서 활용하기](#42-방법2-es6에서-활용하기)
 			* [4.3 방법3 - Symbol 이용하기](#43-방법3-symbol-이용하기)
+			* [private method를 상속할 수 있을까요 ?](#private-method를-상속할-수-있을까요)
 
 <!-- /code_chunk_output -->
 
@@ -60,11 +60,11 @@
 
 **방법 1 :: IIFE**
 
-```js
-
-```
+~~해당 방식은 많이 설명했으므로 생략하도록 하겠습니다.~~
 
 **방법 2 :: ES7**
+
+ES7에는 변수를 private할 수 있는 새로운 기준이 생겼습니다.
 
 ```js
 
@@ -138,14 +138,26 @@ export default class Service {
 new Service().privateMethod()
 
 // Uncaught TypeError: (intermediate value)[Symbol(...)] is not a function
-new Service()[Symbol('privateMethod')]();
+new Service()[Symbol('privateMethod');
 ```
+
+> 심볼을 scope에 이용하면 private 매소드를 만들 수 있습니다.
 
 참고 블로그에서 가장 선호하는 방식은 Symbol이라 말합니다.
 
-이는 call 메소드를 사용해서 lexical scoping을 변경할 필요가 없어,
+이는 call 메소드를 사용해서 lexical scoping을 변경할 필요가 없어, 명확하기 때문입니다.
 
-명확하기 때문입니다.
+#### private method를 상속할 수 있을까요 ?
+
+JS에서 제시하는 대안은 scope를 이용한 처리인데
+
+자식 클래스에 가면 부모 클래스의 scope에는 접근할 수가 없습니다.
+
+그래서 결국 scope를 이용한 private는 하위로 상속할수가 없는 것입니다.
+
+그래서 접두사 "\_"를 이용해서 public 메소드를 만드는 등 다른 방법을 이용해야 합니다.
+
+하지만 해당 방식으로 처리해도 \_public 메소드로 접근만 열어주는 것이지 해당 메소드를 확인할 방법은 없습니다.
 
 ---
 

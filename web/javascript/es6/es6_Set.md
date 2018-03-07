@@ -1,10 +1,21 @@
-ㅁ# JAVASCRIPT ES6 SET
-
-#### ES6 - SET은 무엇인가 ?
+# JS ES6 - 필수입니다.
+## ES6 - SET은 무엇인가 ?
 
 <div class="pull-right"> 문스코딩 - 20178.01.15 </div>
 
 ---
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [JS ES6 - 필수입니다.](#js-es6-필수입니다)
+	* [ES6 - SET은 무엇인가 ?](#es6-set은-무엇인가)
+		* [01. SET](#01-set)
+		* [02. WeakSET](#02-weakset)
+
+<!-- /code_chunk_output -->
+
 
 **용어정리**
 ```
@@ -17,7 +28,7 @@
 ```
 
 
-#### 01. SET
+### 01. SET
 
 셋은 중복을 허용하지 않는 데이터 집합입니다.
 
@@ -35,7 +46,7 @@ roles.delete("Admin"); // true => Set ["User"]
 roles.delete("Admin"); // false
 ```
 
-#### 02. WeakSET
+### 02. WeakSET
 
 위크셋은 객체만 포함할 수 있으며, 이 객체들은 가비지 콜렉션의 대상이 됩니다.
 WeakMap과 마찬가지로 이터러블이 아닙니다. 위크셋의 용도는 아주 적습니다.

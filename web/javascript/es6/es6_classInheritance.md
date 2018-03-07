@@ -1,5 +1,4 @@
-# JS ES6 - 이젠 필수입니다.
-
+# JS ES6 - 필수입니다.
 ## 코드의 재사용 - 상속
 
 <div class="pull-right"> 문스코딩 - 2018.02.dd </div>
@@ -9,7 +8,7 @@
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [JS ES6 - 이젠 필수입니다.](#js-es6-이젠-필수입니다)
+* [JS ES6 - 필수입니다.](#js-es6-필수입니다)
 	* [코드의 재사용 - 상속](#코드의-재사용-상속)
 		* [01. 싱속](#01-싱속)
 		* [02. 다중상속 ? Mixin 패턴으로 해결하세요 !](#02-다중상속-mixin-패턴으로-해결하세요)

@@ -1,10 +1,21 @@
-# JAVASCRIPT ES6 - ITERATOR
-
+# JS ES6 - 필수입니다.
 #### ES6 - ITERATOR 파헤치기
 
 <div class="pull-right"> 문스코딩 - 20178.01.16 </div>
 
 ---
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [JS ES6 - 필수입니다.](#js-es6-필수입니다)
+			* [ES6 - ITERATOR 파헤치기](#es6-iterator-파헤치기)
+		* [01. Iterator](#01-iterator)
+			* [02. Iterable (반복가능)](#02-iterable-반복가능)
+
+<!-- /code_chunk_output -->
+
 
 **용어정리**
 ```
@@ -12,7 +23,7 @@ Iterator (반복기) :: "지금 어디 있는지" 파악할 수 있는 일종의
 Iterable (반복가능) :: 이터레이터를 사용할 수 있는 지 여부
 ```
 
-#### 01. Iterator
+### 01. Iterator
 
 - 이터레이터는 각각 독립적 , 새로운 이터레이터를 생성할때마다 새로이 시작
 

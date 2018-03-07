@@ -55,24 +55,22 @@ Web 파트는 기본적인 Html, Css, JavaScript에 대해서 다룰 예정이�
         - css/
         - bootstrap3/
         - bootstrap4/
-        - sass/
         - less/
+        - ~~sass/~~
     - javascript/
-        - javascript/
+        - native/
         - dom/
-        - es5/
         - es6/
-        - es7/    
+        - ~~es7/~~    
         - jsPattern/
         - ~~RXjs/~~
+        - ~~lodash/~~
     - build/
         - gulp/
         - grunt/
         - babel/
         - webpack/
-        - ~~parcel/~~
-    - lib/
-        - lodash/
+        - ~~parcel/~~        
     - canvas/
         - createjs/
         - protonjs/
@@ -84,7 +82,6 @@ Web 파트는 기본적인 Html, Css, JavaScript에 대해서 다룰 예정이�
 
 [underscore vs lodash 비교분석](http://kbs0327.github.io/blog/technology/underscore-lodash/)
 [native vs underscore vs lodash 비교분석](http://blog.kazikai.net/?p=180)
-
 
 ### Mobile 파트
 

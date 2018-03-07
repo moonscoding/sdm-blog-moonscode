@@ -1,4 +1,4 @@
-# JS ES6 - 이젠 필수입니다.
+# JS ES6 - 필수입니다.
 ## constructor 파헤치기
 
 <div class="pull-right"> 문스코딩 - 2018.02.dd </div>
@@ -8,7 +8,7 @@
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [JS ES6 - 이젠 필수입니다.](#js-es6-이젠-필수입니다)
+* [JS ES6 - 필수입니다.](#js-es6-필수입니다)
 	* [constructor 파헤치기](#constructor-파헤치기)
 		* [01. 생성자의 생성주기에 대해서 자세하게 살펴보아요.](#01-생성자의-생성주기에-대해서-자세하게-살펴보아요)
 

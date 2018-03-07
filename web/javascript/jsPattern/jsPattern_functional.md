@@ -1,6 +1,5 @@
 
 # JavaScript Pattern, 세상에 잘 짜여진 코드는 많다.
-
 ## 자바스크립트를 이용한 함수형 프로그래밍... 함수형 ?
 
 <div class="pull-right"> 문스코딩 - 2018.01.25 </div>

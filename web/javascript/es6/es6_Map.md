@@ -1,10 +1,22 @@
-# JAVASCRIPT ES6 - MAP
-
-#### ES6 - Map 이란 무엇인가 !.
+# JS ES6 - 필수입니다.
+## ES6 - Map 이란 무엇인가 !.
 
 <div class="pull-right"> 문스코딩 - 20178.01.18 </div>
 
 ---
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [JS ES6 - 필수입니다.](#js-es6-필수입니다)
+	* [ES6 - Map 이란 무엇인가 !.](#es6-map-이란-무엇인가)
+		* [01. Map의 기본 원리](#01-map의-기본-원리)
+		* [02. keys(), values(), entries()](#02-keys-values-entries)
+		* [03. WeakMap(위크맵)을 알아보자](#03-weakmap위크맵을-알아보자)
+		* [~~**WeakMap을 지원하지 않는 브라우저에서 직접 생성하기 (ES5 :: WeakMap)**~~](#~~weakmap을-지원하지-않는-브라우저에서-직접-생성하기-es5-weakmap~~)
+
+<!-- /code_chunk_output -->
+
 
 **용어정리**
 ```
@@ -21,7 +33,7 @@
     entries() ::
 ```
 
-#### 01. Map의 기본 원리
+### 01. Map의 기본 원리
 
 es6 이전에는 키와 값을 연결하려면 객체를 사용합니다.
 하지만 이러한 단점을 가집니다.
@@ -77,7 +89,7 @@ userRoles.clear();
 userRoles.size;     // 0
 ```
 
-#### 02. keys(), values(), entries()
+### 02. keys(), values(), entries()
 
 **keys()** 메서드는 맵의 키를,
 **values()** 메서드는 값을,
@@ -100,7 +112,7 @@ for(let [u, r] of userRoles.entries())
 
 ```
 
-#### 03. WeakMap(위크맵)을 알아보자
+### 03. WeakMap(위크맵)을 알아보자
 
 - 키는 반드시 객체
 - WeakMap의 키는 가비지 컬렉션에 포함될 수 있음
@@ -198,7 +210,11 @@ console.log(wm.has(myarea));    // false
 
 > WeakMap 활용 예제
 
-**WeakMap을 지원하지 않는 브라우저에서 직접 생성하기 (ES5 :: WeakMap)**
+
+
+### ~~**WeakMap을 지원하지 않는 브라우저에서 직접 생성하기 (ES5 :: WeakMap)**~~
+
+**babel-polyfill을 이용하세요!**
 
 ```js
 /* vim:set ts=2 sw=2 sts=2 expandtab */

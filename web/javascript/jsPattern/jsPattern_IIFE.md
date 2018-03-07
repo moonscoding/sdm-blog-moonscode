@@ -1,7 +1,5 @@
-
 # JavaScript Pattern, 세상에 잘 짜여진 코드는 많다.
-
-## IIFE는 무엇인가?
+## 알지만 모르는 것, IIFE는 무엇인가?
 
 <div class="pull-right"> 문스코딩 - 2018.02.dd </div>
 
@@ -11,7 +9,7 @@
 <!-- code_chunk_output -->
 
 * [JavaScript Pattern, 세상에 잘 짜여진 코드는 많다.](#javascript-pattern-세상에-잘-짜여진-코드는-많다)
-	* [IIFE는 무엇인가?](#iife는-무엇인가)
+	* [알지만 모르는 것, IIFE는 무엇인가?](#알지만-모르는-것-iife는-무엇인가)
 		* [01. IIFE](#01-iife)
 		* [02. 함수의 선언과 함수 표현식](#02-함수의-선언과-함수-표현식)
 		* [03. 즉시 함수 호출 표현식](#03-즉시-함수-호출-표현식)

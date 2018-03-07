@@ -1,10 +1,21 @@
-# JAVASCRIPT ES6 - GENERATOR
-
-#### ES6 - Generator 생성기 파헤치기.
+# JS ES6 - 필수입니다.
+## ES6 - Generator 생성기 파헤치기.
 
 <div class="pull-right"> 문스코딩 - 20178.01.15 </div>
 
 ---
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [JS ES6 - 필수입니다.](#js-es6-필수입니다)
+	* [ES6 - Generator 생성기 파헤치기.](#es6-generator-생성기-파헤치기)
+		* [01. Generator (생성기)](#01-generator-생성기)
+		* [02. 고급 생성기](#02-고급-생성기)
+
+<!-- /code_chunk_output -->
+
 
 **용어정리**
 ```
@@ -12,7 +23,7 @@
 ```
 
 
-#### 01. Generator (생성기)
+### 01. Generator (생성기)
 
 - 일반적인 함수는 매개변수를 받고 값을 반환, 호출자는 매개변수 외에는 함수의 실행을 제어방법이 없음
 - [Generator STEP01] 함수의 실행을 개별적 단계로 나눔
@@ -110,7 +121,7 @@ for(let l of abc()) {
 ```
 
 
-#### 02. 고급 생성기
+### 02. 고급 생성기
 
 생성기는 요청에 따라 그 산출된 (yielded, yield 식으로 산출된) 값을 계산하고, 계산하기 비싼 수열 또는
 위에 설명한 대로 무한 수열이라도 효율적으로 나타내게 함

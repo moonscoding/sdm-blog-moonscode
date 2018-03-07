@@ -1,17 +1,15 @@
-# JAVASCRIPT 디자인 패턴 - 싱글턴 패턴
-
-## 싱글턴 패턴 - 하나의 클래스로 하나의 객체만 만들기.
+# JavaScript Pattern, 세상에 잘 짜여진 코드는 많다.
+## 하나의 클래스로 하나의 객체만 만들기.
 
 <div class="pull-right"> 문스코딩 - 2018.01.dd </div>
 
 ---
 
-
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [JAVASCRIPT 디자인 패턴 - 싱글턴 패턴](#javascript-디자인-패턴-싱글턴-패턴)
-	* [싱글턴 패턴 - 하나의 클래스로 하나의 객체만 만들기.](#싱글턴-패턴-하나의-클래스로-하나의-객체만-만들기)
+* [JavaScript Pattern, 세상에 잘 짜여진 코드는 많다.](#javascript-pattern-세상에-잘-짜여진-코드는-많다)
+	* [하나의 클래스로 하나의 객체만 만들기.](#하나의-클래스로-하나의-객체만-만들기)
 		* [01. 싱글턴 패턴](#01-싱글턴-패턴)
 		* [02. Private 싱글턴 패턴](#02-private-싱글턴-패턴)
 		* [03. ES6 싱글톤 패턴](#03-es6-싱글톤-패턴)
