@@ -94,8 +94,6 @@ class Car{
 
 **방식2 :: symbol을 이용해서 처리하기**
 
-[참조링크](https://www.sitepoint.com/object-oriented-javascript-deep-dive-es6-classes/)
-
 ```js
 let SimpleDate = (function() {
   let _yearKey = Symbol();
@@ -121,6 +119,8 @@ let SimpleDate = (function() {
 
 > 유니크한 심볼 키를 이용할 수 있습니다.
 > 그리고 그 심볼키를 closure에 묶어둘 수 있습니다.
+> 이 방식은 완전히 참조가 불가능한 것은 아닙니다.
+> es6_dataType.md의 symbol 부분을 보면 그 이유를 확인할 수 있습니다.
 
 **방식3 :: WeakMap을 이용해서 처리하기**
 
@@ -164,7 +164,9 @@ let SimpleDate = (function() {
 
 객체를 생성하고, 모든 객체에 메소드를 이용해 처리하는것도 방법입니다.
 
-**방법2**
+**방법2 :: 생성자 종료를 감시하기**
+
+해당 방법이 있는지 아직 알 수 없서 방법을 구하는 중입니다.
 
 ---
 

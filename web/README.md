@@ -20,7 +20,7 @@ Web 파트는 기본적인 Html, Css, JavaScript에 대해서 다룰 예정이�
         - bootstrap4/
         - less/
         - ~~sass/~~
-    - javascript/
+    - js/
         - native/
         - dom/
         - es6/
@@ -28,6 +28,7 @@ Web 파트는 기본적인 Html, Css, JavaScript에 대해서 다룰 예정이�
         - jsPattern/
         - ~~RXjs/~~
         - ~~lodash/~~
+        - lib/
     - build/
         - gulp/
         - grunt/
