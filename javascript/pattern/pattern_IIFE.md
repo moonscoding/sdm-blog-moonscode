@@ -13,6 +13,9 @@
 		* [01. IIFE](#01-iife)
 		* [02. 함수의 선언과 함수 표현식](#02-함수의-선언과-함수-표현식)
 		* [03. 즉시 함수 호출 표현식](#03-즉시-함수-호출-표현식)
+			* [IIFE](#iife)
+			* [IIFE 기본 예제](#iife-기본-예제)
+			* [IIFE를 이용한 함수 호출 카운트 예제](#iife를-이용한-함수-호출-카운트-예제)
 		* [04. 결론](#04-결론)
 
 <!-- /code_chunk_output -->
@@ -94,12 +97,49 @@ showName("Rich");   // Rich
 showName();         // No Name
 ```
 
+#### IIFE
+
+```js
+(function() {
+    // IIFE 바디
+})();
+```
+
+> IIFE의 장점은 내부에 있는 것들이 모두 자신만의 스코프를 가지지만, IIFE 자체는 함수이므로 그 스코프 밖으로 무언가를 내보낼 수 있다는 점입니다.
+
+#### IIFE 기본 예제
+
+```js
+const message = (function() {
+    const secret = "I m scret!";
+    return `The secret is ${secret.length} characters long.`
+})();
+console.log(message);
+```
+> 변수 secret은 IIFE의 스코프 안에서 안전하게 보호되면 외부에서 접근할 수 없습니다. IIFE는 함수이므로 무엇이든 반환할 수 있습니다.
+
+#### IIFE를 이용한 함수 호출 카운트 예제
+
+```js
+// 호출된 함수를 가지고 있는 변수 f
+const f = (function() {
+    let count = 0;
+    return function() {
+        return `i have been called ${++count} time(s).`
+    }
+})();
+
+f();    // 1
+f();    // 2
+```
+
 ### 04. 결론
 
 IIFE를 왜 사용하고 언제 사용하나요 ?
 
 > 글로벌 스코프를 오염시키지 않기 위해서 사용한다고 보시면 됩니다.
 > 다양한 plugin을 사용할때 외부와의 충돌을 방지할 수 있습니다.
+>
 
 ---
 

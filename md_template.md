@@ -1,6 +1,6 @@
 # TITLE (UpperCase)
 ## SUB-TITLE
-<div class="pull-right"> 문스코딩 - 2018.03.dd </div>
+<div class="pull-right"> 2018.03.dd </div>
 
 ---
 

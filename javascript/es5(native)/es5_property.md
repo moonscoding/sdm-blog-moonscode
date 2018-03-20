@@ -9,20 +9,19 @@
 
 * [JS - 어디까지 알고있나요 ?](#js-어디까지-알고있나요)
 	* [내가 몰랐던 property](#내가-몰랐던-property)
-		* [01. Property란?](#01-property란)
-		* [02. 속성값 이해하기 (Enumerable, Writable, Configurable)](#02-속성값-이해하기-enumerable-writable-configurable)
-		* [03. defineProperty & getOwnPropertyDescriptor](#03-defineproperty-getownpropertydescriptor)
+		* [Property란?](#property란)
+		* [속성값 이해하기 (Enumerable, Writable, Configurable)](#속성값-이해하기-enumerable-writable-configurable)
+		* [defineProperty & getOwnPropertyDescriptor](#defineproperty-getownpropertydescriptor)
 		* [Enumerable 예제](#enumerable-예제)
 		* [Wriatable 예제](#wriatable-예제)
-		* [configurable 예제](#configurable-예제)
-		* [클래스 getter & setter에서 처리하기](#클래스-getter-setter에서-처리하기)
-		* [용어정리](#용어정리)
+		* [Configurable 예제](#configurable-예제)
+		* [클래스 함수, no property, prototype 영역!](#클래스-함수-no-property-prototype-영역)
 
 <!-- /code_chunk_output -->
 
-### 01. Property란?
+### Property란?
 
-자바스크립트의 property는 다 아는 것 같으면서도 모르느 부분인 것 같습니다.
+자바스크립트의 property는 다 아는 것 같으면서도 모르는 부분인 것 같습니다.
 
 이번 글을 통해서 자바스크립트의 property를 이해해 보도록 하겠습니다.
 
@@ -46,11 +45,11 @@ delete ob.b;
 ob.b; // => undefined
 ```
 
-### 02. 속성값 이해하기 (Enumerable, Writable, Configurable)
+### 속성값 이해하기 (Enumerable, Writable, Configurable)
 
 property는 다음과 같은 3가지 속성을 가지고 있습니다.
 
-- Enumerable :: 열거 할 수 있는
+==- Enumerable :: 열거 할 수 있는==
 
 만약 해당 property가 열거할 수 있는 속성이라면, for...in... 루프를 사용하여 그것들에 접근할 수 있습니다.
 
@@ -60,21 +59,21 @@ property는 다음과 같은 3가지 속성을 가지고 있습니다.
 
 Object 속성의 기본 property가 for...in... 루프에 반환되지 않는 이유는 해당 속성이 false이기 때문입니다.
 
-- Wriatable :: 쓸 수 있는
+==- Wriatable :: 쓸 수 있는==
 
 만약 property가 쓸 수 있는 속성이라면, 값을 수정할 수 있습니다.
 
 obj.a = 10 과같이 수정할 수 있습니다.
 
-- Configurable :: 구성할 수 있는
+==- Configurable :: 구성할 수 있는==
 
 구성 가능한 property는 삭제 연산자를 사용하여 제거 할 수있는 유일한 특성을 가집니다.
 
 delete obj.a;
 
-### 03. defineProperty & getOwnPropertyDescriptor
+### defineProperty & getOwnPropertyDescriptor
 
-앞선 속성을 을 참고하여 defineProperty 매서드를 이용하면,
+Object의 메소드인 defineProperty & getOwnPropertyDescriptor를 사용하면
 
 개발자가 원하는 속성의 propety를 만들수 있습니다.
 
@@ -137,11 +136,10 @@ Object.getOwnPropertyDescriptor(obj, 'd');
 Object.getOwnPropertyDescriptor(obj, 'e');
 // {value: "e", writable: false, enumerable: false, configurable: false}
 ```
-
 > enumerable, configurable 속성은 기본적으로 true로 설정된 것을 볼 수 있습니다.
-> getter, setter를 이용하면 writable 속성만, get/set 메소드로 조작할 수 있게 되는 것 입니다.
-
-> 또한, defineProperty를 이용해서 변수를 정의할 때, 기본값은 모두 false인 것을 알 수 있습니다.
+> getter, setter를 이용하면 writable 속성은 생성되지 않습니다.
+> get/set 메소드로 조작할 수 있게 되는 것 입니다.
+> 또한, defineProperty를 이용해서 변수를 정의할 때, 기본값은 모두 false입니다.
 
 ### Enumerable 예제
 
@@ -206,7 +204,7 @@ ob.OB = 'hola';
 ob.OB; // => {c:4, d:5}
 ```
 
-### configurable 예제
+### Configurable 예제
 
 ```js
 var ob = {};
@@ -233,7 +231,7 @@ delete ob.a; // => false
 ob; // => {a:1}
 ```
 
-### 클래스 getter & setter에서 처리하기
+### 클래스 함수, no property, prototype 영역!
 
 > 클래스에 선언하는 함수들은 property가 아니다 !?
 
@@ -254,25 +252,17 @@ var t = new Test();
 
 Object.getOwnPropertyDescriptor(t, 'a');  
 // undefined
-Object.getOwnPropertyDescriptor(t.__proto__, 'a');
+Object.getOwnPropertyDescriptor(Object.getPrototypeOf(t), 'a');
 // {get: ƒ, set: undefined, enumerable: false, configurable: true}
 ```
 
-클래스는 클래스 자체가 객체가 아닙니다.
-
 클래스 내부에 선언한 함수들은 prototype에 저장되게 됩니다.
 
-그래서 getter&setter를 조회해도 undefined가 나게 되는 것입니다.
+그래서 getter & setter를 조회해도 undefined가 나게 되는 것입니다.
 
-올바르게 조회하려면 classObj.\_\_proto\_\_ 와 같이 처리해주면
+올바르게 조회하려면 Object.getPrototypeOf(classObj) OR classObj.\__proto\__ 와 같이 처리해주면
 
 참고하고 있는 prototype을 찾아가기 때문에 getter setter를 조회할 수 있습니다.
-
-
-### 용어정리
-```
-
-```
 
 ---
 

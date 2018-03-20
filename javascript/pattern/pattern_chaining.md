@@ -18,11 +18,6 @@
 
 <!-- /code_chunk_output -->
 
-**용어정리**
-```
-
-```
-
 ### 01. Chaining Pattern이란
 
 Object.function().function().function() 다음과 같은 방식으로 진행되는 패턴을 말합니다.

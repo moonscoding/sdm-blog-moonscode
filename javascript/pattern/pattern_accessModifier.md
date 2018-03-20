@@ -12,11 +12,10 @@
 		* [01. 접근 제한자](#01-접근-제한자)
 		* [02. private](#02-private)
 		* [03. protected](#03-protected)
-		* [04. wrapper를 이용한 protected 구현](#04-wrapper를-이용한-protected-구현)
+		* [04. Wrapper를 이용한 Protected 구현](#04-wrapper를-이용한-protected-구현)
 		* [용어정리](#용어정리)
 
 <!-- /code_chunk_output -->
-
 
 
 ### 01. 접근 제한자
@@ -164,11 +163,17 @@ public 과 protected 는 객체의 property로 추가되며,
 
 private 는 scope 를 이용한 접근만이 가능합니다.
 
-### 04. wrapper를 이용한 protected 구현
+### 04. Wrapper를 이용한 Protected 구현
+
+해당방식은 반환되는 객체를 스코프에 저장하고,
+
+접두사 '\_'를 확인해서 객체의 접근 제한자 여부를 파악하고
+
+올바른 접근 제한자만 가진 객체를 리턴해주는 방식입니다.
 
 ```js
 Object.prototype.makeProtected = function(obj) {
-			let scope = obj;    				// [#] 스코프 저장소
+			let scope = obj;            // [#] 스코프 저장소
 			let result = function(){};  // [#] protected 객체
 
 			// [#] Object down to top ( child -> parent -> object )
