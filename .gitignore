@@ -1,12 +1,10 @@
 
-# cache
-
-./web       # 01. 웹 [open]
-./mobile    # 02. 모바일 [open]
-./server    # 03. 서버 [open]
-./database  # 04. 디비 [open]
-# ./os        # 05. 운영체제 [open]
-# ./data      # 06. 데이터 [close]
-# ./ai        # 07. 인공지능 [close]
-# ./game      # 08. 게임 [close]
-./dev       # 09. 개발 [open]
+# ./web        # 01. 웹 [open]
+# ./javascript # 02. JS [open]
+# ./mobile     # 02. 모바일 [open]
+./server     # 03. 서버 [open]
+./database   # 04. 디비 [open]
+./os         # 05. 운영체제 [close]
+./ai         # 07. 인공지능 [close]
+./game       # 08. 게임 [close]
+./dev        # 09. 개발 [close]
