@@ -16,8 +16,6 @@
 
 <!-- /code_chunk_output -->
 
-
-
 ### 01.
 
 ```js
@@ -85,7 +83,8 @@ function resetStepUi(clearOutput) {
 // 		해당 부분은 각각의 자바스크립트 값에 하이라이트블록기능을 추가로 삽입합니다.
 // 		하이라이트블록기능을 기준으로 step 코드가 끝나는 시점을 확인합니다.
 function generateCodeAndLoadIntoInterpreter() {
-  // Generate JavaScript code and parse it.
+
+  // JavaScript 코드를 생성하고 파싱합니다.
   Blockly.JavaScript.STATEMENT_PREFIX = 'highlightBlock(%1);\n';
   Blockly.JavaScript.addReservedWords('highlightBlock');
   latestCode = Blockly.JavaScript.workspaceToCode(demoWorkspace);

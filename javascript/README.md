@@ -14,7 +14,8 @@
 		* [01. 기본 주석 방법](#01-기본-주석-방법)
 		* [02. 함수 정의 방법](#02-함수-정의-방법)
 		* [03. 파일 정리 방법](#03-파일-정리-방법)
-		* [04. Getter & Setter 정의](#04-getter-setter-정의)
+		* [04. Get & Set 정의](#04-get-set-정의)
+		* [05. Class 템플릿](#05-class-템플릿)
 
 <!-- /code_chunk_output -->
 
@@ -31,7 +32,7 @@
 // [T] -> 테스트 관련
 // [E] -> 예외 관련
 // [F] -> 함수 관련
-// [GS] -> Getter & Setter
+// [V] -> 변수 관련
 // [!] -> 주의 사항
 // [#] -> 중요 사항
 ```
@@ -76,10 +77,21 @@ function() {}
  */
 ```
 
-### 04. Getter & Setter 정의
+### 04. Get & Set 정의
 
 ```js
 // @DES :: HelloWorld[num] - append something...
+```
+
+### 05. Class 템플릿
+```js
+const CNAME = function() {
+	// TODO input private variable here...
+
+	return class {
+
+	}
+}();
 ```
 
 ---
