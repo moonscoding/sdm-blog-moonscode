@@ -1,6 +1,6 @@
 # TITLE (UpperCase)
 ## SUB-TITLE
-<div class="pull-right"> 2018.03.dd </div>
+<div class="pull-right"> 2018.03.dd </div><br>
 
 ---
 
@@ -34,12 +34,16 @@
 
 ---
 
-**Created by SuperMoon**
+**Created by SDM**
 
-**출처 : [SuperMoon's Git Blog](https://github.com/jm921106)**
+==작성자 정보==
+
+e-mail :: jm921106@naver.com
+
+github :: https://github.com/jm921106
+
+==도움을 받은글==
 
 [링크1 :: ]()
 
 [링크2 :: ]()
-
-Copyright (c) 2017 Copyright Holder All Rights Reserved.

@@ -133,19 +133,18 @@ const TobeProtected = function() {
 
 function manageGetAndSet(cname, props) {
 	for(let key in props) {
-		if(!cname.prototype[key]){	// [#] class 내부 선언
+		if(Object.getOwnPropertyNames(cname.prototype).indexOf(key) != 1){	// [#] class 내부 선언
 			if(key[1] != '_') {				// [#] private 제외
-				cname.prototype.__defineGetter__(key, function() { return props[key] });
-				cname.prototype.__defineSetter__(key, function(p) { props[key] = p });
-			}
-			else {
-				cname.prototype.__defineGetter__(key, function() { return props[key] });
-				cname.prototype.__defineSetter__(key, function(p) { props[key] = p });
+				Object.defineProperty(cname.prototype, key, {
+								get : function() { return props[key] },
+								set : function(p) { props[key] = p },
+								enumerable : true,
+								configurable : true
+							});
 			}
 		}
 	}
 }
-
 
 ```
 
@@ -200,7 +199,7 @@ Object.prototype.makeProtected = function(obj) {
 						if (
 							(typeof scope[name] !== 'object' && typeof scope[name] !== 'function')
 							||
-							scope[name] === null
+							scope[name] === nulla
 						) {
 							result.prototype.__defineGetter__(name, function() { return scope[name] });
 							result.prototype.__defineSetter__(name, function(arg) { scope[name] = arg });
