@@ -9,8 +9,7 @@
 
 * [TITLE (UpperCase)](#title-uppercase)
 	* [SUB-TITLE](#sub-title)
-		* [01.](#01)
-			* [1-1.](#1-1)
+		* [01. 상위 감싸기](#01-상위-감싸기)
 		* [02.](#02)
 		* [03.](#03)
 		* [용어정리](#용어정리)
@@ -19,9 +18,26 @@
 
 
 
-### 01.
+### 01. 상위 감싸기
 
+```html
+<div id="parentNode">
+  <div id="childNode"></div>
+</div>
+```
 
+상위 감싸는 예제
+
+- 여기서 궁금한점
+	- 노드 객체가 자동으로 이동된다는 것
+
+```js
+var wrap = function (toWrap, wrapper) {
+    wrapper = wrapper || document.createElement('div');
+    toWrap.parentNode.appendChild(wrapper);
+    return wrapper.appendChild(toWrap);
+};
+```
 
 ### 02.
 

@@ -10,7 +10,6 @@
 * [TITLE (UpperCase)](#title-uppercase)
 	* [SUB-TITLE](#sub-title)
 		* [01.](#01)
-			* [1-1.](#1-1)
 		* [02.](#02)
 		* [03.](#03)
 		* [용어정리](#용어정리)
@@ -21,9 +20,20 @@
 
 ### 01.
 
+```java
+Date date = new Date();
+SimpleDateFormat formatedDate = new SimpleDateFormat("yyyy-mm-dd");
+System.out.println(formatedDate.format(date));
+```
 
+### 02. Realm Model
 
-### 02.
+```java
+class Model extends RealmObject {
+  
+
+}
+```
 
 ### 03.
 

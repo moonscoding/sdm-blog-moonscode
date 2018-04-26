@@ -1,5 +1,5 @@
 # Android Lib를 통한 간단 코드 적용기
-## 간편한 이동 Dart !
+## 간편한 이동 Dart & Henson !
 
 <div class="pull-right"> 문스코딩 - 2018.02.08 </div>
 
@@ -9,10 +9,12 @@
 <!-- code_chunk_output -->
 
 * [Android Lib를 통한 간단 코드 적용기](#android-lib를-통한-간단-코드-적용기)
-	* [간편한 이동 Dart !](#간편한-이동-dart)
+	* [간편한 이동 Dart & Henson !](#간편한-이동-dart-henson)
 		* [기존 인텐트 처리 방식](#기존-인텐트-처리-방식)
 		* [Dart](#dart)
-		* [Henson](#henson)
+		* [Henson (간편한 Intent객체 만들기)](#henson-간편한-intent객체-만들기)
+			* [Henson 의존성 설정하기](#henson-의존성-설정하기)
+			* [Henson 사용하기](#henson-사용하기)
 
 <!-- /code_chunk_output -->
 
@@ -35,11 +37,18 @@ tacoDescription = getIntent().getExtras().getString(EXTRA_TACO_DESCRIPTION);
 ```
 
  intent.putExtra, key, value, getIntent, getExtras, getString 같은 것을
+
  키에 넣어 보내는 것도 상당히 소모적인 작업입니다.
+
  종종 담았던 곳으로 다시 돌아가서 어떤 key에 담았는지,
+
  변수인지 상수인지 살펴봐야만 합니다.
 
 ### Dart
+
+```java
+
+```
 
 인텐트로 부터 엑스트라를 가져오는 코드입니다.
 
@@ -78,15 +87,21 @@ boolean인 favorite와 string인 description인 엑스트라 액티비티와 함
 
 > 또한, 깜박할 경우를 대비해 taco란 값을 기본값으로 줄 수 도 있습니다.
 
-### Henson
+### Henson (간편한 Intent객체 만들기)
 
-Dart 인젝트를 사용하면 우리가 정의한 대로 맴버 변수를 사용할 수 있습니다 .
+#### Henson 의존성 설정하기
+
+
+
+#### Henson 사용하기
+
+Dart 인젝트를 사용하면 우리가 정의한 대로 맴버 변수를 사용할 수 있습니다.
 이런 엑스트라를 인텐트에 어떻게 설정할까요 ?
 
 ```java
-Generate intent builders with Henson
+// Generate intent builders with Henson
 
-// # gotoTacoDetailActivity < activity class 명은 따로 선언하는 게 아니라 default 값입니다 
+// # gotoTacoDetailActivity < activity class 명은 따로 선언하는 게 아니라 default 값입니다
 Intent intent = Henson.with(context)
     .gotoTacoDetailActivity()
     .favorite(true)

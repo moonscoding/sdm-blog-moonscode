@@ -8,7 +8,7 @@
 <!-- code_chunk_output -->
 
 * [JS - 어디까지 알고있나요 ?](#js-어디까지-알고있나요)
-	* [Object 자세히 알기](#object-자세히-알기)
+	* [오브젝트(Object) 자세히 알기](#오브젝트object-자세히-알기)
 		* [01. Object](#01-object)
 		* [02. Object Native 메소드 ==(property)==](#02-object-native-메소드-property)
 			* [getOwnPropertyDescriptor](#getownpropertydescriptor)

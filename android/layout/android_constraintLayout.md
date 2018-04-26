@@ -21,7 +21,7 @@
 
 ### 01.
 
-
+#### 1-1.
 
 ### 02.
 
@@ -44,6 +44,6 @@ github :: https://github.com/jm921106
 
 ==도움을 받은글==
 
-[링크1 :: ]()
+[링크1 :: realm layout 정리 ](https://academy.realm.io/kr/posts/constraintlayout-it-can-do-what-now/)
 
 [링크2 :: ]()

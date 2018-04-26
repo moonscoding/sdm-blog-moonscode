@@ -1,3 +1,5 @@
+
+
 # TITLE (UpperCase)
 ## SUB-TITLE
 <div class="pull-right">  업데이트 :: 2018.04.dd </div><br>
@@ -9,28 +11,34 @@
 
 * [TITLE (UpperCase)](#title-uppercase)
 	* [SUB-TITLE](#sub-title)
-		* [01.](#01)
-			* [1-1.](#1-1)
-		* [02.](#02)
-		* [03.](#03)
-		* [용어정리](#용어정리)
+		* [Shape 선언하기](#shape-선언하기)
+			* [Color](#color)
+			* [Circle](#circle)
+			* [Rect](#rect)
 
 <!-- /code_chunk_output -->
 
+### Shape 선언하기
 
-
-### 01.
-
-
-
-### 02.
-
-### 03.
-
-### 용어정리
+```js
+const SHAPE = new createjs.Shape();
 ```
 
-```
+#### Color
+
+- .beginFill('color')
+
+#### Circle
+
+- .drawCircle()
+
+#### Rect
+
+- .drawRect( x, y, w, h )
+
+- .drawRoundRect( x, y, w, h, r )
+
+- .drawRoundRectComplex( x, y, w, h, r1, r2, r3, r4 )
 
 ---
 
