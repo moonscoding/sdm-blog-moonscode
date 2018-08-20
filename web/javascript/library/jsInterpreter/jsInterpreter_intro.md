@@ -17,7 +17,6 @@
 			* [2.4 Limitations](#24-limitations)
 			* [2.5 Dependency](#25-dependency)
 			* [2.6 Compatibility](#26-compatibility)
-		* [용어정리](#용어정리)
 
 <!-- /code_chunk_output -->
 
@@ -29,9 +28,9 @@ JS 인터프리터는 자바스크립트를 해석하는 라이브러리로써, 
 
 자바스크립트의 순차적인 진행을 원할때 유용합니다.
 
-예를 들어 게임에서 자바스크립트를 순차적으로 진행시키길 원한다면 ?
+(작은양의 코드가 순차적으로 혹은 단계적으로 실행되는걸 보여주고 싶을때)
 
-다음 라이브러리가 도움이 될 것입니다.
+예를 들어 게임에서 자바스크립트를 순차적으로 진행시키길 원한다면 ? 다음 라이브러리가 도움이 될 것입니다.
 
 ### 02. acorn-interpreter
 
@@ -112,15 +111,9 @@ IE 9
 오페라 11.6
 사파리 5
 
-### 용어정리
-
-```
-
-```
-
 ---
 
-**Created by SuperMoon**
+**Created by SDM**
 
 **출처 : [SuperMoon's Git Blog](https://github.com/jm921106)**
 

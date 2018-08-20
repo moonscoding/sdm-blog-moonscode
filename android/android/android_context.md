@@ -1,5 +1,5 @@
-# TITLE (UpperCase)
-## SUB-TITLE
+# Android
+## Context란 무엇이고 어떻게 관리할까?
 <div class="pull-right"> 2018.03.dd </div><br>
 
 ---
@@ -7,11 +7,14 @@
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [TITLE (UpperCase)](#title-uppercase)
-	* [SUB-TITLE](#sub-title)
+* [Android](#android)
+	* [Context란 무엇이고 어떻게 관리할까?](#context란-무엇이고-어떻게-관리할까)
 		* [01. context](#01-context)
 			* [안드로이드에서 Context란 무엇일까요 ?](#안드로이드에서-context란-무엇일까요)
-		* [02.](#02)
+		* [02. Activity Context 관리하기](#02-activity-context-관리하기)
+			* [java app 이용하기](#java-app-이용하기)
+			* [manifest 수정](#manifest-수정)
+			* [app 활용하기](#app-활용하기)
 		* [03.](#03)
 		* [용어정리](#용어정리)
 
@@ -57,9 +60,57 @@ application의 lifeCycle에 해당하는 Context가 사용된다.
 
 즉, 현재 활성화된 액티비티만이 아닌 어플리케이션 전체에 대한 context가 필요한 경우에 사용합니다
 
+### 02. Activity Context 관리하기
 
+#### java app 이용하기
 
-### 02.
+현재 활성화된 context를 관리하는 가장 쉬운 방법입니다.
+
+```java
+public class App extends Application {
+
+    private static Context mContext;
+
+    public static Context getContext() {
+        return mContext;
+    }
+
+    public static void setContext(Context mContext) {
+        Ap	p.mContext = mContext;
+    }
+
+}
+```
+
+#### manifest 수정
+
+```java
+<application
+        android:icon="..."
+        android:label="..."
+        android:name="com.example.yourmainpackagename.App" >
+                    // class that extends Application ^^^
+```
+
+#### app 활용하기
+
+```java
+public class B extends Activity {
+
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.sampleactivitylayout);
+
+        App.setContext(this);
+                  ...
+        }
+...
+}
+```
+
+다음과 같은 방식은 간단하지만 불완전할수도 있습니다.
+
+앱이 재시작되는 경우 App이 가지고 있는 Context가 사라져버리는 경우가 생길 수도 있기 때문입니다.
 
 ### 03.
 

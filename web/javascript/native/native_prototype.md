@@ -1,40 +1,37 @@
-# JS - 어디까지 알고있나요 ?
-## JS, 프로토타입(Prototype) 기반 언어
-<div class="pull-right"> 2018.03.13 </div><br>
+
+<div class="pull-right">  업데이트 :: 2018.03.13 </div><br>
 
 ---
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [JS - 어디까지 알고있나요 ?](#js-어디까지-알고있나요)
-	* [JS, 프로토타입(Prototype) 기반 언어](#js-프로토타입prototype-기반-언어)
-		* [Prototype](#prototype)
-		* [Prototype, 어디에 사용하나요 ?](#prototype-어디에-사용하나요)
-		* [Prototype 생성원리](#prototype-생성원리)
-		* [Prototype Object & Prototype Link](#prototype-object-prototype-link)
-			* [Prototype Object 자세히](#prototype-object-자세히)
-			* [Prototype Link ( = \_\_proto\_\_) 자세히](#prototype-link-__proto__-자세히)
-			* [Prototype Chain](#prototype-chain)
-		* [Prototype과 Class](#prototype과-class)
+* [프로토타입](#프로토타입)
+* [어디에 사용하나요 ?](#어디에-사용하나요)
+* [생성원리](#생성원리)
+	* [Contructor(생성자) 자격 부여](#contructor생성자-자격-부여)
+	* [Prototype Object 생성 및 연결](#prototype-object-생성-및-연결)
+* [Prototype Object & Prototype Link](#prototype-object-prototype-link)
+	* [Prototype Object 자세히](#prototype-object-자세히)
+	* [Prototype Link ( = \_\_proto\_\_) 자세히](#prototype-link-__proto__-자세히)
+	* [Prototype Chain](#prototype-chain)
+* [Prototype & Class](#prototype-class)
 
 <!-- /code_chunk_output -->
 
 
+### 프로토타입
 
-### Prototype
-
-자바스크립트는 객체지향이지만, 클래스가 없습니다.
+JS는 객체기반언어로, 클래스가 없습니다.
 
 대신 ==프로토타입(Prototype)== 이라는 것이 존재합니다.
 
-자바스크립트가 프로토타입 기반 언어라고 불리는 이유입니다.
+JS가 프로토타입 기반 언어라고 불리는 이유입니다.
 
-> 참고로 최근의 ECMA6 표준에서는 Class 문법이 추가되었습니다.
-> 하지만 문법이 추가되었다는 것이지, 자바스크립트가 클래스 기반으로 바뀌었다는 것은 아닙니다.
-> 자바스크립트를 클래스로 작성하더라도 생성된 객체는 여전히 프로토타입기반입니다.
+> 참고로 최근의 ECMA6 표준에서는 Class 문법이 추가되었으나, JS가 클래스기반으로 바뀌었다는 것은 아닙니다.
+> JS를 클래스로 작성하더라도 생성된 객체는 여전히 프로토타입기반입니다.
 
-### Prototype, 어디에 사용하나요 ?
+### 어디에 사용하나요 ?
 
 ```js
 function Person() {
@@ -58,8 +55,8 @@ kim과 park은 eyes와 nose를 공통적으로 가지고 있는데,
 
 바로 이런 문제를 프로토타입으로 해결할 수 있습니다.
 
-> 클래스 내부의 함수들이 prototype인 이유입니다.
-> property로 설정되게 되면 객체 마다 생성이 될텐데, prototype으로 생성되면 상위 메모리에서 참조하기 때문입니다.
+> property로 설정되게 되면 객체 마다 생성이 될텐데,
+prototype으로 생성되면 상위 메모리에서 참조
 
 ```js
 function Person() {}
@@ -76,9 +73,9 @@ Person 함수로부터 생성된 객체(kim, park)들은
 
 어딘가에 존재하는 Object에 들어있는 값 (prototype)을 모두 갖다쓸 수 있습니다.
 
-즉, eyes와 nose를 어딘가에 있는 빈 공간에 넣어놓고 kim과 park이 공유해서 사용하는 것이죠.
+즉, eyes와 nose를 어딘가에 있는 빈 공간에 넣어놓고 kim과 park이 공유해서 사용하는 것
 
-### Prototype 생성원리
+### 생성원리
 
 ```js
 function Person() {} // => 함수
@@ -93,8 +90,8 @@ var obj = {};
 
 console.log(obj)
 /*
-	obj
-		> __proto__
+  obj
+    > __proto__
 */
 ```
 
@@ -105,20 +102,20 @@ var obj = new Object();
 
 console.log(obj)
 /*
-	obj
-		> __proto__
+  obj
+    > __proto__
 */
 ```
-위 코드에서 Object는 자바스크립트에서 기본적으로 제공하는 클래스입니다.
+위 코드에서 Object는 JS에서 기본적으로 제공하는 클래스입니다.
 
 그렇다면 이것이 Prototype이랑 무슨 상관이있느냐?
 
 함수가 정의될 때는 2가지 일이 동시에 이루어집니다.
 
-- 1. 해당 함수에 contructor(생성자) 자격 부여
-- 2. 해당 함수의 Prototype Object 생성 및 연결
+- 1. Contructor(생성자) 자격 부여
+- 2. Prototype Object 생성 및 연결
 
-> 해당 함수에 contructor(생성자) 자격 부여
+#### Contructor(생성자) 자격 부여
 
 Constructor 자격이 부여되면 new를 통해 객체를 만들어 낼 수 있게 됩니다.
 이것이 함수만 new 키워드를 사용할 수 있는 이유입니다.
@@ -128,11 +125,9 @@ var obj = {};
 var instance = new obj(); // (X)
 ```
 
-> 해당 함수의 Prototype Object 생성 및 연결
+#### Prototype Object 생성 및 연결
 
-함수를 정의하면 함수만 생성되는 것이 아니라,
-
-기본적으로 Prototype Object도 같이 생성이 됩니다.
+함수를 정의하면 함수만 생성되는 것이 아니라, 기본적으로 Prototype Object도 같이 생성이 됩니다.
 
 그리고 생성된 함수는 prototype이라는 속성을 통해 Prototype Object에 접근할 수 있습니다.
 
@@ -140,7 +135,7 @@ Prototype Object는 일반적인 객체와 같으며 기본적인 속성으로 =
 
 ### Prototype Object & Prototype Link
 
-자바스크립트 객체는 어떻게 미리 선언한 프로토타입을 참조하는 것일까요?
+JS 객체는 어떻게 미리 선언한 프로토타입을 참조하는 것일까요?
 
 그것을 알기 위해서는 ==Prototype Object== 와 ==Prototype Link== 라는 것을 알아야합니다.
 
@@ -182,9 +177,7 @@ Prototype Object에 존재하는 eyes 속성을 참조한 것인데요, 어떻�
 
 바로 kim이 가지고 있는 딱 하나의 속성 \_\_proto\_\_가 그것을 가능하게 해주는 열쇠입니다.
 
-prototype 속성은 함수만 가지고 있던 것과는 달리 (Person.prototype 기억나시죠?)
-
-\_\_proto\_\_속성은 모든 객체가 빠짐없이 가지고 있는 속성입니다.
+prototype 속성은 함수만 가지고 있던 것과는 달리 \_\_proto\_\_속성은 모든 객체가 빠짐없이 가지고 있는 속성입니다.
 
 \_\_proto\_\_는 객체가 생성될 때 ==조상이었던 함수의 Prototype Object==를 가리킵니다.
 
@@ -208,7 +201,7 @@ Prototype Object는 Object에 있는 모든 속성을 사용할 수 있습니다
 
 한 가지 예를 들면 toString 함수가 있겠습니다.
 
-### Prototype과 Class
+### Prototype & Class
 
 ```js
 class ClassObject {}
@@ -216,10 +209,10 @@ var obj = new ClassObject();
 
 console.log(obj)
 /*
-	obj
-		> constructor
-		> __proto__
-			> __proto__ (Object의 prototype) 	
+obj
+  > constructor
+  > __proto__
+    > __proto__ (Object의 prototype) 	
 */
 ```
 
@@ -258,28 +251,16 @@ console.log(obj)
 
 다음을 보시면 ClassObject의 메소드는 prototype 영역으로 들어가는 것을 확인할 수 있습니다.
 
-그러니까 즉, 클래스 내부에 생성하는 함수는 prototype으로 정적으로 설정되는 것입니다.
+그러니까 즉, 클래스 내부에 생성하는 함수는 prototype으로 정적으로 설정
 
 그렇기 때문에 외부에 prototype을 이용해서 생성하는 메소드와 같습니다.
 
-> 흥미로운 것은 클래스 내부에서 선언된 프로토타입 함수와 외부에서 선언된 프로토타입 함수의 속성이 다르다는 점인데요.
-> 내부에서 선언된 프로토타입 함수는 enumerable 속성이 false 이고
-> 외부에서 선언된 프로토타입 함수는 enumerable 속성이 true인 것을 확인 할 수 있습니다.
+> 흥미로운 것은 클래스의 메소드와 외부에서 선언된 프로토타입 함수의 속성이 다르다는 점
+- 내부에서 선언된 클래스 메소드는 enumerable 속성이 'false'
+- 외부에서 선언된 프로토타입 함수는 enumerable 속성이 'true'
 
 ---
 
-**Created by SDM**
+**Created by MoonsCoding**
 
-==작성자 정보==
-
-e-mail :: jm921106@naver.com
-
-github :: https://github.com/jm921106
-
-==도움을 받은글==
-
-[링크1 :: prototype 이해하기 ](https://medium.com/@bluesh55/javascript-prototype-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-f8e67c286b67)
-
-[링크2 :: prototype 이해하기2](http://www.nextree.co.kr/p7323/)
-
-Copyright (c) 2017 Copyright Holder All Rights Reserved.
+e-mail :: jm921106@gmail.com

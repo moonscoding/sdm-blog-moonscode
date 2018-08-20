@@ -1,5 +1,5 @@
-# TITLE (UpperCase)
-## SUB-TITLE
+# Android
+## Intent - Activity 전환
 <div class="pull-right"> 2018.03.dd </div><br>
 
 ---
@@ -7,8 +7,8 @@
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [TITLE (UpperCase)](#title-uppercase)
-	* [SUB-TITLE](#sub-title)
+* [Android](#android)
+	* [Intent - Activity 전환](#intent-activity-전환)
 		* [Intent](#intent)
 		* [Intent 페이지 전환](#intent-페이지-전환)
 		* [Dart & Henson](#dart-henson)

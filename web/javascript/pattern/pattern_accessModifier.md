@@ -11,9 +11,8 @@
 	* [JS, Access Modifier 접근제한자에 대한 고민](#js-access-modifier-접근제한자에-대한-고민)
 		* [01. 접근 제한자](#01-접근-제한자)
 		* [02. private](#02-private)
-		* [03. protected](#03-protected)
-		* [04. Wrapper를 이용한 Protected 구현](#04-wrapper를-이용한-protected-구현)
-		* [용어정리](#용어정리)
+		* [03. private](#03-private)
+		* [04. protected ( Wrapper를 이용한 Protected 구현 )](#04-protected-wrapper를-이용한-protected-구현)
 
 <!-- /code_chunk_output -->
 
@@ -81,11 +80,11 @@ const TobePrivate = function() {
 
 다음과 같이 함수의 스코프를 이용하는 방법, WeakMap의 Key를 은닉하는 방법입니다.
 
-### 03. protected
+### 03. private
 
-자바스크립트는 공식적으로 protected를 지원하지 않습니다.
+자바스크립트는 공식적으로 [private]를 지원하지 않습니다.
 
-하지만 저와 같이 자바스크립트를 이용해 웹 게임을 개발한다면,
+하지만 자바스크립트의 객체속에 변경되지 말아야할 인스턴스 맴버변수가 있다면,
 
 protected는 꼭 필요한 기능일 것입니다.
 
@@ -162,7 +161,7 @@ public 과 protected 는 객체의 property로 추가되며,
 
 private 는 scope 를 이용한 접근만이 가능합니다.
 
-### 04. Wrapper를 이용한 Protected 구현
+### 04. protected ( Wrapper를 이용한 Protected 구현 )
 
 해당방식은 반환되는 객체를 스코프에 저장하고,
 
@@ -226,11 +225,6 @@ Object.prototype.makeProtected = function(obj) {
 		}
 ```
 
-### 용어정리
-```
-
-```
-
 ---
 
 **Created by SuperMoon**
@@ -238,7 +232,5 @@ Object.prototype.makeProtected = function(obj) {
 **출처 : [SuperMoon's Git Blog](https://github.com/jm921106)**
 
 [링크1 :: WeakMap - Class에 사용하기 ](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
-
-[링크2 :: ]()
 
 Copyright (c) 2017 Copyright Holder All Rights Reserved.

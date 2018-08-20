@@ -1,142 +1,18 @@
-# JavaScript Pattern, 세상에 잘 짜여진 코드는 많다.
-## 나만의 protected 구현하기 2
 
-<div class="pull-right"> 문스코딩 - 2018.03.dd </div>
+<div class="pull-right">  업데이트 :: 2018.08.dd </div><br>
 
 ---
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [JavaScript Pattern, 세상에 잘 짜여진 코드는 많다.](#javascript-pattern-세상에-잘-짜여진-코드는-많다)
-	* [나만의 protected 구현하기 2](#나만의-protected-구현하기-2)
-		* [01. 우리가 사용하는 private 문제점들](#01-우리가-사용하는-private-문제점들)
-		* [02. private를 구현하는데 있어 가져야할 목표는 무엇일까요 ?](#02-private를-구현하는데-있어-가져야할-목표는-무엇일까요)
-		* [03. protected plugin](#03-protected-plugin)
-		* [04. 나만의 protected 구현하기 (생성자의 스트림 이용하기)](#04-나만의-protected-구현하기-생성자의-스트림-이용하기)
+* [protected 구현 (생성자의 스트림 이용하기)](#protected-구현-생성자의-스트림-이용하기)
 
 <!-- /code_chunk_output -->
 
-**용어정리**
-```
-    protected :: 클래스 내부에서 보호되는 속성을 말합니다. 상속 받는 내부 클래스에서는 사용이 가능하고, 외부에선 접근이 불가능합니다.
-```
+### protected 구현 (생성자의 스트림 이용하기)
 
-### 01. 우리가 사용하는 private 문제점들
-
-**문제점**
-
-- 입력 할 코드가 너무 많습니다. 수십 또는 수백 개의 모듈을 가지고 있다면 그것은 곧 부담이 될 것입니다.
-- 각 인스턴스에 ID 속성을 저장해야하는데, 이는 선택한 속성 이름에 따라 성가 시거나 잠재적으로 상충됩니다. (WeakMap으로 해결이 가능합니다.)
-- 이 대신 privateStore [this.id] 객체를 사용하면 인스턴스의 프로토 타입에 액세스 할 수 없게됩니다.
-- **비공개 멤버는 다른 범위에서 정의 된 하위 클래스에서 참조 될 수 없습니다. 즉, 멤버를 보호 할 수 없습니다.**
-- 그것은 효율적이지 않습니다.
-    privateStore 객체는 각각의 private 인스턴스 객체에 대한 참조를 보유하기 때문에
-    이러한 객체 중 어느 것도 가비지 수집 될 수 없습니다.
-    공개 인스턴스가 사라지면 해당 개인 속성에 액세스 할 수 없지만 여전히 메모리 공간을 차지하게됩니다.
-
-이러한 단점이 프라이버시를 갖지 않는 것의 단점을 넘어서는 것은 논란의 여지가 있으며 상황에 달려 있습니다.
-그러나 전략 (대략 제로 코드)을 사용하여 보았던 코드의 양을 토대로,
-개발자는이 상용구에 개인 변수를 유출하는 것을 선호한다고 말하고 싶습니다.
-
-### 02. private를 구현하는데 있어 가져야할 목표는 무엇일까요 ?
-
-**지향점**
-
-- private 맴버을 선포하고 액세스하는 방법은 간단하고 편리하며 직관적이어야합니다.
-- 회원이 private 인지 여부는 코드에서 분명해야합니다.
-- private 멤버는 귀하가 선택한 범위 내에서만 액세스 할 수 있어야합니다.
-- 개인 회원은 필요한 경우 public 프로토 타입에 액세스 할 수 있어야합니다.
-- 솔루션은 하위 클래스를 지원해야합니다. 즉 protected 멤버가 가능해야합니다.
-- 런타임시 인스턴스 또는 인스턴스의 프로토 타입을 동적으로 변경하면 개인 구성원이 노출되지 않아야합니다.
-- 솔루션은 메모리 효율적이어야합니다. (WeakMap사용으로 해결이 가능)
-
-### 03. protected plugin
-
-[mozart 이용방법](https://github.com/philipwalton/mozart#building-and-testing)
-
-PrivateParts 키 기능은 개인 멤버의 액세스를 정의 된 범위로만 제한합니다.
-해당 스코프에서만 접근이 가능하기 떄문이죠.
-어떻게 안전하게 액세스를 공유 할 수 있을까요 !?
-
-**일단 원칙은 이렇습니다.**
-
-- 간단한 서브 클래싱.
-- 개인 및 보호 된 메서드 및 속성.
-- 직관적인 수퍼 메서드 호출.
-- 동적 getter 및 setter 생성.
-
-**기본 형태**
-
-- protected :: _
-- private :: __
-
-```js
-var MyConstructor = ctor(function(prototype, _, _protected, __, __private) {
-  // ...
-})
-```
-
-**부모 클래스**
-
-```js
-var ctor = require('mozart');
-
-var Citizen = ctor(function(prototype, _, _protected) {
-
-  // == PUBLIC ==
-
-  prototype.init = function(name, age) {
-    _(this).name = name;
-    _(this).age = age;
-  };
-
-  prototype.vote = function(politician) {
-    if (_(this).allowedToVote()) {
-      console.log(_(this).name + ' voted for ' + politician);
-    } else {
-      throw new Error(_(this).name + ' is not allowed to vote.');
-    }
-  };
-
-  // == PROTECTED ==
-
-  _protected.allowedToVote = function() {
-    return this.age > 18;
-  };
-});
-```
-
-**자식 클래스**
-
-```js
-var Criminal = Citizen.subclass(function(prototype, _, _protected) {
-
-  // 생성자
-  prototype.init = function(name, age, crime) {
-    _(this).crime = crime;
-    prototype.super.init.call(this, name, age);
-  };
-
-  // protected 함수 상속
-  _protected.allowedToVote = function() {
-    return _(this).crime != 'felony'
-      && _protected.super.allowedToVote.call(this);
-  };
-});
-
-var joe = new Criminal('Joe', 27, 'felony');
-
-joe.vote('Obama')   // Throws: Joe is not allowed to vote. (자식 클래스 로직으로 fail 처리됨)
-```
-
-> 다중 상속 지원하나요 ?
-
-해당 방식은 현재 사용하고 있는 MixinBuilder를 이용하기에 적합하지 않습니다.
-
-### 04. 나만의 protected 구현하기 (생성자의 스트림 이용하기)
-
-생성자의 스트립에 protected를 넣어 주면 어떨까요.
+생성자의 스트립에 protected를 넣어 주면 ?
 
 최초로 생성자에 접근하면 \_pretected에 객체를 만들어 상위 클래스로 전달합니다.
 
@@ -220,12 +96,6 @@ new Child(1, 2, 3)
 
 ---
 
-**Created by SuperMoon**
+**Created by MoonsCoding**
 
-**출처 : [SuperMoon's Git Blog](https://github.com/jm921106)**
-
-[링크1 :: https://philipwalton.com/articles/implementing-private-and-protected-members-in-javascript/ ](https://philipwalton.com/articles/implementing-private-and-protected-members-in-javascript/)
-
-[링크2 :: ]()
-
-Copyright (c) 2017 Copyright Holder All Rights Reserved.
+e-mail :: jm921106@gmail.com

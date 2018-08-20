@@ -11,8 +11,6 @@
 	* [Blockly Sample로 Step 이해하기](#blockly-sample로-step-이해하기)
 		* [01. 예제 살펴보기](#01-예제-살펴보기)
 		* [02. initApi](#02-initapi)
-		* [03.](#03)
-		* [용어정리](#용어정리)
 
 <!-- /code_chunk_output -->
 
@@ -167,21 +165,10 @@ initApi의 scope는 캔버스를 조작할 수 있는 영역이여야 합니다.
 
 그래서 **here.move()** 와 같은 방식으로 조작할 수 있어야 합니다.
 
-### 03.
-
-### 용어정리
-```
-
-```
-
 ---
 
 **Created by SuperMoon**
 
 **출처 : [SuperMoon's Git Blog](https://github.com/jm921106)**
-
-[링크1 :: ]()
-
-[링크2 :: ]()
 
 Copyright (c) 2017 Copyright Holder All Rights Reserved.

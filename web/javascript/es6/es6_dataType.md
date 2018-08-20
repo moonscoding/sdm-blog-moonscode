@@ -1,37 +1,19 @@
-# JS ES6 - 필수입니다.
-## ES6 기본 문법 - 자료형
 
-<div class="pull-right"> 문스코딩 - 20178.01.15 </div>
+<div class="pull-right">  업데이트 :: 2018.01.15 </div><br>
 
 ---
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [JS ES6 - 필수입니다.](#js-es6-필수입니다)
-	* [ES6 기본 문법 - 자료형](#es6-기본-문법-자료형)
-		* [01. scope 활용 전략 (var , let 비교)](#01-scope-활용-전략-var-let-비교)
-		* [02. ES6 - const](#02-es6-const)
-		* [03. ES6 - String](#03-es6-string)
-		* [04. Symbol](#04-symbol)
-			* [4.1 심볼이란?](#41-심볼이란)
-			* [4.2 심볼을 이용해서 데이터 private하기](#42-심볼을-이용해서-데이터-private하기)
-			* [4.3 심볼과 객체 조사 (object-inspection)](#43-심볼과-객체-조사-object-inspection)
-			* [4.4 Symbol registry](#44-symbol-registry)
-			* [4.5 심볼과 IE](#45-심볼과-ie)
-		* [05. null & undefined](#05-null-undefined)
+* [var & let](#var-let)
+* [const](#const)
+* [null & undefined](#null-undefined)
 
 <!-- /code_chunk_output -->
 
 
-**용어정리**
-```
-    LITERAL (리터럴) :: 변수를 설정할때 식별자와 할당된 값이 있다. 이중에서 할당된 값을 리터럴이라고 부름
-    SCOPE :: 변수가 선언된 영역
-    CLOSURE :: 클로저는 외부함수 (포함하고 있는)의 변수에 접근할 수 있는 내부 함수를 일컫습니다. 스코프 체인(scope chain)으로 표현되기도 합니다.
-    Symbol (심볼) :: 심볼은 유일한 토큰을 나타내기 위해 새로이 도입한 데이터 타입
-```
-
-### 01. scope 활용 전략 (var , let 비교)
+### var & let
 
 ES6 이전에는 아래와 같이 function 단위의 scope만 존재했습니다.
 따라서, function 안에 있는 지역변수를 먼저 찾고 이후에 scope chain을 따라 전역변수를 찾는 방식이었습니다.
@@ -70,9 +52,9 @@ function home() {
 
 home();
 ```
-let을 사용하게 되면 scope의 범위가 더 지협적으로 변하게 된다.
+let을 사용하게 되면 scope의 범위가 더 지협적으로 변하게 됩니다.
 for문 or if문 안에 let 변수를 사용하게 되면
-function 단위인 var 와 다르게 for문 or if문 밖에서는 인식할 수 없음
+function 단위인 var 와 다르게 for문 or if문 밖에서는 인식할 수 없습니다.
 > 변수의 범위가 작아 더 메모리 소모가 적다는 장점
 
 **closure scope 문제 해결 방법**
@@ -86,7 +68,7 @@ for(let i=0; i<list.length; i++) {
 }
 ```
 
-### 02. ES6 - const
+### const
 
 > const 타입은 변수에 대한 새로운 값 할당이 불가능
 
@@ -143,124 +125,15 @@ console.log(list === list2);
 
 > const는 재할당은 안되지만 배열, 오브젝트 값을 변경하는 것은 가능
 
-
-
-### 03. ES6 - String
-
-```js
-// ES2015 string에 새로운 메소드들
-let str = 'hello world!';
-let matchstr = 'hello';
-console.log(str.startsWith(matchstr));              // true
-console.log(str.endsWith(matchstr));                // false
-console.log("include test", str.includes("world")); // true
-```
-
-
-
-### 04. Symbol
-
-#### 4.1 심볼이란?
-
-심볼은 어떤 값과도 다릅니다.
-
-심볼은 항상 유일, 다른 어떤 심볼과도 일치하지 않습니다. (객체와 유사합니다.)
-
-```js
-var mySymbol = Symbol();
-obj[mySymbol] = "ok!";
-console.log(obj[mySymbol]); // ok!
-```
-
-```js
-const RED = Symbol("The color of a sunset!")
-const ORANGE = Symbol("The color of a sunset!")
-console.log(RED === ORANGE)     // false (모든 심볼은 유일한 값을 가집니다.)
-console.log(typeof RED)         // symbol
-```
-
-심볼안에 들어가는 문자열은 키가 아닌 주석입니다 !
-
-이 문자열은 디버깅을 할때 유용합니다.
-
-심볼값을 console.log()로 찍거나 .toString()을 이용하거나 에러 메세지에서 참조할 경우 이 문자열일 출력됩니다.
-
-> 다른 식별자와 혼동해서 안되는 고유한 식별자가 필요하다면 심볼을 사용하세요 !
-
-#### 4.2 심볼을 이용해서 데이터 private하기
-
-```js
-// 고유한 심볼을 생성
-var isMoving = Symbol("isMoving");
-
-if (element[isMoving]) {
-  smoothAnimations(element);
-}
-element[isMoving] = true;
-```
-element[isMoving]은 심볼을 키로 갖는 속성입니다.
-
-obj.name 과 같은 점을 사용해서 접근할 수 없습니다.
-
-심볼을 키로 갖는 속성은 반드시 []를 이용해서 접근할 수 있습니다.
-
-이미 심볼값을 알고 있는 경우, 심볼을 키로 갖는 속성에 접근하는 것은 쉽습니다,
-
-위의 예제 처럼 element[isMoving], if(isMoving in element) 처럼 속성을 첨조하거나
-
-delete element[isMoving] 처럼 속성을 삭제할 수도 있습니다.
-
-**하지만 이런 모든 행위는 심볼이 스코프 안에 있을때만 가능합니다.**
-
-이런 방식으로 심볼을 간단한 캡슐화 매카니즘으로 사용할 수 있습니다.
-
-어떤 모듈이 스스로 심볼을 만드는 경우 해당 모듈은 해당 심볼을 모든 객체에 적용할 수 있습니다.
-
-다른 코드가 만드는 속성과 전혀 충돌할 걱정을 하지 않아도 됩니다.
-
-#### 4.3 심볼과 객체 조사 (object-inspection)
-
-객체조사란 for-in과 같은 객체 내부를 반복하는 것을 말합니다.
-
-심볼은 충돌을 피하기 위해 만들어 진 것이기 때문에, 객체조사에서 심볼키들은 무시당합니다.
-
-Object.keys(obj)와 Object.getOwnPropertyNames(obj)도 마찬가지입니다.
-
-하지만, **Object.getOwnPropertySymbols(obj)** 와 같은 메소드를 통해 심볼을 참조할 수 있습니다.
-
-**Reflect.ownKeys(obj)** 는 문자열 키(key)와 심볼 키(key)를 모두 리턴합니다.
-
-#### 4.4 Symbol registry
-
-Symbol.for(string)을 호출합니다.
-
-#### 4.5 심볼과 IE
-
-IE는 심볼을 지원하지 않습니다. 그렇기 때문에 심볼을 IE에 어떻게 적용할지 생각해야합니다.
-
-**babel-polyfill을 사용하세요 !**
-
-만약 ES6를 이용하고 있다면 다양한 브라우저 지원을 위해 build 툴을 사용하고 있을 것입니다.
-
-이부분에 babel-polyfill을 사용한다면, ES6에서 생성된 다양한 기능을 사용할 수 있습니다.
-
-
-
-
-### 05. null & undefined
+### null & undefined
 
 null은 프로그래머에게 허용된 데이터 타입 (할당된 값의 텅빈값)
 undefined는 자바스크립트 자체에서 사용 (할당조차 되지 않은 빈값)
 
 > 프로그래머가 undefined를 사용하는 경우는 아직 값이 주어지지 않은 변수의 동작을 고의로 흉내낼때 사용
 
-
 ---
 
-**Created by SuperMoon**
+**Created by MoonsCoding**
 
-**출처 : [SuperMoon's Git Blog](https://github.com/jm921106)**
-
-[링크1 :: 심볼 제대로 이해하기 ](http://hacks.mozilla.or.kr/2015/09/es6-in-depth-symbols/)
-
-Copyright (c) 2017 Copyright Holder All Rights Reserved.
+e-mail :: jm921106@gmail.com

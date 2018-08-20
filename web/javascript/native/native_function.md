@@ -1,32 +1,20 @@
-# JS - 어디까지 알고있나요 ?
-## 나만 몰랐던, Native Function
 
-<div class="pull-right"> 2018.01.24 </div><br>
+<div class="pull-right">  업데이트 :: 2018.01.24 </div><br>
 
 ---
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [JS - 어디까지 알고있나요 ?](#js-어디까지-알고있나요)
-	* [나만 몰랐던, Native Function](#나만-몰랐던-native-function)
-		* [call](#call)
-		* [apply](#apply)
-		* [bind](#bind)
-			* [bind 주의점](#bind-주의점)
-		* [func.length](#funclength)
-		* [func.name](#funcname)
-		* [arguments](#arguments)
+* [call](#call)
+* [apply](#apply)
+* [bind](#bind)
+	* [bind 주의점](#bind-주의점)
+* [func.length](#funclength)
+* [func.name](#funcname)
+* [arguments](#arguments)
 
 <!-- /code_chunk_output -->
-
-
-**용어정리**
-```
-    call  :: this와 매개변수를 설정할 수 있는 함수입니다.
-    apply :: this와 매개변수(배열)을 설정할 수 있는 함수입니다. (call과 역할은 같습니다.)
-    bind  :: this를 1개로 설정하는 함수입니다. (call과 apply가 동작하지 않습니다.)
-```
 
 ### call
 
@@ -159,19 +147,10 @@ arguments라는 기능을 가지고 있지만
 > 자바스크립트는 Function과 Prototype을 기본으로 동작하는 언어입니다.
 > Function은 확실히 숙지해 두는 것이 자바스크립트 개발에 많은 도움이 될 것입니다.
 
+
+
 ---
 
+**Created by MoonsCoding**
 
-**Created by SDM**
-
-==작성자 정보==
-
-e-mail :: jm921106@naver.com
-
-github :: https://github.com/jm921106
-
-==도움을 받은글==
-
-[링크1 :: MDN - Function 관련 정리 ](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function)
-
-Copyright (c) 2017 Copyright Holder All Rights Reserved.
+e-mail :: jm921106@gmail.com

@@ -1,12 +1,31 @@
 # MONGO - NoSQL의 선두
 
-#### MongoDB 데이터 연산자 정리
+## MongoDB 데이터 연산자 정리
 
 <div class="pull-right"> 문스코딩 - 2017.12.26 </div>
 
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+* [MONGO - NoSQL의 선두](#mongo-nosql의-선두)
+	* [MongoDB 데이터 연산자 정리](#mongodb-데이터-연산자-정리)
+		* [01. 산술 연산자 ( \$add / \$sum / \$avg / \$abs / \$ceil )](#01-산술-연산자-add-sum-avg-abs-ceil)
+		* [02. 논리 연산자 ( \$and / \$or )](#02-논리-연산자-and-or)
+			* [\$allElementTrue / \$anyElementsTrue](#allelementtrue-anyelementstrue)
+		* [03. 배열 연산자](#03-배열-연산자)
+			* [\$addToSet](#addtoset)
+			* [\$arrayElemAt](#arrayelemat)
+			* [\$arrayToObject <?>](#arraytoobject)
+		* [04. \$ne vs \$nin](#04-ne-vs-nin)
+			* [\$ne (NOT EQUAL)](#ne-not-equal)
+			* [\$nin (NOT IN)](#nin-not-in)
+
+<!-- /code_chunk_output -->
+
 ---
 
-##### 01. 산술 연산자 ( \$add / \$sum / \$avg / \$abs / \$ceil )
+### 01. 산술 연산자 ( \$add / \$sum / \$avg / \$abs / \$ceil )
 
 산술 연산자 종합
 ```
@@ -25,9 +44,9 @@
     # 올림
     { $ceil : "num1" }
 ```
-##### 02. 논리 연산자 ( \$and / \$or )
+### 02. 논리 연산자 ( \$and / \$or )
 
-###### \$allElementTrue / \$anyElementsTrue
+#### \$allElementTrue / \$anyElementsTrue
 
 모든 상태 True 확인 연산자
 ```
@@ -49,9 +68,9 @@
 ```
 
 
-##### 03. 배열 연산자
+### 03. 배열 연산자
 
-###### \$addToSet
+#### \$addToSet
 
 배열 추가 연산자
 
@@ -64,7 +83,7 @@
     }
 ```
 
-###### \$arrayElemAt
+#### \$arrayElemAt
 
 인덱스 결과 리턴 연산자 => array[idx]
 ```
@@ -72,10 +91,24 @@
 ```
 
 
-###### \$arrayToObject <?>
+#### \$arrayToObject <?>
+
+### 04. \$ne vs \$nin
+
+#### \$ne (NOT EQUAL)
+
+만약 단일값을 비교하기위해서라면 'NOT EQUAL' 연산자를 사용합니다.
 
 ```
+db.myCollection.find({'blocked.user': {$ne: 11}});
+```
 
+#### \$nin (NOT IN)
+
+제외할 데이터가 여러개라면 'NOT IN' 연산자를 사용해야합니다.
+
+```
+db.myCollection.find({'blocked.user': {$nin: [11, 12, 13]}});
 ```
 
 

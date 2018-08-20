@@ -14,7 +14,6 @@
 		* [3. createNativeFunction vs createAsyncFunction](#3-createnativefunction-vs-createasyncfunction)
 		* [4. nativeToPseudo vs pseudoToNative](#4-nativetopseudo-vs-pseudotonative)
 			* [nativeToPseudo 문제점](#nativetopseudo-문제점)
-		* [용어정리](#용어정리)
 
 <!-- /code_chunk_output -->
 
@@ -140,19 +139,10 @@ nativeToPseudo 함수를 사용하면 자바스크립트에서 사용하는 객�
 
 그렇기 때문에 분기가 되는 새로운 nativeToPseudo를 만들어 처리하도록 합니다.
 
-### 용어정리
-```
-
-```
-
 ---
 
-**Created by SuperMoon**
+**Created by SDM**
 
 **출처 : [SuperMoon's Git Blog](https://github.com/jm921106)**
-
-[링크1 :: ]()
-
-[링크2 :: ]()
 
 Copyright (c) 2017 Copyright Holder All Rights Reserved.

@@ -1,42 +1,29 @@
-# JS - 어디까지 알고있나요 ?
-## 내가 몰랐던 프로퍼티(Property)
-<div class="pull-right"> 2018.03.16 </div><br>
+
+<div class="pull-right">  업데이트 :: 2018.03.16 </div><br>
 
 ---
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [JS - 어디까지 알고있나요 ?](#js-어디까지-알고있나요)
-	* [내가 몰랐던 프로퍼티(Property)](#내가-몰랐던-프로퍼티property)
-		* [프로퍼티(Property)?](#프로퍼티property)
-		* [프로퍼티(Property) 속성값 이해하기 1 (Value, Get, Set)](#프로퍼티property-속성값-이해하기-1-value-get-set)
-			* [value](#value)
-			* [get & set](#get-set)
-		* [프로퍼티(Property) 속성값 이해하기 2 (Enumerable, Writable, Configurable)](#프로퍼티property-속성값-이해하기-2-enumerable-writable-configurable)
-			* [Enumerable (열거 할 수 있는)](#enumerable-열거-할-수-있는)
-			* [Wriatable (쓸 수 있는)](#wriatable-쓸-수-있는)
-			* [Configurable (구성할 수 있는)](#configurable-구성할-수-있는)
-		* [Object 메소드, defineProperty & getOwnPropertyDescriptor](#object-메소드-defineproperty-getownpropertydescriptor)
-			* [defineProperty](#defineproperty)
-			* [getOwnPropertyDescriptor](#getownpropertydescriptor)
-			* [get&set의 getOwnPropertyDescriptor](#getset의-getownpropertydescriptor)
-		* [Enumerable 자세히 살펴보기](#enumerable-자세히-살펴보기)
-		* [Wriatable 자세히 살펴보기](#wriatable-자세히-살펴보기)
-		* [Configurable 자세히 살펴보기](#configurable-자세히-살펴보기)
-		* [클래스 내부 함수는 Property인가?](#클래스-내부-함수는-property인가)
+* [프로퍼티(Property)](#프로퍼티property)
+* [속성값 이해하기](#속성값-이해하기)
+	* [value](#value)
+	* [get & set](#get-set)
+	* [enumerable (열거 할 수 있는)](#enumerable-열거-할-수-있는)
+	* [wriatable (쓸 수 있는)](#wriatable-쓸-수-있는)
+	* [configurable (구성할 수 있는)](#configurable-구성할-수-있는)
+* [Property 속성설정하기](#property-속성설정하기)
+	* [defineProperty](#defineproperty)
+	* [getOwnPropertyDescriptor](#getownpropertydescriptor)
+	* [get&set의 getOwnPropertyDescriptor](#getset의-getownpropertydescriptor)
+* [클래스 메소드는 Prototype](#클래스-메소드는-prototype)
 
 <!-- /code_chunk_output -->
 
-### 프로퍼티(Property)?
+### 프로퍼티(Property)
 
-=='Property'== 는 ==속성== 이란 뜻으로써,
-
-자바스크립트에서는 객체 내부의 속성을 의미합니다.
-
-자바스크립트의 Property는 다 아는 것 같으면서도 모르는 부분인 것 같습니다.
-
-이번 글을 통해서 자바스크립트의 프로퍼티(Property)를 이해해 보도록 하겠습니다.
+=='Property'== 는 ==속성== 이란 뜻으로, JS에서는 객체 내부의 속성을 의미합니다.
 
 ```js
 // 객체 생성
@@ -58,7 +45,7 @@ delete ob.b;
 ob.b; // => undefined
 ```
 
-### 프로퍼티(Property) 속성값 이해하기 1 (Value, Get, Set)
+### 속성값 이해하기
 
 Property는 총 6가지의 속성을 가지고 있습니다.
 
@@ -77,7 +64,7 @@ value는 일단 프로퍼티의 속성값을 말합니다.
 
 value는 단지 값을 의미할뿐 다른 기능은 없습니다.
 
-value에 대한 접근 권한자를 설정하기 위해선 아래서 설명할 ==Enumerable, Writable, Configurable==를 이용할 수 있습니다.
+value에 대한 접근 권한자를 설정하기 위해서  ==Enumerable, Writable, Configurable==를 이용할 수 있습니다.
 
 #### get & set
 
@@ -89,15 +76,11 @@ get & set 은 ES6에서 부터 나오기 시작한 문법으로
 
 get & set 자체로 writable의 역할을 가지고 있기 때문입니다.
 
+#### enumerable (열거 할 수 있는)
 
+만약 해당 property가 열거할 수 있는 속성이라면,
 
-### 프로퍼티(Property) 속성값 이해하기 2 (Enumerable, Writable, Configurable)
-
-이번엔 다음 3가지 속성에 대해서 이해해 보도록 하겠습니다.
-
-#### Enumerable (열거 할 수 있는)
-
-만약 해당 property가 열거할 수 있는 속성이라면, ==for...in...== 루프를 사용하여 그것들에 접근할 수 있습니다.
+==for...in...== 루프를 사용하여 그것들에 접근할 수 있습니다.
 
 또한 개체의 열거 가능한 속성의 키는 ==Object.keys== 메서드를 이용해 반환 받을 수 있습니다.
 
@@ -105,23 +88,113 @@ get & set 자체로 writable의 역할을 가지고 있기 때문입니다.
 
 Object속성의 기본 property가 for...in... 루프에 반환되지 않는 이유는 해당 속성이 false이기 때문입니다.
 
-#### Wriatable (쓸 수 있는)
+```js
+var ob = {a:1, b:2};
+
+ob.c = 3;
+
+Object.defineProperty(ob, 'd', {
+  value: 4,
+  enumerable : false
+});
+
+// enumerable속성은 조회가능여부와 엄연히 다릅니다.
+ob.d; // => 4
+
+// enumerable속성은 열거가능여부와 관련이 있습니다.
+for( var key in ob ) console.log( ob[key] );
+// Console will print out
+// 1, 2, 3
+
+Object.keys( ob );  // => ["a", "b", "c"]
+
+JSON.stringify( ob ); // => "{a:1,b:2,c:3}"
+
+// enumerable속성은 조회가능여부와 엄연히 다릅니다.
+ob.d; // => 4
+```
+
+#### wriatable (쓸 수 있는)
 
 만약 property가 쓸 수 있는 속성이라면, 값을 수정할 수 있습니다.
 
 obj.a = 10 과같이 수정할 수 있습니다.
 
-#### Configurable (구성할 수 있는)
+- 원시 속성
+
+```js
+var ob = {a: 1};
+Object.defineProperty( ob, 'B', {value: 2, writable:false} );
+
+ob.B = 6; // => 6
+ob.B = 1000; // => 1000
+
+// Wriatable속성은 값을 수정하는 것과 관련이 있습니다.
+ob.B; // => 2;
+
+function updateB(){
+  'use strict';
+  ob.B = 4; // Error
+}
+updateB(); // Error
+```
+
+- 참소 속성
+
+```js
+var ob = {a: 1};
+Object.defineProperty( ob, 'OB', {value: {c:3}, writable:false} );
+
+// Wriatable속성을 Object에 줬다면 객체 내부 수정은 가능합니다.
+ob.OB.c = 4;
+ob.OB.d = 5;
+ob.OB; // => {c:4, d:5}
+
+// Wriatable속성을 Object에 줬다면 객체의 변경은 되지 않습니다.
+ob.OB = 'hola';
+ob.OB; // => {c:4, d:5}
+```
+
+#### configurable (구성할 수 있는)
 
 구성 가능한 property는 삭제 연산자를 사용하여 제거 할 수있는 여부를 의미합니다.
 
 > delete obj.a; 다음 명령어를 사용할 수 있는가 여부를 나타냅니다.
 
-### Object 메소드, defineProperty & getOwnPropertyDescriptor
+```js
+var ob = {};
+Object.defineProperty(ob, 'a', { configurable:false, writable:true });
+
+// throws a TypeError (이미 정의된 객체의 속성을 변경할 수 없습니다.)
+Object.defineProperty(ob, 'a', { enumerable: true });
+
+// throws a TypeError (이미 정의된 객체의 속성을 변경할 수 없습니다.)
+Object.defineProperty(ob, 'a', { value: 12 });  
+
+// This is allowed!!! (이부분만 가능합니다. 수정가능 > 수정불가)     
+Object.defineProperty(ob, 'a', { writable: false });  
+
+// throws a TypeError (수정불가가 된 후로는 처리할 수 있습니다.)
+Object.defineProperty(ob, 'a', { writable: true });   
+```
+
+```js
+var ob = {};
+
+Object.defineProperty( ob, 'a', {configurable: true, value: 1} );
+delete ob.a; // => true
+ob;          // => {}
+
+Object.defineProperty( ob, 'a', {configurable: false, value: 1} );
+delete ob.a; // => false
+ob;          // => {a:1}
+```
+
+### Property 속성설정하기
 
 #### defineProperty
 
-앞서 설명한 속성들을 추가해서 property를 만들수 있습니다.
+앞서 설명한 속성들을 defineProperty를 통해서 만들수 있습니다.
 
 ```js
 Object.defineProperty( obj, 'c', {
@@ -149,9 +222,7 @@ Object.getOwnPropertyDescriptor(obj, 'c');
 
 #### get&set의 getOwnPropertyDescriptor
 
-그럼 우리가 지금까지 사용했던 기능을 이용해서
-
-get&set이 속성은 어떻게 구성되는지 살펴보겠습니다.
+그럼 우리가 지금까지 사용했던 기능을 이용해서 get&set이 속성은 어떻게 구성되는지 살펴보겠습니다.
 
 ```js
 // 다양한 타입의 속성을 만들어 보겠습니다.
@@ -188,116 +259,19 @@ Object.getOwnPropertyDescriptor(obj, 'd');
 Object.getOwnPropertyDescriptor(obj, 'e');
 // {value: "e", writable: false, enumerable: false, configurable: false}
 ```
-> enumerable, configurable, writable은 속성은 기본적으로 true로 설정된 것을 볼 수 있습니다.
 
-> 반대로, defineProperty를 이용해서 변수를 정의할 때, 기본값은 모두 false입니다.
+- enumerable, configurable, writable의 기본속성은 'true'
+- 반대로, defineProperty를 이용해서 변수를 정의할 때, 기본값 'false'
+- get&set의 enumerable과 configurable의 기본값은 'true'
+- get&set의 writable 속성은 없음
 
-> get&set의 enumerable과 configurable의 기본값은 true입니다.
-
-> get&set을 이용하면 writable 속성은 생성되지 않습니다.
-
-### Enumerable 자세히 살펴보기
-
-```js
-var ob = {a:1, b:2};
-
-ob.c = 3;
-
-Object.defineProperty(ob, 'd', {
-  value: 4,
-  enumerable : false
-});
-
-// enumerable속성은 조회가능여부와 엄연히 다릅니다.
-ob.d; // => 4
-
-// enumerable속성은 열거가능여부와 관련이 있습니다.
-for( var key in ob ) console.log( ob[key] );
-// Console will print out
-// 1
-// 2
-// 3
-
-Object.keys( ob );  // => ["a", "b", "c"]
-
-JSON.stringify( ob ); // => "{a:1,b:2,c:3}"
-
-// enumerable속성은 조회가능여부와 엄연히 다릅니다.
-ob.d; // => 4
-```
-
-### Wriatable 자세히 살펴보기
-
-> Primitive 속성
-
-```js
-var ob = {a: 1};
-Object.defineProperty( ob, 'B', {value: 2, writable:false} );
-
-ob.B = 6; 	 // => 6
-ob.B = 1000; // => 1000
-
-// Wriatable속성은 값을 수정하는 것과 관련이 있습니다.
-ob.B; => 2;
-
-function updateB(){
-  'use strict';
-  ob.B = 4; // Error
-}
-
-updateB(); // Error
-```
-
-> Object 속성
-
-```js
-var ob = {a: 1};
-Object.defineProperty( ob, 'OB', {value: {c:3}, writable:false} );
-
-// Wriatable속성을 Object에 줬다면 객체 내부 수정은 가능합니다.
-ob.OB.c = 4;
-ob.OB.d = 5;
-ob.OB; // => {c:4, d:5}
-
-// Wriatable속성을 Object에 줬다면 객체의 변경은 되지 않습니다.
-ob.OB = 'hola';
-ob.OB; // => {c:4, d:5}
-```
-
-### Configurable 자세히 살펴보기
-
-```js
-var ob = {};
-Object.defineProperty(ob, 'a', {configurable:false, writable:true} );
-Object.defineProperty(ob, 'a', { enumerable: true }); // throws a TypeError (이미 정의된 객체의 속성을 변경할 수 없습니다.)
-Object.defineProperty(ob, 'a', { value: 12 });        // throws a TypeError (이미 정의된 객체의 속성을 변경할 수 없습니다.)
-Object.defineProperty(ob, 'a', { writable: false });  // This is allowed!!! (이부분만 가능합니다. 수정가능 > 수정불가)
-Object.defineProperty(ob, 'a', { writable: true });   // throws a TypeError (수정불가가 된 후로는 처리할 수 있습니다.)
-```
-
-```js
-var ob = {};
-
-Object.defineProperty( ob, 'a', {configurable: true, value: 1} );
-ob;          // => {a:1}
-delete ob.a; // => true
-ob;          // => {}
-
-Object.defineProperty( ob, 'a', {configurable: false, value: 1} );
-ob;          // => {a:1}
-delete ob.a; // => false
-ob;          // => {a:1}
-```
-
-### 클래스 내부 함수는 Property인가?
+### 클래스 메소드는 Prototype
 
 > 클래스에 선언하는 함수들은 property가 아니다 !?
 
-ES6가 생기면서 Class단위 개발을 진행할 수있게 되었는데요.
+ES6가 생기면서 Class단위 개발을 진행할 수있게 되었는데,
 
 일단 Class단위 개발이라고 하더라도 자바스크립트는 프로토타입단위의 언어입니다
-
-[자바스크립트 프로토타입관련 글 살펴보기]()
 
 ```js
 class Test {
@@ -326,21 +300,9 @@ Object.getOwnPropertyDescriptor(Object.getPrototypeOf(t), 'funcA');
 
 참고하고 있는 prototype을 찾아가기 때문에 funcA를 조회할 수 있습니다.
 
+
 ---
 
+**Created by MoonsCoding**
 
-**Created by SDM**
-
-==작성자 정보==
-
-e-mail :: jm921106@naver.com
-
-github :: https://github.com/jm921106
-
-==도움을 받은글==
-
-[링크1 :: Property 속성에 대해 자세히 정리된 글](http://arqex.com/967/javascript-properties-enumerable-writable-configurable)
-
-[링크2 :: MDN - Object 메소드 관련글](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
-
-Copyright (c) 2017 Copyright Holder All Rights Reserved.
+e-mail :: jm921106@gmail.com

@@ -1,5 +1,5 @@
-# TITLE (UpperCase)
-## SUB-TITLE
+# Android
+## Dialog
 <div class="pull-right">  업데이트 :: 2018.04.dd </div><br>
 
 ---
@@ -7,23 +7,35 @@
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [TITLE (UpperCase)](#title-uppercase)
-	* [SUB-TITLE](#sub-title)
-		* [01. dialog 내장](#01-dialog-내장)
-		* [02. dialog 커스텀](#02-dialog-커스텀)
+* [Android](#android)
+	* [Dialog](#dialog)
+		* [들어가기전에](#들어가기전에)
+		* [01. AlertDialog](#01-alertdialog)
+			* [java](#java)
+		* [02.  Custom Dialog 만들기](#02-custom-dialog-만들기)
+			* [xml](#xml)
+			* [java](#java-1)
 		* [03.](#03)
 		* [용어정리](#용어정리)
 
 <!-- /code_chunk_output -->
 
 
+### 들어가기전에
 
-### 01. dialog 내장
+Dialog와 AlertDialog의 차이를 알아야 합니다.
+
+이 둘은 Dialog > AlertDialog 과 같은 상속 구조를 같습니다.
+
+지극히 특별한 경우가 아니랄면 AlertDialog로 대부분의 Dialog를 만들 수 있습니다.
+
+### 01. AlertDialog
+
+#### java
 
 ```java
 public void showDialog() {
-    AlertDialog.Builder alert = new AlertDialog.Builder(this);
-
+   AlertDialog.Builder alert = new AlertDialog.Builder(this);
    alert.setTitle("Title");
    alert.setMessage("Message");
 
@@ -32,24 +44,35 @@ public void showDialog() {
    final EditText edtContents = new EditText(this);
    alert.setView(edtTitle);
    alert.setView(edtContents);
-
    alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
        public void onClick(DialogInterface dialog, int whichButton) {
            // Do something with value!
        }
    });
-
    alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
        public void onClick(DialogInterface dialog, int whichButton) {
            // Canceled.
        }
    });
-
    alert.show();
 }
 ```
 
-### 02. dialog 커스텀
+- setTitle
+- setMessage
+- setView
+- setPositiveButton
+- setNegativeButton
+
+### 02.  Custom Dialog 만들기
+
+#### xml
+
+```
+
+```
+
+#### java
 
 ```java
 AlertDialog.Builder builder = new AlertDialog.Builder(this);

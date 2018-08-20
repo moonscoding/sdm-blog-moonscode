@@ -97,13 +97,15 @@ function appendCanvasDom(canvasWrapper, domId, w, h, z, p) {
   // [#] CANVAS_DOM
   const CANVAS_DOM = document.createElement('div');
   CANVAS_DOM.setAttribute("id", domId);
-  CANVAS_DOM.style.position = "absolute";
+	CANVAS_DOM.style['visibility'] = "hidden";
+  CANVAS_DOM.style['position'] = "absolute";
   CANVAS_DOM.style['z-index'] = z;
-  CANVAS_DOM.style.width = w + "px";
-  CANVAS_DOM.style.height = h + "px";
-  CANVAS_DOM.style.padding = p + "px";
+  CANVAS_DOM.style['width'] = w + "px";
+  CANVAS_DOM.style['height'] = h + "px";
+  CANVAS_DOM.style['padding'] = p + "px";
 
-  canvasWrapper.appendChild(CANVAS_DOM);
+  // [#] 제일 앞에서부터 추가해야함
+  canvasWrapper.insertBefore(CANVAS_DOM, canvasWrapper.firstChild);
 
   return CANVAS_DOM;
 }
@@ -114,6 +116,8 @@ var createjsDomObject = new createjs.DOMElement(DOM_ID);
 ```
 
 - appendCanvasDom 메소드를 사용하면 캔버스 위치에 (0,0) 위치에 DOM을 추가할수 있습니다.
+
+> 주의 > 캔버스를 재시작하면 Dom 정리를 따로 해줘야 합니다.
 
 ---
 

@@ -9,14 +9,9 @@
 
 * [JS interpreter, 어디에 쓰는 물건일까요 ?](#js-interpreter-어디에-쓰는-물건일까요)
 	* [Blockly Sample로 Async 이해하기](#blockly-sample로-async-이해하기)
-		* [01.](#01)
-		* [02.](#02)
-		* [03.](#03)
-		* [용어정리](#용어정리)
 
 <!-- /code_chunk_output -->
 
-### 01.
 
 ```js
 var demoWorkspace = Blockly.inject('blocklyDiv',
@@ -149,23 +144,10 @@ demoWorkspace.addChangeListener(function(event) {
 });
 ```
 
-### 02.
-
-### 03.
-
-### 용어정리
-```
-
-```
-
 ---
 
-**Created by SuperMoon**
+**Created by SDM**
 
 **출처 : [SuperMoon's Git Blog](https://github.com/jm921106)**
-
-[링크1 :: ]()
-
-[링크2 :: ]()
 
 Copyright (c) 2017 Copyright Holder All Rights Reserved.

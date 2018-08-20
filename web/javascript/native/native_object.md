@@ -1,32 +1,30 @@
-# JS - 어디까지 알고있나요 ?
-## 오브젝트(Object) 자세히 알기
-<div class="pull-right"> 2018.03.18 </div><br>
+
+
+<div class="pull-right">  업데이트 :: 2018.03.18 </div><br>
 
 ---
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [JS - 어디까지 알고있나요 ?](#js-어디까지-알고있나요)
-	* [오브젝트(Object) 자세히 알기](#오브젝트object-자세히-알기)
-		* [01. Object](#01-object)
-		* [02. Object Native 메소드 ==(property)==](#02-object-native-메소드-property)
-			* [getOwnPropertyDescriptor](#getownpropertydescriptor)
-			* [defineProperty](#defineproperty)
-			* [getOwnPropertyNames](#getownpropertynames)
-			* [getOwnPropertySymbols](#getownpropertysymbols)
-			* [assign](#assign)
-			* [is](#is)
-			* [keys & values & entries](#keys-values-entries)
-			* [preventExtensions & isExtensible](#preventextensions-isextensible)
-			* [seal & isSealed](#seal-issealed)
-			* [freeze & isFrozen](#freeze-isfrozen)
-		* [03. Object Native 메소드 ==(prototype)==](#03-object-native-메소드-prototype)
-			* [getPrototypeOf](#getprototypeof)
-			* [setPrototypeOf](#setprototypeof)
-			* [create](#create)
-			* [\__defineGetter__ & \__defineSetter__](#__definegetter__-__definesetter__)
-			* [\__lookupGetter__ & \__lookupSetter__](#__lookupgetter__-__lookupsetter__)
+* [01. Object](#01-object)
+* [02. Object Native 메소드 ==(property)==](#02-object-native-메소드-property)
+	* [getOwnPropertyDescriptor](#getownpropertydescriptor)
+	* [defineProperty](#defineproperty)
+	* [getOwnPropertyNames](#getownpropertynames)
+	* [getOwnPropertySymbols](#getownpropertysymbols)
+	* [assign](#assign)
+	* [is](#is)
+	* [keys & values & entries](#keys-values-entries)
+	* [preventExtensions & isExtensible](#preventextensions-isextensible)
+	* [seal & isSealed](#seal-issealed)
+	* [freeze & isFrozen](#freeze-isfrozen)
+* [03. Object Native 메소드 ==(prototype)==](#03-object-native-메소드-prototype)
+	* [getPrototypeOf](#getprototypeof)
+	* [setPrototypeOf](#setprototypeof)
+	* [create](#create)
+	* [\__defineGetter__ & \__defineSetter__](#__definegetter__-__definesetter__)
+	* [\__lookupGetter__ & \__lookupSetter__](#__lookupgetter__-__lookupsetter__)
 
 <!-- /code_chunk_output -->
 
@@ -321,18 +319,9 @@ obj.__defineSetter__(prop, func)
 
 ==Deprecated==
 
+
 ---
 
-**Created by SDM**
+**Created by MoonsCoding**
 
-==작성자 정보==
-
-e-mail :: jm921106@naver.com
-
-github :: https://github.com/jm921106
-
-==도움을 받은글==
-
-[링크1 :: MDN - Object 관련 정리 ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-
-Copyright (c) 2017 Copyright Holder All Rights Reserved.
+e-mail :: jm921106@gmail.com

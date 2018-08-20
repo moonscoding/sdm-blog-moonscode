@@ -12,6 +12,7 @@
 		* [01. XML 만들기](#01-xml-만들기)
 		* [02. app:menu](#02-appmenu)
 		* [03. app:headerLayout](#03-appheaderlayout)
+		* [04. 연동하기](#04-연동하기)
 
 <!-- /code_chunk_output -->
 
@@ -117,6 +118,7 @@ app:headerLayout 속성으로 추가할 수 있습니다.
 ```
 
 
+### 04. 연동하기
 
 ---
 

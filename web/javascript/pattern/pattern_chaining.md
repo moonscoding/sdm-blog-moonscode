@@ -1,22 +1,20 @@
-# JavaScript Pattern, 세상에 잘 짜여진 코드는 많다.
-## 깔끔한 메소드 진행, Chaining Pattern
 
-<div class="pull-right"> 문스코딩 - 2018.03.07 </div>
+
+<div class="pull-right">  업데이트 :: 2018.03.07 </div><br>
 
 ---
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [JavaScript Pattern, 세상에 잘 짜여진 코드는 많다.](#javascript-pattern-세상에-잘-짜여진-코드는-많다)
-	* [깔끔한 메소드 진행, Chaining Pattern](#깔끔한-메소드-진행-chaining-pattern)
-		* [01. Chaining Pattern이란](#01-chaining-pattern이란)
-		* [02. Method Chaining의 예](#02-method-chaining의-예)
-		* [03. 비교하기](#03-비교하기)
-		* [04. 사용하기](#04-사용하기)
-		* [05 결론](#05-결론)
+* [01. Chaining Pattern이란](#01-chaining-pattern이란)
+* [02. Method Chaining의 예](#02-method-chaining의-예)
+* [03. 비교하기](#03-비교하기)
+* [04. 사용하기](#04-사용하기)
+* [05. 결론](#05-결론)
 
 <!-- /code_chunk_output -->
+
 
 ### 01. Chaining Pattern이란
 
@@ -127,7 +125,7 @@ DBConnector.prototype.connect = function(){
 dbconn.host('localhost').port(80).user('saltfactory').password('password').connect();  
 ```
 
-### 05 결론
+### 05. 결론
 
 체이닝 패턴은 자바스크립트에서만 사용할 수 있는 패턴은 아닙니다.
 
@@ -141,14 +139,9 @@ dbconn.host('localhost').port(80).user('saltfactory').password('password').conne
 
 그리고 자바스크립트의 많은 라이브러리들이 체이닝 패턴을 지원하고 있습니다.
 
+
 ---
 
-**Created by SuperMoon**
+**Created by MoonsCoding**
 
-**출처 : [SuperMoon's Git Blog](https://github.com/jm921106)**
-
-[링크1 :: 체이닝패턴 ](http://blog.saltfactory.net/javascript-method-chaining-pattern/)
-
-[링크2 :: ]()
-
-Copyright (c) 2017 Copyright Holder All Rights Reserved.
+e-mail :: jm921106@gmail.com

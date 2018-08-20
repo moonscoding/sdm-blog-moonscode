@@ -1,46 +1,30 @@
-# JavaScript Pattern, 세상에 잘 짜여진 코드는 많다.
-## 나만의 protected 구현하기 2
 
-<div class="pull-right"> 문스코딩 - 2018.03.dd </div>
+<div class="pull-right">  업데이트 :: 2018.03.12 </div><br>
 
 ---
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [JavaScript Pattern, 세상에 잘 짜여진 코드는 많다.](#javascript-pattern-세상에-잘-짜여진-코드는-많다)
-	* [나만의 protected 구현하기 2](#나만의-protected-구현하기-2)
-		* [나만의 Protected 구현하기 (Wrapper 이용하기)](#나만의-protected-구현하기-wrapper-이용하기)
-		* [모든 클래스에 해당 Wrapper 적용하기](#모든-클래스에-해당-wrapper-적용하기)
-		* [어떻게 생성자의 마지막 나가는 타이밍을 알 수 있을까요 ?](#어떻게-생성자의-마지막-나가는-타이밍을-알-수-있을까요)
-		* [용어정리](#용어정리)
+* [Protected 구현하기 (Wrapper 이용하기)](#protected-구현하기-wrapper-이용하기)
+* [Wrapper 적용하기](#wrapper-적용하기)
+* [생성자가 반환됨을 알 수 있을까요 ?](#생성자가-반환됨을-알-수-있을까요)
 
 <!-- /code_chunk_output -->
 
 
-
-### 나만의 Protected 구현하기 (Wrapper 이용하기)
+### Protected 구현하기 (Wrapper 이용하기)
 
 우리는 명시적으로 '\_' 접두사를 사용해서 private를 표현하곤 합니다.
 
 하지만 해당 방식은 불안정하고 완벽하지 않습니다.
 
-그래서 이번에 구현할 방법은,
-
-이번에 구현할 방법은 클래스를 원래 방식대로 구현하고 마지막에 wrapper() 메소드를 이용해
-
-protected를 감춰버리는 방법입니다.
+그래서 클래스를 원래 방식대로 구현하고 마지막에 wrapper() 메소드를 이용해 protected를 감춰버리는 방법입니다.
 
 코드를 먼저 보겠습니다.
 
 ```js
-/**
- * getProtected
- *
- * 다음 함수는 '_' 접두사를 가지고 있는 함수를 숨기고,
- * 'public'한 속성과 메소드만을 property로 만들어 반환하는 함수입니다.
- * */
- function getProtected(obj) {
+function getProtected(obj) {
 
 	 let scope = obj;    // [#] 스코프 저장소
 	 let result = {};    // [#] protected 객체
@@ -141,14 +125,13 @@ protected를 감춰버리는 방법입니다.
  }
 ```
 
-> 해당 방식은 '\_' 접두사를 사용하고 있는 public한 속성들을
-> 모두 private를 요청한 것으로 인식해서 function 안에 scope에 감춘후에
-> '\_' 접두사를 가지지 않는 속성만 return하는 방식입니다.
-> 오브젝트에 적용시켜 모든 객체가 getProtected 메소드를 갖게 할 수도 있습니다.
+해당 방식은 '\_' 접두사를 사용하고 있는 public한 속성들을 모두 private를 요청한 것으로 인식해서 function 안에 scope에 감춘후에 '\_' 접두사를 가지지 않는 속성만 return하는 방식입니다.
 
-일단 Wrapping 하는 것이기 때문에 객체가 많다면, 성능상 문제가 있을수 있습니다.
+오브젝트에 적용시켜 모든 객체가 getProtected 메소드를 갖게 할 수도 있습니다.
 
-### 모든 클래스에 해당 Wrapper 적용하기
+하지만 해당 메소드는 새로운 객체를 생성해서 반환하는 것이기 때문에 객체 생성에 대한 메모리 소모가 있을 수 있습니다.
+
+### Wrapper 적용하기
 
 ```js
 class ToBeProtected {
@@ -164,22 +147,12 @@ class ToBeProtected {
 > 다음과 같이 사용한다면 클래스를 사용하는 상위사용자는
 > 개발자가 의도한 Protected 속성만 가진 객체를 받게 될 것입니다.
 
-### 어떻게 생성자의 마지막 나가는 타이밍을 알 수 있을까요 ?
+### 생성자가 반환됨을 알 수 있을까요 ?
 
-
-### 용어정리
-```
-
-```
+// TODO
 
 ---
 
-**Created by SuperMoon**
+**Created by MoonsCoding**
 
-**출처 : [SuperMoon's Git Blog](https://github.com/jm921106)**
-
-[링크1 :: ]()
-
-[링크2 :: ]()
-
-Copyright (c) 2017 Copyright Holder All Rights Reserved.
+e-mail :: jm921106@gmail.com
