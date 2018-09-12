@@ -6,13 +6,18 @@
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
+* [의존성주입을 사용하는 이유?](#의존성주입을-사용하는-이유)
 * [의존성주입 종류](#의존성주입-종류)
-* [설정자 기반 ( Setter Injection )](#설정자-기반-setter-injection)
-* [생성자 기반 ( Constructor Injection )](#생성자-기반-constructor-injection)
-* [필드 기반 ( Field Injection )](#필드-기반-field-injection)
+	* [설정자 기반 ( Setter Injection )](#설정자-기반-setter-injection)
+	* [생성자 기반 ( Constructor Injection )](#생성자-기반-constructor-injection)
+	* [필드 기반 ( Field Injection )](#필드-기반-field-injection)
 
 <!-- /code_chunk_output -->
 
+### 의존성주입을 사용하는 이유?
+
+- 객체를 실제 코드흐름에 생성하는 것이 아닌 외부에 생성된 객체를 가져와 사용하는 방식
+- 클래스간의 결합도를 낮춰 재사용성을 높임
 
 ### 의존성주입 종류
 
@@ -20,7 +25,7 @@
 - 생성자 기반 의존성 주입 방식
 - 필드 기반 의존성 주입 방식
 
-### 설정자 기반 ( Setter Injection )
+#### 설정자 기반 ( Setter Injection )
 
 ```java
 public class UserServiceImpl implements UserService {
@@ -41,7 +46,7 @@ public class UserServiceImpl implements UserService {
 }
 ```
 
-java기반(bean이용)
+> java기반(bean이용)
 
 ```java
 @Bean
@@ -52,7 +57,7 @@ UserService userService() {
 }
 ```
 
-java기반(매게변수)
+> java기반(매개변수)
 
 ```java
 @Bean
@@ -63,7 +68,7 @@ UserService userService(UserRepository userRepository, PasswordEncoder passwordE
 }
 ```
 
-xml기반
+> xml기반
 
 ```xml
 <bean id="userService" class="com.example.demo.UserService">
@@ -72,7 +77,7 @@ xml기반
 </bean>
 ```
 
-Annotation기반
+> Annotation기반 ( 자동으로 주입 )
 
 ```java
 @Component
@@ -94,9 +99,9 @@ public class UserServiceImpl implements UserService {
 
 - @Autowired를 달아주면 java기반의 설정방식이나 xml기반의 설정방식이 필요 없음
 
-### 생성자 기반 ( Constructor Injection )
+#### 생성자 기반 ( Constructor Injection )
 
-xml 기반 ( 인덱스사용 )
+> xml 기반 ( 인덱스사용 )
 
 ```xml
 <bean id="userService" class="com.example.demo.UserServiceImpl">
@@ -105,7 +110,8 @@ xml 기반 ( 인덱스사용 )
 </bean>
 ```
 
-xml 기반 ( 인수명사용 )
+> xml 기반 ( 인수명사용 )
+
 ```xml
 <bean id="userService" class="com.example.demo.UserServiceImpl">
   <constructor-arg name="userRepository" ref="userRepository" />
@@ -126,7 +132,7 @@ public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEn
 
 - 컨스트럭트 인젝션만이 필드를 final로 선언해서 생성후에 변경되지 않게 만들 수 있음
 
-### 필드 기반 ( Field Injection )
+#### 필드 기반 ( Field Injection )
 
 ```java
 @Component

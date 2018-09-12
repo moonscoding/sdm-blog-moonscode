@@ -7,7 +7,7 @@
 <!-- code_chunk_output -->
 
 * [컴포넌트 스캔](#컴포넌트-스캔)
-* [기본설정 컴포넌트스캔](#기본설정-컴포넌트스캔)
+* [기본설정 컴포넌트 스캔](#기본설정-컴포넌트-스캔)
 * [필터적용 컴포넌트스캔](#필터적용-컴포넌트스캔)
 	* [할당가능한 타입활용 필터](#할당가능한-타입활용-필터)
 	* [정규표현식 패턴으로 필터](#정규표현식-패턴으로-필터)
@@ -17,12 +17,12 @@
 
 ### 컴포넌트 스캔
 
-클래스로더를 스캔하면서 특정 클래스를 찾아 DI 컨테이너에 등록하는 방법
+- 클래스로더를 스캔하면서 특정 클래스를 찾아 DI 컨테이너에 등록하는 방법
 
-### 기본설정 컴포넌트스캔
+### 기본설정 컴포넌트 스캔
 
 - ==@Component==
-  - 위의 세 경우에 해당하지 않는 컴포넌트 ( 유틸리티, 기타 지원 클래스 )에 붙는 애너테이션
+  - 아래 세 경우에 해당하지 않는 컴포넌트 ( 유틸리티, 기타 지원 클래스 )에 붙는 애너테이션
 - ==@Controller==
   - MVC패턴에서 C, 컨트롤러 역할을 하는 컴포넌트에 붙이는 애너테이션
   - 클라이언트에서 오는 요청을 받고, 비즈니스 로직의 처리 결과를 응답으로 돌려보내는 기능
@@ -69,11 +69,13 @@
 #### 할당가능한 타입활용 필터
 
 > 할당가능한 타입으로 필터링 (인터페이스)
+>
 ```java
 public interface DemainService {}
 ```
 
 > 할당가능한 타입으로 필터링 (자바기반 설정방식)
+>
 ```java
 @ComponentScan(
   basePackages="com.example.demo"
@@ -81,7 +83,8 @@ public interface DemainService {}
 )
 ```
 
-할당가능한 타입으로 필터링 (Xml기반 설정방식)
+> 할당가능한 타입으로 필터링 (Xml기반 설정방식)
+>
 ```xml
 <context:component-scan base-package="com.example.demo">
   <context:include-filter type="assignable" expression="com.example.demo.domain.DomainService" />
@@ -90,7 +93,8 @@ public interface DemainService {}
 
 #### 정규표현식 패턴으로 필터
 
-정규표현직 패턴으로 필터 (자바기반 설정방식)
+>정규표현직 패턴으로 필터 (자바기반 설정방식)
+
 ```java
 @ComponentScan(
   basePackages="com.example.demo",
@@ -98,7 +102,8 @@ public interface DemainService {}
 )
 ```
 
-정규표현직 패턴으로 필터 (xml기반 설정방식)
+> 정규표현직 패턴으로 필터 (xml기반 설정방식)
+
 ```xml
 <context:component-scan base-package="com.example.demo">
   <context:include-filter type="regex" expression=".+DomainService$" />

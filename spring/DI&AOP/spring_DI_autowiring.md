@@ -15,9 +15,7 @@
 
 ### 오토와이어링
 
-자바기반 설저방식이나 XML기반 설정방식에서 명시적으로 Bean을 선언하는 것과 다르게
-
-DI 컨테이너에 빈을 자동으로 주입하는 방식
+- 자바기반 설저방식이나 XML기반 설정방식에서 명시적으로 Bean을 선언하는 것과 달리 DI 컨테이너에 빈을 자동으로 주입하는 방식
 
 ### 타입으로 오토와이어링
 
@@ -26,7 +24,7 @@ DI 컨테이너에 빈을 자동으로 주입하는 방식
   - DI 컨테이너 안에서 찾지 못하면 'NoSuchBeanDefinitionException' 에외발생
   - 'required' 속성을 false 처리하면 필수조건이 완화 ( java.util.Optional 속성도 가능 )
 
-required 사용
+> required 사용
 
 ```java
 @Component
@@ -36,7 +34,7 @@ public class UserServiceImpl implements UserService {
 }
 ```
 
-Optional 사용
+> Optional 사용
 
 ```java
 @Autowired
@@ -47,12 +45,13 @@ public void createUser(User user, String rawPassword) {
 }
 ```
 
-두 개의 PasswordEncoder를 자바기반 설정방식으로 정의
+> 두 개의 PasswordEncoder를 자바기반 설정방식으로 정의
 
 ```java
 @Configuaration
 @Component
 public class AppConfig {
+
   @Bean
   PasswordEncoder sha256PasswordEncoder() {
     return new Sha256PasswordEncoder();
@@ -68,7 +67,7 @@ public class AppConfig {
 - 다음과 같은 예제는 @Autowired 만으로 빈을 구분하지 못함
 - @Qualifier 애너테이션으로 이름을 명시해 줘야함
 
-@Qualifier로 이름을 명시하는 사용하는 방식
+> @Qualifier로 이름을 명시하는 사용하는 방식
 
 ```java
 @Component
@@ -79,12 +78,13 @@ public class UserServiceImpl implements UserService {
 }
 ```
 
-@Primary를 사용해 기본빈을 설정하는 방식
+> @Primary를 사용해 기본빈을 설정하는 방식
 
 ```java
 @Configuaration
 @Component
 public class AppConfig {
+
   @Bean
   PasswordEncoder sha256PasswordEncoder() {
     return new Sha256PasswordEncoder();
@@ -98,7 +98,7 @@ public class AppConfig {
 }
 ```
 
-특정이름이 아닌 포괄적인 목적에 맞춰 @Qualifier 이름을 설정한 예
+> 특정이름이 아닌 포괄적인 목적에 맞춰 @Qualifier 이름을 설정한 예
 
 ```java
 @Configuaration
@@ -120,7 +120,7 @@ public class AppConfig {
 ```java
 @Component
 public class UserServiceImpl implements UserService {
-  @Autowired
+  @Autowireds
   @Qualifier("lightweight")
   PasswordEncoder passwordEncoder;
 }
@@ -129,7 +129,7 @@ public class UserServiceImpl implements UserService {
 - 특정이름을 지정한것은 DI의 목적에 위배
 - 포괄적인 특징으로 이름을 설정해야함
 
-@Qualifier 역할을 할 @Lightweight 애너테이션을 구현
+> @Qualifier 역할을 할 @Lightweight 애너테이션을 구현
 
 ```java
 @Target({ElementType.FIELD, ElementType.PARAMETER, ElementType.METHOD})
@@ -168,7 +168,7 @@ PasswordEncoder passwordEncoder;
 
 ### 이름으로 오토와이어링
 
-빈의 이름이 필드명이나 프로퍼티명과 일치할 경우 빈 이름으로 필드 인젝션을 하는 방법
+- 빈의 이름이 필드명이나 프로퍼티명과 일치할 경우 빈 이름으로 필드 인젝션을 하는 방법
 
 ```java
 @Component
@@ -181,7 +181,7 @@ public class UserServiceImpl implements UserService {
 - @Resource 애너테이션의 name 속성은 생략이 가능
 - 필드 인젝션을 하는 경우 필드 이름과 같은 이름의 빈이 선택
 
-@Resource 애너테이션으로 필드 인젝션하는 상황 ( 필드이름과 일치 )
+> @Resource 애너테이션으로 필드 인젝션하는 상황 ( 필드이름과 일치 )
 
 ```java
 @Component
@@ -191,7 +191,7 @@ public class UserServiceImpl implements UserService {
 }
 ```
 
-@Resource 애너테이션으로 세터 인젝션하는 상황 ( 프로퍼티과 일치 )
+> @Resource 애너테이션으로 세터 인젝션하는 상황 ( 프로퍼티과 일치 )
 
 ```java
 @Component

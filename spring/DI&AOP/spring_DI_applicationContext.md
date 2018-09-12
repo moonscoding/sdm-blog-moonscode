@@ -9,11 +9,10 @@
 * [ApplicationContext & Bean](#applicationcontext-bean)
 	* [ApplicationContext 가져오기](#applicationcontext-가져오기)
 	* [Bean 가져오기](#bean-가져오기)
-	* [예제](#예제)
 * [AppConfig](#appconfig)
-	* [자바기반](#자바기반)
+	* [Java기반](#java기반)
 	* [XML 기반](#xml-기반)
-	* [Anotation 기반](#anotation-기반)
+	* [Annotation 기반](#annotation-기반)
 	* [컴포넌트 스캔](#컴포넌트-스캔)
 	* [명시적 이름주기](#명시적-이름주기)
 
@@ -21,7 +20,7 @@
 
 ### ApplicationContext & Bean
 
-ApplicationContext & Bean을 설정하는 방법들
+> ApplicationContext & Bean을 설정하는 방법들
 
 - 자바기반 설정방식
 - XML기반 설정방식
@@ -38,7 +37,7 @@ ApplicationContext context = new FileSystemXmlApplication("./spring/applicationC
 
 - ApplicationContext를 사용하는 경우
   - 단독 애플리케이션에 스프링프레임워크를 사용할때
-  - JUnit으로 만든 테스트 케이스 안에서 스프링프레임워크를 구동할ㄴ때
+  - JUnit으로 만든 테스트 케이스 안에서 스프링프레임워크를 구동할때
 - Web 환경에서는 WebApplicationContext를 사용
 
 #### Bean 가져오기
@@ -49,7 +48,7 @@ UserService userService = context.getBean("userService", UserService.class);
 UserService userService = (UserService) context.getBean(userService);
 ```
 
-#### 예제
+> 예제
 
 ```java
 ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
@@ -61,11 +60,12 @@ UserService UserService = context.getBean(UserService.class); // lookup
 
 ### AppConfig
 
-#### 자바기반
+#### Java기반
 
 ```java
 @Configuration
 public class AppConfig {
+
   @Bean
   UserRepository userRepository() {
     return new UserRepository();
@@ -84,8 +84,10 @@ public class AppConfig {
 ```
 
 - @Configuration & @Bean 애너테이션을 사용
-- Bean이란 DI 컨테이너에 등록하는 컴포넌트
-- Lookup이란 DI 컨테이너에서 Bean을 찾아오는 행위
+- Bean이란
+	- DI 컨테이너에 등록하는 컴포넌트
+- Lookup이란
+	- DI 컨테이너에서 Bean을 찾아오는 행위
 
 #### XML 기반
 
@@ -104,10 +106,10 @@ public class AppConfig {
 - 자바기반 설정방식과 Annotation기반 설정방식을 조합해서 사용하는 것이 일반적
 - 만약 주입대상이 다른 빈이 아니라, 특정값일 경우 'ref'대신 'value'를 사용
 
-#### Anotation 기반
+#### Annotation 기반
 
 - Bean 설정파일에 정의하는 대신 Beam을 정의하는 Annotation을 Bean의 클래스에 부여
-- Annotation이 붙은 클래스를 탐색해서 DI 컨테이너에 자동으로 등록 ( = 컴포넌트 스캔 )
+- Annotation이 붙은 클래스를 탐색해서 DI 컨테이너에 ==자동등록== ( = 컴포넌트 스캔 )
 - 명시적으로 설정하는 것이 아닌 자동으로 의존 컴포넌트를 주입 ( = 오토 와이어링 )
 
 ```java
@@ -138,8 +140,9 @@ public class UserServiceImpl implements UserService {
 #### 컴포넌트 스캔
 
 - 컴포넌트 스캔을 수행할때 스캔할 범위를 지정
+- full scan을 하지 않아도 되기 때문에 성능향상
 
-자바에서 컴포넌트 스캔범위 주기
+> 자바에서 컴포넌트 스캔범위 주기
 ```java
 @Configuration
 @Component("com.example.demo")
@@ -148,7 +151,7 @@ public class AppConfig {
 }
 ```
 
-Xml에서 컴포넌트 스캔범위 주기
+> Xml에서 컴포넌트 스캔범위 주기
 ```xml
 <beans>
   <context:component-scan base-package="com.example.demo" />
@@ -157,7 +160,7 @@ Xml에서 컴포넌트 스캔범위 주기
 
 #### 명시적 이름주기
 
-- 기본 빈의 이름은 첫글자가 소문자로 바뀌는 형태
+- 기본 빈의 이름은 첫글자가 소문자로 바뀌는 형태 (CamelCase)
 - 명시적으로 바꾸려면 다음과 같은 방식을 사용
 
 ```java

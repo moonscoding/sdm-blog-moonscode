@@ -15,7 +15,7 @@
 
 ### 프로파일 (profile)
 
-설정 파일을 특정 환경이나 목적에 맞게 선택적으로 사용할 수 있도록 그룹화
+- 설정 파일을 특정 환경이나 목적에 맞게 선택적으로 사용할 수 있도록 그룹화
 
 ### 클래스레벨
 
@@ -63,6 +63,7 @@ public class DummyUserRepository implements UserRepository {
 ```java
 @Configuration
 public class AppConfig {
+
     @Bean(name="dataSource")
     @Profile("dev")
     DataSource dataSourceForDev() {

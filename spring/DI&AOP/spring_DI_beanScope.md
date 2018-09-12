@@ -6,23 +6,22 @@
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-* [빈 스코프 (Bean Scope)](#빈-스코프-bean-scope)
-* [스코프 종류](#스코프-종류)
-* [스코프 설정](#스코프-설정)
+* [빈 스코프](#빈-스코프)
+	* [스코프 종류](#스코프-종류)
+	* [스코프 설정](#스코프-설정)
 * [서로 다른 스코프의 빈 주입시 문제점](#서로-다른-스코프의-빈-주입시-문제점)
-* [룩업메소드 인젝션](#룩업메소드-인젝션)
-* [스코프트 프락시](#스코프트-프락시)
+	* [룩업메소드 인젝션](#룩업메소드-인젝션)
+	* [스코프트 프락시](#스코프트-프락시)
 * [커스텀 스코프](#커스텀-스코프)
 
 <!-- /code_chunk_output -->
 
-### 빈 스코프 (Bean Scope)
+### 빈 스코프
 
-DI 컨테이너는 빈 간의 의존 관계를 관리할 뿐아니라 빈의 생존 기간도 관리
+- DI 컨테이너는 빈 간의 의존 관계를 관리할 뿐아니라 빈의 생존 기간도 관리
+- 빈의 생성방식을 빈 스코프라고 하며, 개발자는 빈 스코프를 직접 다루지 않아도 됨
 
-빈의 생성방식을 빈 스코프라고 하며, 개발자는 빈 스코프를 직접 다루지 않아도 됨
-
-### 스코프 종류
+#### 스코프 종류
 
 - ==singleton==
   - DI 컨테이너를 기동할 때 빈 인스턴스가 하나 만들어지고, 이후에는 그 인스턴스를 공유하는 방식
@@ -45,7 +44,13 @@ DI 컨테이너는 빈 간의 의존 관계를 관리할 뿐아니라 빈의 생
 - ==custon==
   - 스코프 이름을 직접 정하고 정의한 규칙에 따라 빈 인스턴스를 만들 수 있음
 
-### 스코프 설정
+
+> 포틀릿이란 ?
+
+- 포틀릿은 재사용이 가능한 웹구성요소로서 포탈 사용자들에게 관련정보를 표시해주는데 사용
+- 전자우편, 날씨정보, 토론방, 뉴스등이 있음
+
+#### 스코프 설정
 
 >프로토타입 스코프 타입으로 빈 추가 (자바)
 ```java
@@ -69,7 +74,7 @@ public class UserServiceImpl implements UserService {
 }
 ```
 
-> 스턴스는 서로 다름 (prototype)
+> #스턴스는 서로 다름 (prototype)
 ```java
 UserService userServiceA = context.getBean(UserService.class);
 UserService userServiceB = context.getBean(UserService.class);
@@ -105,7 +110,7 @@ public class UserServiceImpl implements UserService {
 }
 ```
 
-### 룩업메소드 인젝션
+#### 룩업메소드 인젝션
 
 >의존관계가 코드상에 남지만 문제를 해결하는 방법
 ```java
@@ -129,6 +134,7 @@ public class UserServiceImpl implements UserService {
 ```java
 @Component
 public class UserServiceImpl implements UserService {
+
   public void register(User user, String rawPassword) {
     PasswordEncoder passwordEncoder = passwordEncoder();
     String encodedPassword = passwordEncoder.encode(rawPassword);
@@ -157,7 +163,7 @@ public class UserServiceImpl implements UserService {
 - 소스코드에서 직접 DI 컨테이너를 사용하는 것을 방지하는 용도로 활용
 - 자바기반의 설정방식에서는 룩업메서드 인젝션을 처리할 수 없음(Override할수없기때문)
 
-### 스코프트 프락시
+#### 스코프트 프락시
 
 - 기존의 빈을 프락시로 감쌈
 - 프락시를 다른 빈에 주입
@@ -187,10 +193,10 @@ public class UserServiceImpl implements UserService {
 }
 ```
 
-- 스코프트 프락시가 활성화 된 상태이기 떄문에 passwordEncoder에 PasswordEncoder의 프락시 주입
+- 스코프트 프락시가 활성화 된 상태이기 때문에 passwordEncoder에 PasswordEncoder의 프락시 주입
 - encode 메소드가 호출될 때 마다 request 스코프의 PasswordEncoder 인스턴스가 만들어짐
 
-**스코프트 프락시 속성**
+> 스코프트 프락시 속성
 
 - ==ScopedProxyMode.INTERFACES==
   - JDK 동적 프락시 (java.lang.reflect.Proxy)를 사용해서 인터페이스 기반 프락시 생성

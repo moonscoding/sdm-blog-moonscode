@@ -9,9 +9,9 @@
 * [빈의 생명주기](#빈의-생명주기)
 * [빈 초기화단계](#빈-초기화단계)
 	* [빈 설정정보 읽기 및 보완](#빈-설정정보-읽기-및-보완)
-	* [빈 생성 및 의존관계 해결](#빈-생성-및-의존관계-해결)
 	* [빈 생성 전후처리](#빈-생성-전후처리)
 	* [빈 생성 초기화처리](#빈-생성-초기화처리)
+* [빈 사용단계](#빈-사용단계)
 * [빈 종료단계](#빈-종료단계)
 	* [빈 파괴 전처리](#빈-파괴-전처리)
 * [DI 컨테이너 종료](#di-컨테이너-종료)
@@ -39,12 +39,6 @@ public interface BeanFactoryPostProcessor {
 ```
 - BeanFactoryPostProcessor를 직접 구현해서 빈으로 정의하면 자신만의 빈 정보 보완 처리도 추가 가능
 
-#### 빈 생성 및 의존관계 해결
-
-- 생성자 기반 의존성 주입
-- 세터 기반 의존성 주입
-- 필드 기반 의존성 주입
-
 #### 빈 생성 전후처리
 
 - 전처리
@@ -69,11 +63,11 @@ public interface BeanPostProcessor {
 	- @PostConstruct를 사용하는 경우
 	- InitializingBean 인터페이스를 구현하는 경우, afterPropertiesSet 메서드 오버라이드
 - 자바기반설정
-	- @BEAN 의 initMethod 속성에 지정한 메서드
+	- @Bean의 initMethod 속성에 지정한 메서드
 - XML기반설정
 	- <bean>요소의 init-method 속성에 지정한 메서드
 
-초기화처리 @PostConstruct 활용
+> 초기화처리 @PostConstruct 활용
 ```java
 @Component
 public class UserServiceImpl implements UserService {
@@ -89,7 +83,7 @@ public class UserServiceImpl implements UserService {
 - @PostConstruct 메소드의 반환값은 반드시 'void'
 - @PostConstruct 메소드의 매개변수는 없어야함
 
-초기화처리 InitializingBean 인터페이스
+> 초기화처리 InitializingBean 인터페이스
 ```java
 @Component
 public class UserServiceImpl implements UserService, InitializingBean {
@@ -102,7 +96,7 @@ public class UserServiceImpl implements UserService, InitializingBean {
 }
 ```
 
-초기화 메서드 지정 (자바)
+> 초기화 메서드 지정 (자바)
 ```java
 @Bean (initMethod="populateCache")
 UserService userService(){
@@ -110,12 +104,18 @@ UserService userService(){
 }
 ```
 
-초기화 메서드 지정 (xml)
+> 초기화 메서드 지정 (xml)
 ```xml
 <bean id="userService" class="com.example.demo.UserServiceImpl" init-method="populateCache" >
 ```
 
 - 서드파티를 사용할때 소스코드에 @PostConstruct 나 InitializingBean을 사용하기 힘들때 사용할 수 있음
+
+### 빈 사용단계
+
+- 생성자 기반 의존성 주입
+- 세터 기반 의존성 주입
+- 필드 기반 의존성 주입
 
 
 ### 빈 종료단계
@@ -171,28 +171,26 @@ xml 기반
 
 ### DI 컨테이너 종료
 
-ConfigurableApplicationContext 인터페이스는
+- ConfigurableApplicationContext 인터페이스
+	- ApplicationConext 인터페이스를 확장한 서브 인터페이스
+	- 우리가 사용하는 DI 컨테이너가 바로 ConfigurableApplicationContext의 구현체
+	- 이 인터페이스의 'close()' 메소드가 컨테이너를 종료시킴
 
-ApplicationConext 인터페이스를 확장한 서브 인터페이스로
+> 기본 처리
 
-우리가 사용하는 DI 컨테이너가 바로 ConfigurableApplicationContext의 구현체
-
-이 인터페이스의 'close()' 메소드가 컨테이너를 종료시킴
-
-기본 처리
 ```java
 ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 context.close();
 ```
 
-Closeable 인터페이스 관련 처리
+> Closeable 인터페이스 관련 처리
 ```java
 try(ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class)) {
 
 };
 ```
 
-JVM 종료시에 함께 종료되도록 Hook처리
+> JVM 종료시에 함께 종료되도록 Hook처리
 ```java
 ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 context.registerShutdownHook();

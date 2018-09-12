@@ -9,7 +9,6 @@
 * [스프링 MVC](#스프링-mvc)
 * [웹 애플리케이션 개발특징](#웹-애플리케이션-개발특징)
 * [MVC 특징](#mvc-특징)
-* [MVC 예제](#mvc-예제)
 
 <!-- /code_chunk_output -->
 
@@ -45,6 +44,8 @@
   - DI컨테이너 상에서 동작하는 프레임워크
   - DI컨테이너가 제공하는 DI나 AOP같은 구조를 그대로 활용
 
+> 구현예제
+
 ```java
 @Controller // DI 컨테이너와의 연게
 public class WelComeController { // POJO (=프레임워크에서제공하는 인터페이스 구현은 불필요)
@@ -65,8 +66,6 @@ public class WelComeController { // POJO (=프레임워크에서제공하는 인
 - 풍부한 확장 포인트 제공
 - 엔터프라이즈 애플리케이션에 필요한 기능 제공
 - 서드파티 라이브러리와의 연계 지원
-
-### MVC 예제
 
 ---
 
