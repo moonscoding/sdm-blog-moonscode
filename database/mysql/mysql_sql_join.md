@@ -1,5 +1,5 @@
 
-<div class="pull-right">  업데이트 :: 2018.10.dd </div><br>
+<div class="pull-right">  업데이트 :: 2018.10.02 </div><br>
 
 ---
 
