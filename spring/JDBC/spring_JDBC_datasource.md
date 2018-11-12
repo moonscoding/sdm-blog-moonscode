@@ -1,29 +1,44 @@
-
-<div class="pull-right">  업데이트 :: 2018.08.08 </div><br>
+<div class="pull-right"> 업데이트 :: 2018.08.08 </div><br>
 
 ---
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
 <!-- code_chunk_output -->
 
-* [DataSource](#datasource)
-* [DataSourcce 설정](#datasourcce-설정)
-	* [애플리케이션모듈이 제공하는 데이터소스](#애플리케이션모듈이-제공하는-데이터소스)
-	* [애플리케이션서버가 제공하는 데이터소스](#애플리케이션서버가-제공하는-데이터소스)
-	* [내장형 데이터베이스를 사용하는 데이터 소스](#내장형-데이터베이스를-사용하는-데이터-소스)
+-	[구조](#구조)
+-	[DataSource](#datasource)
+-	[DataSourcce 설정](#datasourcce-설정)
+	-	[애플리케이션모듈이 제공하는 데이터소스](#애플리케이션모듈이-제공하는-데이터소스)
+	-	[애플리케이션서버가 제공하는 데이터소스](#애플리케이션서버가-제공하는-데이터소스)
+	-	[내장형 데이터베이스를 사용하는 데이터 소스](#내장형-데이터베이스를-사용하는-데이터-소스)
 
 <!-- /code_chunk_output -->
 
+### 구조
+
+```
+Spring JDBC
+    - 트랜잭션 관리자
+        - DataSourceTransactionManager
+        - JpaTransactionManager
+        - JtaTransactionManager
+    - 데이터 소스
+        - Common DBCP 처럼 애플리케이션 모듈이 제공하는 데이터 소스
+        - Java EE 스팩을 준수하는 애플리케이션 서버가 제공하는 데이터 소스
+        - 내장형 데이터베이스를 사용하는 데이터 소스
+```
+
 ### DataSource
 
-- 데이터소스는 애플리케이션이 데이터베이스에 접근하기 위한 추상화된 연결방식
-- 커넥션을 제공하는 역할
+-	데이터소스는 애플리케이션이 데이터베이스에 접근하기 위한 추상화된 연결방식
+-	커넥션을 제공하는 역할
 
 > 스프링이 제공하는 데이터소스
 
-- 애플리케이션 모듈이 제공하는 데이터소스
-- 애플리케이션 서버가 제공하는 데이터소스
-- 내장형 데이터베이스르 사용하는 데이터소스
+-	애플리케이션 모듈이 제공하는 데이터소스
+-	애플리케이션 서버가 제공하는 데이터소스
+-	내장형 데이터베이스르 사용하는 데이터소스
 
 ### DataSourcce 설정
 
@@ -67,8 +82,8 @@ public class PoolingDataSourceConfig {
 }
 ```
 
-- Commons DBCP가 제공하는 데이터 소스 객체를 빈으로 정의
-- 종료시에 관련 리소스가 해제될 수 있도록 destoryMethod에 'close()' 설정
+-	Commons DBCP가 제공하는 데이터 소스 객체를 빈으로 정의
+-	종료시에 관련 리소스가 해제될 수 있도록 destoryMethod에 'close()' 설정
 
 > 프로퍼티 설정파일
 
@@ -98,8 +113,8 @@ public class JndiDataSourceConfig {
 }
 ```
 
-- 애플리케이션서버에 있는 리소스를 JNDI를 통해 룩업하기 위해 JndiTemplate 클래스의 인스턴스를 생성
-- lookup 메소드로 JNDI명이 "java.comp/env/jdbc/mydb"인 리소스(데이터소스)를 찾아옴
+-	애플리케이션서버에 있는 리소스를 JNDI를 통해 룩업하기 위해 JndiTemplate 클래스의 인스턴스를 생성
+-	lookup 메소드로 JNDI명이 "java.comp/env/jdbc/mydb"인 리소스(데이터소스)를 찾아옴
 
 > 데이터소스정의 ( Xml기반 )
 
@@ -112,23 +127,23 @@ public class JndiDataSourceConfig {
 
 #### 내장형 데이터베이스를 사용하는 데이터 소스
 
-- 애플리케이션이 가동될때 마다 데이터베이스가 새로 구축
-- DDL(Data Definition Language), 테이블과 같은 기본 구조를 만들기 위함
-- DML(Data Manipulation Language), 초기 데이터를 적재하기 위함
+-	애플리케이션이 가동될때 마다 데이터베이스가 새로 구축
+-	DDL(Data Definition Language), 테이블과 같은 기본 구조를 만들기 위함
+-	DML(Data Manipulation Language), 초기 데이터를 적재하기 위함
 
 > 데이터소스 정의 ( 자바기반 )
 
 ```java
 @Configuration
 public class DataSourceEmbeddedConfig {
-	@Bean
-	public DataSource dataSource() {
-		return new EmbeddedDatabaseBuilder()
-			.setType(EmbeddedDatabaseType.H2)
-			.setScriptEncoding("UTF-8")
-			.addScript("META-INF/sql/schema.sql", "META-INF/sql/insert-init-data.sql")
-			.build();
-	}
+    @Bean
+    public DataSource dataSource() {
+        return new EmbeddedDatabaseBuilder()
+            .setType(EmbeddedDatabaseType.H2)
+            .setScriptEncoding("UTF-8")
+            .addScript("META-INF/sql/schema.sql", "META-INF/sql/insert-init-data.sql")
+            .build();
+    }
 }
 ```
 
