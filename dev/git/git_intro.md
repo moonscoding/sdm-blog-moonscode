@@ -1,37 +1,36 @@
-# GIT
-## 명령어 위주 정리 & 개념은 문서로 정리
+GIT
+===
+
+명령어 위주 정리 & 개념은 문서로 정리
+-------------------------------------
 
 <div class="pull-right"> 문스코딩 - 2018.02.20 </div>
 
 ---
 
-
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
 <!-- code_chunk_output -->
 
-* [GIT](#git)
-	* [명령어 위주 정리 & 개념은 문서로 정리](#명령어-위주-정리-개념은-문서로-정리)
-		* [설치방법 (install)](#설치방법-install)
-		* [Git 프로젝트 가져오기](#git-프로젝트-가져오기)
-		* [Git ID/PW 등록하기](#git-idpw-등록하기)
-		* [명령어 (basic)](#명령어-basic)
-		* [명령어 (branch)](#명령어-branch)
+-	[설치방법 (install)](#설치방법-install)
+-	[Git 프로젝트 가져오기](#git-프로젝트-가져오기)
+-	[Git ID/PW 등록하기](#git-idpw-등록하기)
+-	[명령어 (basic)](#명령어-basic)
+-	[명령어 (branch)](#명령어-branch)
 
 <!-- /code_chunk_output -->
 
-
 ### 설치방법 (install)
 
-- 01. osX
+-	01. osX
 
 http://sourceforge.net/projects/git-osx-installer/
 
-MacPorts 사용방법
-```
+MacPorts 사용방법`
 $ sudo port install git-core +svn +doc +bash_completion +gitweb
-```
+`
 
-- 02. linux
+-	02. linux
 
 ```
   yum install git-core
@@ -56,9 +55,9 @@ git config credential.username <유저아이디> # 만약다른아이디로 로�
 
 ### Git ID/PW 등록하기
 
-- /etc/gitconfig :: 시스템의 모든 사용자와 모든 저장소에 적용되는 설정입니다. ( git config --system 으로 읽고쓸수 있습니다 . )
-- ~/.gitconfig :: 특정 사용자에게만 적용되는 설정입니다.
-- .git/config :: 이 파일은 Git 디렉토리에 있고 특정 저장소에만 적용됩니다.
+-	/etc/gitconfig :: 시스템의 모든 사용자와 모든 저장소에 적용되는 설정입니다. ( git config --system 으로 읽고쓸수 있습니다 . )
+-	~/.gitconfig :: 특정 사용자에게만 적용되는 설정입니다.
+-	.git/config :: 이 파일은 Git 디렉토리에 있고 특정 저장소에만 적용됩니다.
 
 아이디 / 패스워드 등록
 
@@ -73,43 +72,37 @@ $ git config --global user.email johndoe@example.com
 $ git config --list
 ```
 
-
 ### 명령어 (basic)
 
-- add
+-	add
 
-git add
-git add .
-git add /dir/
+git add git add . git add /dir/
 
-- commit
+-	commit
 
 git commit -m "message in here"
 
-- push
+-	push
 
 git push origin master
 
-- pull
+-	pull
 
 git pull origin master
 
-
 ### 명령어 (branch)
 
-- branch
+-	branch
 
-git branch
-git branch bName
+git branch git branch bName
 
-- checkout
+-	checkout
 
 git checkout branch_name
 
-- pull & push
+-	pull & push
 
-git push origin branch_name
-git pull origin branch_name
+git push origin branch_name git pull origin branch_name
 
 ---
 

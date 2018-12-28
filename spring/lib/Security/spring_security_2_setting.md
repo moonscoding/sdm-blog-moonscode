@@ -1,14 +1,14 @@
-
-<div class="pull-right">  업데이트 :: 2018.08.22 </div><br>
+<div class="pull-right"> 업데이트 :: 2018.08.22 </div><br>
 
 ---
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
 <!-- code_chunk_output -->
 
-* [라이브러리 설정](#라이브러리-설정)
-* [스프링 시큐리티 빈정의](#스프링-시큐리티-빈정의)
-* [서블릿 필터 설정](#서블릿-필터-설정)
+-	[라이브러리 설정](#라이브러리-설정)
+-	[스프링 시큐리티 빈정의](#스프링-시큐리티-빈정의)
+-	[서블릿 필터 설정](#서블릿-필터-설정)
 
 <!-- /code_chunk_output -->
 
@@ -47,12 +47,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 }
 ```
 
-- @EnableWebSecurity
-  - 스프링 시큐리티가 제공하는 설정 클래스가 임포트
-  - 스프링 시큐리티를 이용할 때 필요한 컴포넌트의 빈이 자동으로 정의
-- WebSecurityConfigurerAdapter 상속
-  - 기본적으로 적용되는 빈의 정의를 간단히 커스텀할 수 있음
-- 보안기능이 필요없는 리소스에는 스프링 시큐리티를 적용치 않음
+-	@EnableWebSecurity
+	-	스프링 시큐리티가 제공하는 설정 클래스가 임포트
+	-	스프링 시큐리티를 이용할 때 필요한 컴포넌트의 빈이 자동으로 정의
+-	WebSecurityConfigurerAdapter 상속
+	-	기본적으로 적용되는 빈의 정의를 간단히 커스텀할 수 있음
+-	보안기능이 필요없는 리소스에는 스프링 시큐리티를 적용치 않음
 
 > web.xml
 
@@ -72,8 +72,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
  </context-param>
 ```
 
-- contextConfigLocation
-  - ApplicationContext를 스프링 시큐리티가 적용된 Config 클래스로 교체
+-	contextConfigLocation
+	-	ApplicationContext를 스프링 시큐리티가 적용된 Config 클래스로 교체
 
 ### 서블릿 필터 설정
 
@@ -90,8 +90,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
  </filter-mapping>
 ```
 
-- DelegatingFilterProxy
-  - DI 컨테이너에서 관리되는 빈(FilterChainProxy) 서블릿 컨테이너에 등록
+-	DelegatingFilterProxy
+	-	DI 컨테이너에서 관리되는 빈(FilterChainProxy) 서블릿 컨테이너에 등록
+	-	서블릿 필터의 이름으로 DI 컨테이너에서 관리되는 빈의 이름을 지정
 
 ---
 

@@ -37,8 +37,15 @@ Spring JDBC
 > 스프링이 제공하는 데이터소스
 
 -	애플리케이션 모듈이 제공하는 데이터소스
+	-	Common DBCP나 Tomcat JDBC Connection Pool과 같이 서드파티가 제공하는 데이터소스
+	-	DriverManagerDataSource 같이 스프링 프레임워크가 테스트 용도로 제공하는 데이터 소스를 빈으로 등록
 -	애플리케이션 서버가 제공하는 데이터소스
+	-	JNDI(Java Naming and Directory Interface)를 통해 가져와서 사용하는 방식
+	-	데이터베이스에 접속하기 위해 각종 정보를 애플리케이션 서버에서 관리
 -	내장형 데이터베이스르 사용하는 데이터소스
+	-	HSQLDB, H2, Apache Derby 같은 내장형 데이터베이스에 접속하는 데이터소스
+	-	데이터베이스를 준비할 필요 없이 애플리케이션이 기동할 때, 데이터 소스의 설정과 생성이 자동으로 이뤄짐
+	-	프로토타입을 위해 적절
 
 ### DataSourcce 설정
 

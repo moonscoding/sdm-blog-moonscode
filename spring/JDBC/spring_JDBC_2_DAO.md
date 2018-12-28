@@ -35,7 +35,7 @@
 #### 사용법
 
 -	JdbcTemplate
-	-	? 문자를 플레이스홀더로 사용
+	-	\<?> 문자를 플레이스홀더로 사용
 -	NamedParameterJdbcTemplate
 	-	파라미터 이름을 사용할 수 있음
 
