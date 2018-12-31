@@ -1,57 +1,59 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>proton.js-emitter-FlowEmitter</title>
-		<meta name="viewport" id="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<meta charset="utf-8">
-		<style type="text/css">
-			body {
-				font-family: Monospace;
-				background-color: #f0f0f0;
-				margin: 0px;
-				overflow: hidden;
-			}
-			#testCanvas {
-				background: #000;
-			}
-		</style>
-	</head>
-	<body>
-		<canvas id="testCanvas"></canvas>
-		<script src="../../lib/stats.min.js"></script>
-		<script src="//localhost:3001/build/proton.js"></script>
-		<script>
-            // Proton 객체와 Emitter 객체를 생성합니다.
-            var canvas = document.getElementById("testCanvas");
-            var proton = new Proton();
-            var emitter = new Proton.Emitter();
+<head>
+    <title>proton.js-emitter-FlowEmitter</title>
+    <meta name="viewport" id="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="utf-8">
+    <style type="text/css">
+        body {
+            font-family: Monospace;
+            background-color: #f0f0f0;
+            margin: 0px;
+            overflow: hidden;
+        }
 
-            //set Rate
-            emitter.rate = new Proton.Rate(Proton.getSpan(10, 20), 0.1);
+        #testCanvas {
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+<canvas id="testCanvas"></canvas>
+<script src="../../lib/stats.min.js"></script>
+<script src="//localhost:3001/build/proton.js"></script>
+<script>
+    // Proton 객체와 Emitter 객체를 생성합니다.
+    var canvas = document.getElementById("testCanvas");
+    var proton = new Proton();
+    var emitter = new Proton.Emitter();
 
-            //add Initialize
-            emitter.addInitialize(new Proton.Radius(1, 12));
-            emitter.addInitialize(new Proton.Life(2, 4));
-            emitter.addInitialize(new Proton.Velocity(3, Proton.getSpan(0, 360), 'polar'));
+    //set Rate
+    emitter.rate = new Proton.Rate(Proton.getSpan(10, 20), 0.1);
 
-            //add Behaviour
-            emitter.addBehaviour(new Proton.Color('ff0000', 'random'));
-            emitter.addBehaviour(new Proton.Alpha(1, 0));
+    //add Initialize
+    emitter.addInitialize(new Proton.Radius(1, 12));
+    emitter.addInitialize(new Proton.Life(2, 4));
+    emitter.addInitialize(new Proton.Velocity(3, Proton.getSpan(0, 360), 'polar'));
 
-            //set emitter position
-            emitter.p.x = canvas.width / 2;
-            emitter.p.y = canvas.height / 2;
-            emitter.emit(5);
+    //add Behaviour
+    emitter.addBehaviour(new Proton.Color('ff0000', 'random'));
+    emitter.addBehaviour(new Proton.Alpha(1, 0));
 
-            // Emitter 객체 삽입
-            proton.addEmitter(emitter);
+    //set emitter position
+    emitter.p.x = canvas.width / 2;
+    emitter.p.y = canvas.height / 2;
+    emitter.emit(5);
 
-            // Renderer 생성 및 Proton 객체에 삽입
-            var renderer = new Proton.CanvasRenderer(canvas);
-            proton.addRenderer(renderer);
+    // Emitter 객체 삽입
+    proton.addEmitter(emitter);
 
-            //use Euler integration calculation is more accurate (default false)
-            // Proton.USE_CLOCK = false or true;
-		</script>
-	</body>
+    // Renderer 생성 및 Proton 객체에 삽입
+    var renderer = new Proton.CanvasRenderer(canvas);
+    proton.addRenderer(renderer);
+
+    //use Euler integration calculation is more accurate (default false)
+    // Proton.USE_CLOCK = false or true;
+</script>
+</body>
 </html>

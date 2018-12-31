@@ -1,4 +1,3 @@
-
 console.log('hello server');
 
 var http = require('http');
@@ -6,9 +5,9 @@ http.createServer(function (req, res) {
     console.log('hello req')
     console.log(req.headers.referer)
     console.log(req)
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.write('Hello World!');
-  res.end();
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write('Hello World!');
+    res.end();
 }).listen(1234);
 
 // var express = require('express');
