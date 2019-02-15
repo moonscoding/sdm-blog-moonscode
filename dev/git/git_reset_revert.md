@@ -1,5 +1,4 @@
-
-<div class="pull-right"> 업데이트 :: 2018.12.01 </div><br>
+<div class="pull-right"> 업데이트 :: 2018.11.01 </div><br>
 
 ---
 
@@ -7,9 +6,9 @@
 
 <!-- code_chunk_output -->
 
-* [#](#)
-* [#](#-1)
-* [#](#-2)
+-	[\#](#)
+-	[\#](#-1)
+-	[\#](#-2)
 
 <!-- /code_chunk_output -->
 

@@ -12,6 +12,7 @@
 -	[클래스레벨](#클래스레벨)
 -	[메서드레벨](#메서드레벨)
 -	[프로파일 선택](#프로파일-선택)
+-	[톰캣에 프로파일 저장하기](#톰캣에-프로파일-저장하기)
 
 <!-- /code_chunk_output -->
 
@@ -242,6 +243,22 @@ http://feco.tistory.com/106
   <param-name>spring.profiles.active</param-name>
   <param-value>dev</param-name>
 </context-param>
+```
+
+### 톰캣에 프로파일 저장하기
+
+tomcat/bin 디렉토리에서 setenv.sh 파일 생성 후 아래와 같이 작성
+
+> Linux
+
+```
+JAVA_OPTS="$JAVA_OPTS -Dspring.profiles.active={profile_name}"
+```
+
+> window
+
+```
+set JAVA_OPTS=%JAVA_OPTS% -Dspring.profiles.active={profile_name}
 ```
 
 ---

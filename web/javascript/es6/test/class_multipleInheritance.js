@@ -7,7 +7,7 @@ class A {
 
 class B extends A {
 
-    constructor(a){
+    constructor(a) {
         super(a);
         console.log("b : " + a)
     }
@@ -15,9 +15,13 @@ class B extends A {
 
 new B("input");
 
-class C extends B(A) {
+class C extends B
 
-    constructor(a) {
+(A)
+{
+
+    constructor(a)
+    {
         super(a);
         console.log("c : " + a)
     }

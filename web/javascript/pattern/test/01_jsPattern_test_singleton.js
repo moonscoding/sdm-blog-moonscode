@@ -1,14 +1,13 @@
-
 // # 싱글톤 테스트
 
-const Singleton = (function() {
+const Singleton = (function () {
 
     let instance = null;
 
     class Singleton {
         constructor() {
 
-            if(!instance) {
+            if (!instance) {
                 instance = this;
             }
 
