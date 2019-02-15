@@ -1,5 +1,9 @@
 # Moon's Coding
 
+
+
+![image-20190215221247553](/Users/SuperMoon/project/sdm/blog/sdm-blog-moonscode/image-20190215221247553.png)
+
 ## SDM (software designer moon)의 개발일지
 
 <div class="pull-right"> Moon's Coding Blog </div>
@@ -16,7 +20,7 @@
 		* [Mobile 파트](#mobile-파트)
 		* [Server 파트](#server-파트)
 		* [DataBase 파트](#database-파트)
-		* [Dev 파트](#dev-파트)
+		* [~~Dev 파트~~ (Desparated)](#~~dev-파트~~-desparated)
 
 <!-- /code_chunk_output -->
 
@@ -104,9 +108,10 @@ mobile 운영체제의 프로그래밍 언어에 대해서 학습하는 파트�
 
 ### DataBase 파트
 
-### Dev 파트
+### ~~Dev 파트~~ (Desparated)
 
-Dev 파트는 개발에 관련된 Tool 사용법을 정리하는 저장소입니다.
+- Dev 파트는 Evernote 쪽으로 이관될 예정입니다. 더 이상 사용하지 않습니다.
+- Dev 파트는 개발에 관련된 Tool 사용법을 정리하는 저장소입니다.
 1. editor    :: 개발 IDE에 관련된 문서입니다.
 2. git       :: Git 사용법에 관한 문서입니다.
 3. oxs       :: Mac 운영체제의 사용법에 관한 문서입니다.

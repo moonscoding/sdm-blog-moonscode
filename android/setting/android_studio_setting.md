@@ -1,4 +1,5 @@
 # Android Studio Setting (in OSX)
+
 ## 안드로이드 스튜디오 설정방법
 <div class="pull-right"> 2018.03.26 </div><br>
 
@@ -36,7 +37,6 @@ colors & fonts > general
 > 자동완성기능
 
 ==cmd + ,==
-
 
 
 
