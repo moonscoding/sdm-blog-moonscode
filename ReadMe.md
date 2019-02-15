@@ -1,8 +1,6 @@
 # Moon's Coding
 
-
-
-![image-20190215221247553](/Users/SuperMoon/project/sdm/blog/sdm-blog-moonscode/image-20190215221247553.png)
+![image-20190215221604926](image-20190215221604926.png)
 
 ## SDM (software designer moon)의 개발일지
 
